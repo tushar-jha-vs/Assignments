@@ -8,4 +8,11 @@ export type NotificationListType = {
   status: StatusType;
 };
 
+export type DActiveListType = {
+  id: number;
+  bgImage: ImageSourcePropType;
+  title: string;
+  textColor: string;
+};
+
 type StatusType = 'READ' | 'UNREAD';

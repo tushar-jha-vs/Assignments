@@ -3,6 +3,9 @@ interface Color {
   primary50: string;
   neutral700: string;
   neutral600: string;
+  secondary600: string;
+  primary700: string;
+  accent700: string;
 }
 
 export const COLORS: Color = {
@@ -10,6 +13,9 @@ export const COLORS: Color = {
   primary50: '#f1fcfa',
   neutral700: '#292f36',
   neutral600: '#4e5e6c',
+  secondary600: '#d72b6a',
+  primary700: '#176e6d',
+  accent700: '#B96204',
 };
 
 interface FontSize {

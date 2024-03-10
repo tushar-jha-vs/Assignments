@@ -13,7 +13,7 @@ const NotificationCard = ({item}: {item: NotificationListType}) => {
   return (
     <View style={[styles.container,{backgroundColor}]}>
       <View style={styles.subContainer}>
-        <Image style={styles.icon} source={item?.image} resizeMode="contain" />
+        <Image style={styles.icon} source={item.image} resizeMode="contain" />
         <Text style={styles.text}>{item.text}</Text>
       </View>
       <View style={styles.textContainer}>
