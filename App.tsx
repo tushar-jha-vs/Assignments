@@ -1,14 +1,25 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+// Third-party libraries
+import React from 'react';
+import {SafeAreaView, StyleSheet} from 'react-native';
+
+// Absolute imports
+import Notifications from './src/screens/notifications/Notifications';
+import DActive from './src/screens/D-active/DActive';
 
 const App = () => {
+  const screen = false;
   return (
-    <View>
-      <Text>App</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={styles.container}>
+      {screen ? <Notifications /> : <DActive />}
+    </SafeAreaView>
+  );
+};
 
-export default App
+export default App;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+});
