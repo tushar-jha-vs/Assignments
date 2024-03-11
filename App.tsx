@@ -4,8 +4,6 @@ import {SafeAreaView, StyleSheet} from 'react-native';
 
 // Absolute imports
 import Notifications from './src/screens/notifications/Notifications';
-
-// Constants
 import DActive from './src/screens/D-active/DActive';
 
 const App = () => {
@@ -22,5 +20,6 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
 });

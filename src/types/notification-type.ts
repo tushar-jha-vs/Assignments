@@ -1,18 +1,13 @@
-import {ImageSourcePropType} from 'react-native';
 
 export type NotificationListType = {
-  id: number;
-  image: ImageSourcePropType;
+  id: string;
+  image: string;
   text: string;
-  time: string;
-  status: StatusType;
+  createdAt: number;
+  status: string;
 };
 
 export type DActiveListType = {
   id: number;
-  bgImage: ImageSourcePropType;
   title: string;
-  textColor: string;
 };
-
-type StatusType = 'READ' | 'UNREAD';

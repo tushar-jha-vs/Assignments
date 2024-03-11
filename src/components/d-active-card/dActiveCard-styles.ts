@@ -1,4 +1,10 @@
-import {Platform, StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {
+  ImageStyle,
+  Platform,
+  StyleSheet,
+  TextStyle,
+  ViewStyle,
+} from 'react-native';
 import {COLORS, FONTSIZE, SPACING} from '../../theme/theme';
 
 interface Styles {
@@ -12,24 +18,21 @@ interface Styles {
 export const styles: Styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: SPACING.space_20,
-    paddingTop: SPACING.space_24,
-    alignItems: 'center',
     overflow: 'hidden',
     borderRadius: 20,
     marginBottom: 20,
   },
   textContainer: {
+    width: '100%',
     paddingVertical: SPACING.space_8,
     paddingHorizontal: SPACING.space_16,
-    alignItems: 'center',
-    width: '100%',
   },
   title: {
     fontFamily: 'Fraunces_72pt-Bold',
-    fontWeight: '700',
+    fontWeight: '600',
     lineHeight: SPACING.space_24,
     fontSize: FONTSIZE.size_18,
+    textAlign: 'center',
   },
   buttonContainer: {
     paddingVertical: SPACING.space_8,
