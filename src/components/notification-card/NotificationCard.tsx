@@ -1,36 +1,28 @@
-// Third-party libraries
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 
-// Absolute imports
-import {styles} from './notificationCard-styles';
-import {COLORS} from '../../theme/theme';
-import {NotificationListType} from '../../types/notification-type';
-import {getTimeString} from '../../utils/coomon-util';
+import {NotificationImageSource} from '../../constants';
+import {COLORS} from '../../theme';
+import {NotificationListType} from '../../types';
 
-const imagePaths: {[key: string]: number} = {
-  reflection: require('../../assets/icons/reflection.png'),
-  reminder: require('../../assets/icons/reminder.png'),
-  'D-active': require('../../assets/icons/D-active.png'),
-};
+import {getTimeString} from '../../utils/common-utils';
+
+import {styles} from './notificationCard-styles';
 
 const NotificationCard = ({item}: {item: NotificationListType}) => {
-  const backgroundColor = item.status ? COLORS.primary50 : 'white';
+  const backgroundColor = item.isRead ? COLORS.primary50 : COLORS.white;
   return (
     <View style={[styles.container, {backgroundColor}]}>
       <View style={styles.subContainer}>
         <Image
           style={styles.icon}
-          source={imagePaths[item.image]}
+          source={NotificationImageSource[item.image]}
           resizeMode="contain"
         />
         <Text style={styles.text}>{item.text}</Text>
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.subText}>
-          {getTimeString(item.createdAt)}
-          {' ago'}
-        </Text>
+        <Text style={styles.subText}>{getTimeString(item.createdAt)}</Text>
       </View>
     </View>
   );

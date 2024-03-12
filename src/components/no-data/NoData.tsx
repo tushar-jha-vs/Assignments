@@ -1,12 +1,15 @@
 import {Image, Text, View} from 'react-native';
-import {styles} from './NotificationNone-styles';
 
-const EmptyNotification = () => {
+import {notificationIcon} from '../../constants';
+
+import {styles} from './NoData-styles';
+
+const NoData = () => {
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
-        source={require('../../assets/icons/notification.png')}
+        source={notificationIcon}
         resizeMode="contain"
       />
       <View style={styles.subContainer}>
@@ -19,4 +22,4 @@ const EmptyNotification = () => {
   );
 };
 
-export default EmptyNotification;
+export default NoData;

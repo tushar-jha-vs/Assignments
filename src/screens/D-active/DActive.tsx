@@ -1,40 +1,32 @@
-// 3rd party libraries
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, FlatList} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 
-// Absolute imports
+import {DActiveListType} from '../../types';
+import {DACTIVE_BASE_URL} from '../../constants';
+
+import DActiceCard from '../../components/d-active-card/DActiveCard';
+
 import {styles} from './dActive-styles';
-import DActiceCard from '../../components/d-active-card/DActiceCard';
-import {DActiveListType} from '../../types/notification-type';
 
 const DActive = () => {
   const [dActiveList, setDActiveList] = useState<DActiveListType[]>([]);
   useEffect(() => {
-    const fetchDActiveListData = async () => {
+    (async () => {
       try {
-        const response = await fetch(
-          'https://tushar-jha-vs.github.io/api/dActive.json',
-        );
+        const response = await fetch(DACTIVE_BASE_URL);
         const data = await response.json();
         setDActiveList(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
-    };
-    fetchDActiveListData();
+    })();
   }, []);
   return (
     <>
       <View style={styles.header}>
-        <Image
-          style={styles.icon}
-          source={require('../../assets/images/empty.png')}
-        />
+        <View style={styles.icon} />
         <Text style={styles.title}>D-active</Text>
-        <Image
-          style={styles.icon}
-          source={require('../../assets/images/empty.png')}
-        />
+        <View style={styles.icon} />
       </View>
       <FlatList
         style={styles.subContainer}

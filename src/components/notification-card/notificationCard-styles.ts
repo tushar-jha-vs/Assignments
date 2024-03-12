@@ -1,5 +1,6 @@
 import {StyleSheet, ViewStyle, TextStyle, ImageStyle} from 'react-native';
-import {COLORS, FONTSIZE, SPACING} from '../../theme/theme';
+
+import {SPACING, COLORS, FONT_FAMILY} from '../../theme';
 
 interface Styles {
   container: ViewStyle;
@@ -12,34 +13,32 @@ interface Styles {
 
 export const styles: Styles = StyleSheet.create({
   container: {
-    paddingVertical: SPACING.space_16,
     paddingHorizontal: SPACING.space_20,
+    paddingVertical: SPACING.space_16,
   },
   subContainer: {
     flexDirection: 'row',
   },
   icon: {
-    width: 48,
-    height: 48,
-    paddingVertical: SPACING.space_2,
+    height: SPACING.space_48,
     paddingHorizontal: SPACING.space_4,
+    paddingVertical: SPACING.space_2,
+    width: SPACING.space_48,
   },
   text: {
-    fontFamily: 'Quicksand-Medium',
-    fontWeight: '500',
+    color: COLORS.black,
+    fontFamily: FONT_FAMILY.QuicksandMedium,
+    fontSize: SPACING.space_14,
     marginLeft: SPACING.space_20,
     marginRight: SPACING.space_8,
-    fontSize: FONTSIZE.size_14,
-    color: 'black',
   },
   textContainer: {
-    marginHorizontal: 76,
+    marginHorizontal: SPACING.space_76,
     marginVertical: SPACING.space_4,
   },
   subText: {
-    fontFamily: 'Quicksand-Medium',
-    fontWeight: '500',
-    fontSize: FONTSIZE.size_12,
     color: COLORS.neutral600,
+    fontFamily: FONT_FAMILY.QuicksandMedium,
+    fontSize: SPACING.space_12,
   },
 });

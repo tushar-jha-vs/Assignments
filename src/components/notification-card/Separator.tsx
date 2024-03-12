@@ -1,5 +1,6 @@
 import {StyleSheet, View, ViewStyle} from 'react-native';
-import {COLORS} from '../../theme/theme';
+
+import {COLORS, SPACING} from '../../theme';
 
 const Separator = () => {
   return <View style={styles.separator}></View>;
@@ -13,7 +14,7 @@ interface Styles {
 
 const styles: Styles = StyleSheet.create({
   separator: {
-    height: 1,
+    height: SPACING.space_1,
     width: '100%',
     backgroundColor: COLORS.neutral100,
   },

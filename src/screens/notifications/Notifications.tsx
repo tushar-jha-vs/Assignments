@@ -1,50 +1,41 @@
-// 3rd party libraries
 import React, {useEffect, useState} from 'react';
 import {FlatList, Image, Text, View} from 'react-native';
 
-// Absolute imports
-import {styles} from './notifications-styles';
+import {NotificationListType} from '../../types';
+import {NOTIFICATIONS_BASE_URL, settingsIcon} from '../../constants';
+
 import NotificationCard from '../../components/notification-card/NotificationCard';
 import Separator from '../../components/notification-card/Separator';
-import EmptyNotification from '../../components/notification-none/NotificationNone';
-import {NotificationListType} from '../../types/notification-type';
+import NoData from '../../components/no-data/NoData';
+
+import {styles} from './notifications-styles';
 
 const Notifications = () => {
-  const [notificationList, setNotificationListtiveList] = useState<
+  const [notificationList, setNotificationList] = useState<
     NotificationListType[]
   >([]);
 
   useEffect(() => {
-    const fetchNotificationListData = async () => {
+    (async () => {
       try {
-        const response = await fetch(
-          'https://tushar-jha-vs.github.io/api/notifications.json',
-        );
+        const response = await fetch(NOTIFICATIONS_BASE_URL);
         const data = await response.json();
-        setNotificationListtiveList(data);
+        setNotificationList(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
-    };
-    fetchNotificationListData();
+    })();
   }, []);
   return (
     <>
       <View style={styles.header}>
-        <Image
-          style={styles.icon}
-          source={require('../../assets/images/empty.png')}
-        />
+        <View style={styles.icon} />
         <Text style={styles.title}>Notification</Text>
-        <Image
-          style={styles.icon}
-          resizeMode="contain"
-          source={require('../../assets/icons/settings.png')}
-        />
+        <Image style={styles.icon} resizeMode="contain" source={settingsIcon} />
       </View>
       <FlatList
         data={notificationList}
-        ListEmptyComponent={EmptyNotification}
+        ListEmptyComponent={NoData}
         renderItem={({item}) => <NotificationCard item={item} />}
         ItemSeparatorComponent={Separator}
         keyExtractor={item => item.id}
