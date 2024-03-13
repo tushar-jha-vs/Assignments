@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { FlatList, View } from 'react-native'
 
-import { INotificationCardProps } from '../../types'
+import { IASNotificationCardProps } from '../../types'
 import { NOTIFICATIONS_BASE_URL, settingsIcon } from '../../constants'
 import { NoData, NotificationCard, Header } from '../../components'
-import { getListData } from '../../services'
+import { getNotificationDActiveData } from '../../services'
 
 import { styles } from './notifications-styles'
 
 const Notifications = () => {
-  const [notificationList, setNotificationList] = useState<INotificationCardProps[]>([])
+  const [notificationList, setNotificationList] = useState<IASNotificationCardProps[]>([])
 
   const getNotificationsListData = async () => {
-    const res = await getListData(NOTIFICATIONS_BASE_URL)
+    const res = await getNotificationDActiveData(NOTIFICATIONS_BASE_URL)
     if (res.success) {
       setNotificationList(res.data)
     } else {

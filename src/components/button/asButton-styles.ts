@@ -3,12 +3,12 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { COLORS, SPACING, Typography } from '../../theme'
 
 interface Styles {
-  customButton: ViewStyle
-  buttonText: TextStyle
+  asButton: ViewStyle
+  label: TextStyle
 }
 
 export const styles: Styles = StyleSheet.create({
-  customButton: {
+  asButton: {
     backgroundColor: COLORS.white,
     borderRadius: SPACING.space_8,
     elevation: SPACING.space_8,
@@ -16,7 +16,7 @@ export const styles: Styles = StyleSheet.create({
     paddingVertical: SPACING.space_12,
     shadowColor: COLORS.tundora,
   },
-  buttonText: {
+  label: {
     color: COLORS.neutral[600],
     fontFamily: Typography.primary.semiBold,
     fontSize: SPACING.space_16,

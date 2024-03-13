@@ -27,7 +27,7 @@ export const palette = {
     '500': '#FFB800',
     '600': '#E28D00',
   },
-  neutral: {
+  shark: {
     '50': '#F4F6F7',
     '100': '#E2E8EB',
     '200': '#C9D3D8',
@@ -37,12 +37,14 @@ export const palette = {
     '600': '#4E5E6C',
     '700': '#292F36',
   },
-  failure: '#D72B2B',
-  success: '#178A53',
-  punch: '#D72B2B',
   genoa: '#178A53',
-  white: '#FFFFFF',
+  punch: '#D72B2B',
+  white: {
+    '00': '#FFFFFF00',
+    'CC': '#FFFFFFCC',
+    '8F': 'FFFFFF8F',
+    '1E': '#FFFFFF1E',
+    '300': '#FFFFFF',
+  },
   tundora: '#454545',
-  dActiveButtonGradient: ['#FFFFFF00', '#FFFFFFCC'],
-  dActiveTextGradient: ['#FFFFFF8F', '#FFFFFF1E', '#FFFFFF00'],
 }

@@ -1,7 +1,9 @@
 export enum ResizeMode {
-  cover = 'cover',
-  contain = 'contain',
-  stretch = 'stretch',
-  repeat = 'repeat',
-  center = 'center',
+  Cover = 'cover',
+  Contain = 'contain',
+  Stretch = 'stretch',
+  Repeat = 'repeat',
+  Center = 'center',
 }
+
+export const SECONDS_IN_MINUTE = 60

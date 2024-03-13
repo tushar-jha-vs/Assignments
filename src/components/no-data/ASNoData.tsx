@@ -2,7 +2,7 @@ import { Image, Text, View } from 'react-native'
 
 import { notificationIcon } from '../../constants'
 
-import { styles } from './NoData-styles'
+import { styles } from './asNoData-styles'
 
 const NoData = () => {
   return (

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { FlatList, View } from 'react-native'
 
-import { IDActiveCardProps } from '../../types'
+import { IASDActiveCardProps } from '../../types'
 import { DACTIVE_BASE_URL } from '../../constants'
 import { Header, DActiveCard } from '../../components'
-import { getListData } from '../../services'
+import { getNotificationDActiveData } from '../../services'
 
 import { styles } from './dActive-styles'
 
 const DActive = () => {
-  const [dActiveList, setDActiveList] = useState<IDActiveCardProps[]>([])
+  const [dActiveList, setDActiveList] = useState<IASDActiveCardProps[]>([])
   const getDActiveListData = async () => {
-    const res = await getListData(DACTIVE_BASE_URL)
+    const res = await getNotificationDActiveData(DACTIVE_BASE_URL)
     if (res.success) {
       setDActiveList(res.data)
     } else {

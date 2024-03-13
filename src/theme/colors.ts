@@ -4,13 +4,14 @@ const Colors = {
   primary: palette.green,
   secondary: palette.pink,
   accent: palette.yellow,
-  neutral: palette.neutral,
-  failure: palette.failure,
-  success: palette.success,
-  white: palette.white,
+  neutral: palette.shark,
+  failure: palette.punch,
+  success: palette.genoa,
+  white: palette.white['300'],
   tundora: palette.tundora,
-  dActiveButtonGradient: palette.dActiveButtonGradient,
-  dActiveTextGradient: palette.dActiveTextGradient,
+  //TODO: Use colors from the palette
+  dActiveButtonGradient: ['#FFFFFF00', '#FFFFFFCC'],
+  dActiveTextGradient: ['#FFFFFF8F', '#FFFFFF1E', '#FFFFFF00'],
 }
 
 export const COLORS = Colors

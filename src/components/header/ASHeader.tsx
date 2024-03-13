@@ -3,21 +3,21 @@ import React from 'react'
 
 import { ResizeMode } from '../../constants'
 
-import { styles } from './header-styles'
+import { styles } from './asHeader-styles'
 
-interface IHeaderProps {
+interface IASHeaderProps {
   imgSrc?: number | undefined
   title: string
 }
 
-const Header = (props: IHeaderProps) => {
+const ASHeader = (props: IASHeaderProps) => {
   const { title, imgSrc } = props
   return (
     <View style={styles.header}>
       <View style={styles.icon} />
       <Text style={styles.title}>{title}</Text>
       {imgSrc !== undefined ? (
-        <Image style={styles.image} resizeMode={ResizeMode.contain} source={imgSrc} />
+        <Image style={styles.image} resizeMode={ResizeMode.Contain} source={imgSrc} />
       ) : (
         <View style={styles.icon} />
       )}
@@ -25,4 +25,4 @@ const Header = (props: IHeaderProps) => {
   )
 }
 
-export default Header
+export default ASHeader
