@@ -1,4 +1,11 @@
-import { SECONDS_IN_MINUTE } from '../constants'
+import {
+  SECONDS_IN_DAY,
+  SECONDS_IN_HOUR,
+  SECONDS_IN_MINUTE,
+  SECONDS_IN_MONTH,
+  SECONDS_IN_WEEK,
+  SECONDS_IN_YEAR,
+} from '../constants'
 
 export const getTime = (timestamp: number) => {
   const currentTime = new Date().getTime()
@@ -8,18 +15,18 @@ export const getTime = (timestamp: number) => {
 
   if (secondsDifference < SECONDS_IN_MINUTE) {
     timeAgo = `${secondsDifference}s`
-  } else if (secondsDifference < SECONDS_IN_MINUTE * 60) {
+  } else if (secondsDifference < SECONDS_IN_HOUR) {
     timeAgo = `${Math.floor(secondsDifference / SECONDS_IN_MINUTE)}mn ago`
-  } else if (secondsDifference < SECONDS_IN_MINUTE * 60 * 24) {
-    timeAgo = `${Math.floor(secondsDifference / (SECONDS_IN_MINUTE * 60))}hr ago`
-  } else if (secondsDifference < SECONDS_IN_MINUTE * 60 * 24 * 7) {
-    timeAgo = `${Math.floor(secondsDifference / (SECONDS_IN_MINUTE * 60 * 24))}d ago`
-  } else if (secondsDifference < SECONDS_IN_MINUTE * 60 * 24 * 7 * 4) {
-    timeAgo = `${Math.floor(secondsDifference / (SECONDS_IN_MINUTE * 60 * 24 * 7))}w ago`
-  } else if (secondsDifference < SECONDS_IN_MINUTE * 60 * 24 * 7 * 4 * 12) {
-    timeAgo = `${Math.floor(secondsDifference / (SECONDS_IN_MINUTE * 60 * 24 * 7 * 4))}mo ago`
+  } else if (secondsDifference < SECONDS_IN_DAY) {
+    timeAgo = `${Math.floor(secondsDifference / SECONDS_IN_HOUR)}hr ago`
+  } else if (secondsDifference < SECONDS_IN_WEEK) {
+    timeAgo = `${Math.floor(secondsDifference / SECONDS_IN_DAY)}d ago`
+  } else if (secondsDifference < SECONDS_IN_MONTH) {
+    timeAgo = `${Math.floor(secondsDifference / SECONDS_IN_WEEK)}w ago`
+  } else if (secondsDifference < SECONDS_IN_YEAR) {
+    timeAgo = `${Math.floor(secondsDifference / SECONDS_IN_MONTH)}mo ago`
   } else {
-    timeAgo = `${Math.floor(secondsDifference / (SECONDS_IN_MINUTE * 60 * 24 * 7 * 4 * 12))}y ago`
+    timeAgo = `${Math.floor(secondsDifference / SECONDS_IN_YEAR)}y ago`
   }
   return timeAgo
 }
