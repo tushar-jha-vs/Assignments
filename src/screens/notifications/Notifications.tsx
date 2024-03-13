@@ -4,7 +4,7 @@ import { FlatList, View } from 'react-native'
 import { INotificationCardProps } from '../../types'
 import { NOTIFICATIONS_BASE_URL, settingsIcon } from '../../constants'
 import { NoData, NotificationCard, Header } from '../../components'
-import { getData } from '../../services'
+import { getListData } from '../../services'
 
 import { styles } from './notifications-styles'
 
@@ -12,7 +12,7 @@ const Notifications = () => {
   const [notificationList, setNotificationList] = useState<INotificationCardProps[]>([])
 
   const getNotificationsListData = async () => {
-    const res = await getData(NOTIFICATIONS_BASE_URL)
+    const res = await getListData(NOTIFICATIONS_BASE_URL)
     if (res.success) {
       setNotificationList(res.data)
     } else {

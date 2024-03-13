@@ -1,12 +1,9 @@
 import { COLORS } from '../theme'
+import { IDActiveCardInfoType } from '../types'
 
 export const buttonsText = ['2min', '4min', '8min']
 
-interface DActiveCardInfoType {
-  imageSource: number
-  textColor: string
-}
-export const DActiveCardInfo: { [key: string]: DActiveCardInfoType } = {
+export const DActiveCardInfo: { [key: string]: IDActiveCardInfoType } = {
   'Outer Ring': {
     imageSource: require('../assets/images/outer-ring.png'),
     textColor: COLORS.secondary[600],

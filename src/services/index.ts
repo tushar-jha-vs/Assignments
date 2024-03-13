@@ -1,1 +1,1 @@
-export * from './get-data'
+export * from './get-list-data'
