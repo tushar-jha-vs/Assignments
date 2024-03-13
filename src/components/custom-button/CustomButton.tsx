@@ -1,14 +1,18 @@
-import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import React from 'react'
+import { Text, TouchableOpacity } from 'react-native'
 
-import {styles} from './customButton-styles';
+import { styles } from './customButton-styles'
 
-const CustomButton = ({item}: {item: string}) => {
+interface ICustomButtonProps {
+  buttonText: string
+}
+const CustomButton = (props: ICustomButtonProps) => {
+  const { buttonText } = props
   return (
     <TouchableOpacity style={styles.customButton}>
-      <Text>{item}</Text>
+      <Text style={styles.buttonText}>{buttonText}</Text>
     </TouchableOpacity>
-  );
-};
+  )
+}
 
-export default CustomButton;
+export default CustomButton

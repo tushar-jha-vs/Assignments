@@ -1,12 +1,12 @@
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-import {SPACING, FONT_FAMILY} from '../../theme';
+import { SPACING, Typography } from '../../theme'
 
 interface Styles {
-  container: ViewStyle;
-  textContainer: ViewStyle;
-  buttonContainer: ViewStyle;
-  title: TextStyle;
+  container: ViewStyle
+  textContainer: ViewStyle
+  buttonContainer: ViewStyle
+  title: TextStyle
 }
 
 export const styles: Styles = StyleSheet.create({
@@ -22,7 +22,7 @@ export const styles: Styles = StyleSheet.create({
     width: '100%',
   },
   title: {
-    fontFamily: FONT_FAMILY.Fraunces,
+    fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_18,
     lineHeight: SPACING.space_24,
     textAlign: 'center',
@@ -35,4 +35,4 @@ export const styles: Styles = StyleSheet.create({
     paddingVertical: SPACING.space_8,
     width: '100%',
   },
-});
+})

@@ -9,10 +9,10 @@ interface Styles {
 
 export const styles: Styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
     flex: SPACING.space_1,
   },
   subContainer: {
-    flexGrow: SPACING.space_1,
+    marginHorizontal: SPACING.space_20,
+    marginBottom: SPACING.space_24,
   },
 })

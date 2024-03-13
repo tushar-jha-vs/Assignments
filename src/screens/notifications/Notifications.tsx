@@ -1,47 +1,42 @@
-import React, {useEffect, useState} from 'react';
-import {FlatList, Image, Text, View} from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { FlatList, View } from 'react-native'
 
-import {NotificationListType} from '../../types';
-import {NOTIFICATIONS_BASE_URL, settingsIcon} from '../../constants';
+import { INotificationCardProps } from '../../types'
+import { NOTIFICATIONS_BASE_URL, settingsIcon } from '../../constants'
+import { NoData, NotificationCard, Header } from '../../components'
+import { getData } from '../../services'
 
-import NotificationCard from '../../components/notification-card/NotificationCard';
-import Separator from '../../components/notification-card/Separator';
-import NoData from '../../components/no-data/NoData';
-
-import {styles} from './notifications-styles';
+import { styles } from './notifications-styles'
 
 const Notifications = () => {
-  const [notificationList, setNotificationList] = useState<
-    NotificationListType[]
-  >([]);
+  const [notificationList, setNotificationList] = useState<INotificationCardProps[]>([])
 
+  const getNotificationsListData = async () => {
+    const res = await getData(NOTIFICATIONS_BASE_URL)
+    if (res.success) {
+      setNotificationList(res.data)
+    } else {
+      console.error(res.error)
+    }
+  }
   useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch(NOTIFICATIONS_BASE_URL);
-        const data = await response.json();
-        setNotificationList(data);
-      } catch (error) {
-        console.error(error);
-      }
-    })();
-  }, []);
+    getNotificationsListData()
+  }, [])
   return (
     <>
-      <View style={styles.header}>
-        <View style={styles.icon} />
-        <Text style={styles.title}>Notification</Text>
-        <Image style={styles.icon} resizeMode="contain" source={settingsIcon} />
+      <Header title="Notification" imgSrc={settingsIcon} />
+      <View style={styles.container}>
+        <FlatList
+          contentContainerStyle={styles.subContainer}
+          data={notificationList}
+          ListEmptyComponent={NoData}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => <NotificationCard item={item} />}
+          keyExtractor={item => item.id}
+        />
       </View>
-      <FlatList
-        data={notificationList}
-        ListEmptyComponent={NoData}
-        renderItem={({item}) => <NotificationCard item={item} />}
-        ItemSeparatorComponent={Separator}
-        keyExtractor={item => item.id}
-      />
     </>
-  );
-};
+  )
+}
 
-export default Notifications;
+export default Notifications

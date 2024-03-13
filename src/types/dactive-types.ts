@@ -1,4 +1,4 @@
-export type DActiveListType = {
-  id: number;
-  title: string;
-};
+export type IDActiveCardProps = {
+  id: number
+  title: string
+}

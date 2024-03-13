@@ -1,2 +1,2 @@
-export * from './dactive-types'
+export * from './dActive-types'
 export * from './notifications-types'

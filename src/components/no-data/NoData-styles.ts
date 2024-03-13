@@ -1,43 +1,39 @@
-import {StyleSheet, ViewStyle, TextStyle, ImageStyle} from 'react-native';
+import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native'
 
-import {SPACING, COLORS, FONT_FAMILY} from '../../theme';
+import { SPACING, Typography } from '../../theme'
 
 interface Styles {
-  container: ViewStyle;
-  image: ImageStyle;
-  subContainer: ViewStyle;
-  text: TextStyle;
-  subText: TextStyle;
+  container: ViewStyle
+  subContainer: ViewStyle
+  image: ImageStyle
+  text: TextStyle
+  subText: TextStyle
 }
-
 export const styles = StyleSheet.create<Styles>({
   container: {
     alignItems: 'center',
     flex: SPACING.space_1,
-    gap: SPACING.space_28,
+    flexDirection: 'row',
     justifyContent: 'center',
-    marginHorizontal: SPACING.space_20,
-    marginTop: SPACING.space_184,
-  },
-  image: {
-    height: SPACING.space_154,
-    width: SPACING.space_154,
   },
   subContainer: {
-    alignItems: 'center',
     justifyContent: 'center',
+    marginHorizontal: SPACING.space_20,
+  },
+  image: {
+    alignSelf: 'center',
+    height: SPACING.space_154,
+    marginHorizontal: 'auto',
+    width: SPACING.space_154,
   },
   text: {
-    color: COLORS.tundora,
-    fontFamily: FONT_FAMILY.Fraunces,
-    fontSize: SPACING.space_24,
-    marginBottom: SPACING.space_8,
-  },
-  subText: {
-    color: COLORS.neutral600,
-    fontFamily: FONT_FAMILY.QuicksandMedium,
-    fontSize: SPACING.space_16,
-    lineHeight: SPACING.space_24,
+    fontFamily: Typography['secondary'].bold,
+    fontSize: SPACING.space_28,
     textAlign: 'center',
   },
-});
+  subText: {
+    fontFamily: Typography['primary'].medium,
+    fontSize: SPACING.space_16,
+    textAlign: 'center',
+  },
+})
