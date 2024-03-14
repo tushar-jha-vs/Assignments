@@ -2,37 +2,33 @@ import { View, Text, ImageBackground, Alert } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
 import { IASDActiveCardProps } from '../../types'
-import {
-  BUTTON_GRADIENT_LOCATION,
-  D_ACTIVE_CARD_INFO,
-  TEXT_GRADIENT_LOCATION,
-  buttonsText,
-} from '../../constants'
+import { D_ACTIVE_CARD_INFO, BUTTONS_TEXT_DATA } from '../../constants'
 import { COLORS } from '../../theme'
 import { CustomButton } from '..'
 
 import { styles } from './asDActiveCard-styles'
 
 const ASDActiveCard = ({ item }: { item: IASDActiveCardProps }) => {
+  const { title } = item
   const renderDActiveButtons = () => {
-    return buttonsText.map((item, idx) => (
-      <CustomButton key={idx} buttonText={item} onPress={() => Alert.alert('Button Pressed')} />
+    return BUTTONS_TEXT_DATA.map((item, index) => (
+      <CustomButton key={index} label={item} onPress={() => Alert.alert('Button Pressed')} />
     ))
   }
   return (
     <View style={styles.container}>
-      <ImageBackground source={D_ACTIVE_CARD_INFO[item.title].imageSource}>
+      <ImageBackground source={D_ACTIVE_CARD_INFO[title].imageSource}>
         <LinearGradient
           colors={COLORS.dActiveTextGradient}
-          locations={TEXT_GRADIENT_LOCATION}
+          locations={[0, 0.8792, 1]}
           style={styles.textContainer}>
-          <Text style={[styles.title, { color: D_ACTIVE_CARD_INFO[item.title].textColor }]}>
-            {item.title}
+          <Text style={[styles.title, { color: D_ACTIVE_CARD_INFO[title].textColor }]}>
+            {title}
           </Text>
         </LinearGradient>
         <LinearGradient
           colors={COLORS.dActiveButtonGradient}
-          locations={BUTTON_GRADIENT_LOCATION}
+          locations={[0, 0.7]}
           style={styles.buttonContainer}>
           {renderDActiveButtons()}
         </LinearGradient>

@@ -6,7 +6,7 @@ import { ResizeMode } from '../../constants'
 import { styles } from './asHeader-styles'
 
 interface IASHeaderProps {
-  imgSrc?: number | undefined
+  imgSrc?: number
   title: string
 }
 
@@ -16,7 +16,7 @@ const ASHeader = (props: IASHeaderProps) => {
     <View style={styles.header}>
       <View style={styles.icon} />
       <Text style={styles.title}>{title}</Text>
-      {imgSrc !== undefined ? (
+      {imgSrc ? (
         <Image style={styles.image} resizeMode={ResizeMode.Contain} source={imgSrc} />
       ) : (
         <View style={styles.icon} />

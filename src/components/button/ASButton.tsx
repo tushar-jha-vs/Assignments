@@ -4,14 +4,14 @@ import { Text, TouchableOpacity } from 'react-native'
 import { styles } from './asButton-styles'
 
 interface IASButtonProps {
-  buttonText: string
+  label: string
   onPress?: () => void
 }
 const ASButton = (props: IASButtonProps) => {
-  const { buttonText,onPress } = props
+  const { label, onPress } = props
   return (
-    <TouchableOpacity style={styles.asButton} onPress={onPress}>
-      <Text style={styles.label}>{buttonText}</Text>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <Text style={styles.label}>{label}</Text>
     </TouchableOpacity>
   )
 }

@@ -3,12 +3,12 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { COLORS, SPACING, Typography } from '../../theme'
 
 interface Styles {
-  asButton: ViewStyle
+  container: ViewStyle
   label: TextStyle
 }
 
 export const styles: Styles = StyleSheet.create({
-  asButton: {
+  container: {
     backgroundColor: COLORS.white,
     borderRadius: SPACING.space_8,
     elevation: SPACING.space_8,
@@ -19,6 +19,7 @@ export const styles: Styles = StyleSheet.create({
   label: {
     color: COLORS.neutral[600],
     fontFamily: Typography.primary.semiBold,
+    lineHeight: SPACING.space_18,
     fontSize: SPACING.space_16,
   },
 })

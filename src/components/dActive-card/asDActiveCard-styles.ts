@@ -19,7 +19,6 @@ export const styles: Styles = StyleSheet.create({
   textContainer: {
     paddingHorizontal: SPACING.space_16,
     paddingVertical: SPACING.space_8,
-    width: '100%',
   },
   title: {
     fontFamily: Typography.secondary.bold,
@@ -33,6 +32,5 @@ export const styles: Styles = StyleSheet.create({
     marginTop: SPACING.space_48,
     paddingHorizontal: SPACING.space_16,
     paddingVertical: SPACING.space_8,
-    width: '100%',
   },
 })

@@ -9,19 +9,20 @@ import { getTime } from '../../utils'
 import { styles } from './asNotificationCard-styles'
 
 const ASNotificationCard = ({ item }: { item: IASNotificationCardProps }) => {
-  const backgroundColor = item.isRead ? COLORS.primary[50] : COLORS.white
+  const { isRead, image, text, createdAt } = item
+  const backgroundColor = isRead ? COLORS.primary[50] : COLORS.white
   return (
     <View style={[styles.container, { backgroundColor }]}>
       <View style={styles.subContainer}>
         <Image
           style={styles.image}
-          source={NOTIFICATION_IMAGE_SOURCE[item.image]}
+          source={NOTIFICATION_IMAGE_SOURCE[image]}
           resizeMode={ResizeMode.Contain}
         />
-        <Text style={styles.text}>{item.text}</Text>
+        <Text style={styles.text}>{text}</Text>
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.subText}>{getTime(item.createdAt)}</Text>
+        <Text style={styles.subText}>{getTime(createdAt)}</Text>
       </View>
     </View>
   )

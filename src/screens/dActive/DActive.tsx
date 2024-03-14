@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FlatList, View } from 'react-native'
 
 import { IASDActiveCardProps } from '../../types'
-import { DACTIVE_BASE_URL } from '../../constants'
+import { DACTIVE_BASE_URL, HeaderTitle } from '../../constants'
 import { Header, DActiveCard } from '../../components'
 import { getNotificationDActiveData } from '../../services'
 
@@ -24,7 +24,7 @@ const DActive = () => {
 
   return (
     <View style={styles.container}>
-      <Header title="D Active" />
+      <Header title={HeaderTitle.DActive} />
       <FlatList
         style={styles.subContainer}
         data={dActiveList}

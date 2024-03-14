@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FlatList, View } from 'react-native'
 
 import { IASNotificationCardProps } from '../../types'
-import { NOTIFICATIONS_BASE_URL, settingsIcon } from '../../constants'
+import { HeaderTitle, NOTIFICATIONS_BASE_URL, settingsIcon } from '../../constants'
 import { NoData, NotificationCard, Header } from '../../components'
 import { getNotificationDActiveData } from '../../services'
 
@@ -24,7 +24,7 @@ const Notifications = () => {
   }, [])
   return (
     <>
-      <Header title="Notification" imgSrc={settingsIcon} />
+      <Header title={HeaderTitle.Notifications} imgSrc={settingsIcon} />
       <View style={styles.container}>
         <FlatList
           contentContainerStyle={styles.subContainer}

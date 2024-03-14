@@ -6,7 +6,7 @@ interface Styles {
   header: ViewStyle
   image: ImageStyle
   title: TextStyle
-  icon: ImageStyle
+  icon: ViewStyle
 }
 
 export const styles: Styles = StyleSheet.create({
