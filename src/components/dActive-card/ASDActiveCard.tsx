@@ -8,8 +8,8 @@ import { CustomButton } from '..'
 
 import { styles } from './asDActiveCard-styles'
 
-const ASDActiveCard = ({ item }: { item: IASDActiveCardProps }) => {
-  const { title } = item
+const ASDActiveCard = (props: IASDActiveCardProps) => {
+  const { title } = props
   const renderDActiveButtons = () => {
     return BUTTONS_TEXT_DATA.map((item, index) => (
       <CustomButton key={index} label={item} onPress={() => Alert.alert('Button Pressed')} />

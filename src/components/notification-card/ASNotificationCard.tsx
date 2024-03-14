@@ -8,8 +8,8 @@ import { getTime } from '../../utils'
 
 import { styles } from './asNotificationCard-styles'
 
-const ASNotificationCard = ({ item }: { item: IASNotificationCardProps }) => {
-  const { isRead, image, text, createdAt } = item
+const ASNotificationCard = (props: IASNotificationCardProps) => {
+  const { isRead, image, text, createdAt } = props
   const backgroundColor = isRead ? COLORS.primary[50] : COLORS.white
   return (
     <View style={[styles.container, { backgroundColor }]}>

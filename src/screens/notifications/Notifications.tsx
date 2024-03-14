@@ -31,7 +31,7 @@ const Notifications = () => {
           data={notificationList}
           ListEmptyComponent={NoData}
           showsVerticalScrollIndicator={false}
-          renderItem={({ item }) => <NotificationCard item={item} />}
+          renderItem={({ item }) => <NotificationCard {...item} />}
           keyExtractor={item => item.id}
         />
       </View>

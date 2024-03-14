@@ -29,7 +29,7 @@ const DActive = () => {
         style={styles.subContainer}
         data={dActiveList}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <DActiveCard item={item} />}
+        renderItem={({ item }) => <DActiveCard {...item} />}
         keyExtractor={item => String(item.id)}
       />
     </View>
