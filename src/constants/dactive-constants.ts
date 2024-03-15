@@ -26,5 +26,5 @@ export const D_ACTIVE_CARD_INFO: { [key: string]: IDActiveCardInfoType } = {
   },
 }
 
-export const TEXT_GRADIENT_LOCATION = [0, 0.8792, 1]
+export const TEXT_GRADIENT_LOCATION = [0, 0.8791, 1]
 export const BUTTON_GRADIENT_LOCATION = [0, 0.7]
