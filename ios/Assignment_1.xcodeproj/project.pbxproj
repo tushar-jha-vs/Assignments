@@ -16,10 +16,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		44989D494D5B4BC0BD96D5F7 /* Fraunces_72pt-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81A8FE8604574B7FB780C636 /* Fraunces_72pt-Bold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Assignment_1-Assignment_1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Assignment_1-Assignment_1Tests.a */; };
+		77E7D75D89CC458697C1EE91 /* Fraunces_72pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DFCA080F76482F9011FE3D /* Fraunces_72pt-SemiBold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		C00EC509512A43F08E7F643E /* Quicksand-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6291EE8435DE488DA78021FC /* Quicksand-SemiBold.ttf */; };
 		D6484581C7D94B1DA3D427C8 /* Fraunces_72pt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1572E14AD28942B993A9F938 /* Fraunces_72pt-Regular.ttf */; };
-		77E7D75D89CC458697C1EE91 /* Fraunces_72pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4DFCA080F76482F9011FE3D /* Fraunces_72pt-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +42,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Assignment_1/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Assignment_1/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Assignment_1/main.m; sourceTree = "<group>"; };
+		1572E14AD28942B993A9F938 /* Fraunces_72pt-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Fraunces_72pt-Regular.ttf"; path = "../src/assets/fonts/Fraunces_72pt-Regular.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Assignment_1-Assignment_1Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Assignment_1-Assignment_1Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2641B3A843D24104B3E6D963 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-Medium.ttf"; path = "../src/assets/fonts/Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		2C25696836FF4210B4492C3A /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Quicksand-Bold.ttf"; path = "../src/assets/fonts/Quicksand-Bold.ttf"; sourceTree = "<group>"; };
@@ -53,9 +54,8 @@
 		81A8FE8604574B7FB780C636 /* Fraunces_72pt-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Fraunces_72pt-Bold.ttf"; path = "../src/assets/fonts/Fraunces_72pt-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Assignment_1/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Assignment_1-Assignment_1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment_1-Assignment_1Tests.release.xcconfig"; path = "Target Support Files/Pods-Assignment_1-Assignment_1Tests/Pods-Assignment_1-Assignment_1Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C4DFCA080F76482F9011FE3D /* Fraunces_72pt-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Fraunces_72pt-SemiBold.ttf"; path = "../src/assets/fonts/Fraunces_72pt-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		1572E14AD28942B993A9F938 /* Fraunces_72pt-Regular.ttf */ = {isa = PBXFileReference; name = "Fraunces_72pt-Regular.ttf"; path = "../src/assets/fonts/Fraunces_72pt-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C4DFCA080F76482F9011FE3D /* Fraunces_72pt-SemiBold.ttf */ = {isa = PBXFileReference; name = "Fraunces_72pt-SemiBold.ttf"; path = "../src/assets/fonts/Fraunces_72pt-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

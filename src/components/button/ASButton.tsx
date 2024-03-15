@@ -7,6 +7,7 @@ interface IASButtonProps {
   label: string
   onPress?: () => void
 }
+
 const ASButton = (props: IASButtonProps) => {
   const { label, onPress } = props
   return (
