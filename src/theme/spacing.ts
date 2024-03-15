@@ -12,6 +12,7 @@ export enum SPACING {
   space_28 = 28,
   space_48 = 48,
   space_76 = 76,
+  space_88 = 88,
   space_154 = 154,
   space_184 = 184,
 }

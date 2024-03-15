@@ -3,7 +3,7 @@ import { FlatList, View } from 'react-native'
 
 import { IASNotificationCardProps } from '../../types'
 import { HeaderTitle, NOTIFICATIONS_BASE_URL, settingsIcon } from '../../constants'
-import { NoData, NotificationCard, Header } from '../../components'
+import { ASNoData, NotificationCard, Header } from '../../components'
 import { getNotificationDActiveData } from '../../services'
 
 import { styles } from './notifications-styles'
@@ -29,7 +29,7 @@ const Notifications = () => {
         <FlatList
           contentContainerStyle={styles.subContainer}
           data={notificationList}
-          ListEmptyComponent={NoData}
+          ListEmptyComponent={ASNoData}
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => <NotificationCard {...item} />}
           keyExtractor={item => item.id}
