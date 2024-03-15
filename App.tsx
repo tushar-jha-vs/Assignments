@@ -5,7 +5,7 @@ import { COLORS, SPACING } from './src/theme'
 import { DActive, Notifications,DashBoard } from './src/screens'
 
 const App = () => {
-  const showNotificationScreen = false
+  const showNotificationScreen = true
   return (
     <SafeAreaView style={styles.container}>
       {/* {showNotificationScreen ? <Notifications /> : <DActive />} */}
