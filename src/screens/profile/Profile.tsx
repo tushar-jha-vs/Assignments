@@ -5,6 +5,7 @@ import { ProfileCard, ProfileHeader } from '../../components'
 import { PROFILE_MENU_ITEMS } from '../../constants'
 
 import styles from './profile-styles'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const renderItems = () => {
   return PROFILE_MENU_ITEMS.map((item, index) => {
@@ -14,12 +15,12 @@ const renderItems = () => {
 
 const Profile = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ProfileHeader />
       <View style={styles.subContainer}>
         {renderItems()}
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 
