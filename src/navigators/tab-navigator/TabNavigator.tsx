@@ -26,7 +26,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              style={styles.icon}
+              style={styles.tabBarIcon}
               source={require('../../assets/icons/nav-dashboard.png')}
               resizeMode={ResizeMode.Contain}
             />
@@ -38,7 +38,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              style={styles.icon}
+              style={styles.tabBarIcon}
               source={require('../../assets/icons/nav-d-active.png')}
               resizeMode={ResizeMode.Contain}
             />
@@ -50,7 +50,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              style={styles.icon}
+              style={styles.tabBarIcon}
               source={require('../../assets/icons/nav-activity.png')}
               resizeMode={ResizeMode.Contain}
             />
@@ -62,7 +62,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              style={styles.icon}
+              style={styles.tabBarIcon}
               source={require('../../assets/icons/nav-notification.png')}
               resizeMode={ResizeMode.Contain}
             />
@@ -74,7 +74,7 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: () => (
             <Image
-              style={styles.icon}
+              style={styles.tabBarIcon}
               source={require('../../assets/icons/nav-profile.png')}
               resizeMode={ResizeMode.Contain}
             />

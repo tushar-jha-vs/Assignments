@@ -4,7 +4,7 @@ import { SPACING } from '../../theme'
 
 interface Styles {
   tabBarStyle: ViewStyle
-  icon: ImageStyle
+  tabBarIcon: ImageStyle
 }
 
 export const styles: Styles = StyleSheet.create({
@@ -16,9 +16,8 @@ export const styles: Styles = StyleSheet.create({
     paddingVertical: SPACING.space_20,
     position: 'absolute',
   },
-  icon: {
+  tabBarIcon: {
     height: SPACING.space_24,
-    margin: SPACING.space_20,
     width: SPACING.space_24,
   },
 })
