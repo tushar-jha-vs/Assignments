@@ -19,7 +19,7 @@ export const styles: Styles = StyleSheet.create({
   label: {
     color: COLORS.neutral[600],
     fontFamily: Typography.primary.semiBold,
-    lineHeight: SPACING.space_18,
     fontSize: SPACING.space_16,
+    lineHeight: SPACING.space_18,
   },
 })

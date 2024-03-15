@@ -1,23 +1,17 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
 
-import { COLORS, SPACING } from './src/theme'
-import { DActive, Notifications } from './src/screens'
+import { StackNavigator } from './src/navigators'
+import { StatusBar } from 'react-native'
+import { COLORS } from './src/theme'
 
 const App = () => {
-  const showNotificationScreen = true
   return (
-    <SafeAreaView style={styles.container}>
-      {showNotificationScreen ? <Notifications /> : <DActive />}
-    </SafeAreaView>
+    <NavigationContainer>
+      <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
+      <StackNavigator />
+    </NavigationContainer>
   )
 }
 
 export default App
-
-const styles = StyleSheet.create({
-  container: {
-    flex: SPACING.space_1,
-    backgroundColor: COLORS.white,
-  },
-})

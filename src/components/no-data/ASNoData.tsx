@@ -4,7 +4,7 @@ import { notificationIcon } from '../../constants'
 
 import { styles } from './asNoData-styles'
 
-const NoData = () => {
+const ASNoData = () => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
@@ -20,4 +20,4 @@ const NoData = () => {
   )
 }
 
-export default NoData
+export default ASNoData

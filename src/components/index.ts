@@ -1,5 +1,5 @@
 export { default as CustomButton } from './button/ASButton'
 export { default as DActiveCard } from './dActive-card/ASDActiveCard'
-export { default as NoData } from './no-data/ASNoData'
+export { default as ASNoData } from './no-data/ASNoData'
 export { default as NotificationCard } from './notification-card/ASNotificationCard'
 export { default as Header } from './header/ASHeader'

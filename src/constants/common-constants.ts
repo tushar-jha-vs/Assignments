@@ -9,6 +9,9 @@ export enum ResizeMode {
 export enum HeaderTitle {
   Notifications = 'Notifications',
   DActive = 'D Active',
+  Activity = 'Activity',
+  Dashboard = 'Dashboard',
+  Profile = 'Profile',
 }
 
 export const SECONDS_IN_MINUTE = 60
