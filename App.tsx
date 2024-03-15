@@ -2,13 +2,14 @@ import React from 'react'
 import { SafeAreaView, StyleSheet } from 'react-native'
 
 import { COLORS, SPACING } from './src/theme'
-import { DActive, Notifications } from './src/screens'
+import { DActive, Notifications,DashBoard } from './src/screens'
 
 const App = () => {
   const showNotificationScreen = false
   return (
     <SafeAreaView style={styles.container}>
-      {showNotificationScreen ? <Notifications /> : <DActive />}
+      {/* {showNotificationScreen ? <Notifications /> : <DActive />} */}
+      <DashBoard/>
     </SafeAreaView>
   )
 }

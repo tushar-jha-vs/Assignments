@@ -38,3 +38,7 @@ export const getTime = (timestamp: number) => {
 
   return timeAgo
 }
+
+export const getCurrentDate = () => {
+  return new Date().getDate();
+}
