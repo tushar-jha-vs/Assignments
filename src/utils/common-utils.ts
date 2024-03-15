@@ -39,6 +39,9 @@ export const getTime = (timestamp: number) => {
   return timeAgo
 }
 
+const { format } = require('date-fns')
+
 export const getCurrentDate = () => {
-  return new Date().getDate();
+  const currentDate = new Date().toDateString()
+  return format(currentDate, 'do MMM yyyy')
 }

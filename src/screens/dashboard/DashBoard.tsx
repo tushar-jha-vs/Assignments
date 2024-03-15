@@ -1,21 +1,24 @@
 import React from 'react'
-import { FlatList, Image, ListRenderItem, SafeAreaView, Text, View } from 'react-native'
+import { Image, SafeAreaView, Text, View } from 'react-native'
 import { ResizeMode } from '../../constants'
 import { getCurrentDate } from '../../utils'
+import ASChallengeList from '../../components/challenge-list/ASChallengeList'
+import { styles } from './dashboard-styles'
+import ASDashboardHeader from '../../components/dashboard-header/ASDashboardHeader'
+import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
 
 const calendar = require('../../assets/icons/calendar.png')
 
 const DashBoard = () => {
-  // const renderItem: ListRenderItem<any> = ({ item }) => <DActiveChallenge data={item} />
   return (
-    <SafeAreaView>
-      <View>
+    <SafeAreaView style={styles.container}>
+      {/* <View>
         <Image source={calendar} resizeMode={ResizeMode.Contain}/>
         <Text>{getCurrentDate()}</Text>
       </View>
       <View>
-        <Text></Text>
-        <Text></Text>
+        <Text>Overthinker</Text>
+        <Text>Day 1 of 24</Text>
       </View>
       <View>
         <Image />
@@ -35,14 +38,10 @@ const DashBoard = () => {
             <Image />
           </View>
         </View>
-      </View>
-      {/* <FlatList
-        ListEmptyComponent={}
-        data={}
-        keyExtractor={item => item.id.toString()}
-        renderItem={renderItem}
-        scrollEnabled
-      /> */}
+      </View> */}
+      <ASDashboardHeader/>
+      <ASDashboardCard/>
+      <ASChallengeList/>
     </SafeAreaView>
   )
 }
