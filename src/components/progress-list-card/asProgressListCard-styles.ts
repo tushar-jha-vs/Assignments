@@ -5,7 +5,7 @@ import { COLORS, SPACING, Typography } from '../../theme'
 export const styles = StyleSheet.create({
   container: {
     borderBottomColor: COLORS.primary[100],
-    borderBottomWidth: 1,
+    borderBottomWidth: SPACING.space_1,
     flex: SPACING.space_1,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -16,9 +16,16 @@ export const styles = StyleSheet.create({
     height: SPACING.space_40,
     marginVertical: SPACING.space_16,
   },
-  image: {
+  imageContainer: {
+    backgroundColor: COLORS.accent[50],
+    borderRadius: SPACING.space_20,
+    height: SPACING.space_40,
     marginRight: SPACING.space_12,
     width: SPACING.space_40,
+  },
+  image: {
+    width: SPACING.space_40,
+    height: SPACING.space_40,
   },
   title: {
     fontFamily: Typography.primary.bold,
@@ -28,6 +35,10 @@ export const styles = StyleSheet.create({
   progress: {
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  pieChart: {
+    backgroundColor: COLORS.secondary[200],
+    borderRadius: SPACING.space_100,
   },
   percentLabel: {
     color: COLORS.charcoal,

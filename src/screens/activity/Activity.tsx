@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 
 import { ASHeader } from '../../components'
-import { COLORS } from '../../theme'
+import { COLORS, SPACING } from '../../theme'
+import { backGreenIcon } from '../../constants'
 
 import ASOptionsPanel from '../../components/options-panel/ASOptionsPanel'
 import Progress from './progress/Progress'
@@ -13,7 +14,7 @@ const Activity = () => {
 
   return (
     <View style={styles.container}>
-      <ASHeader title="Your Activity" />
+      <ASHeader title="Your Activity" imgSrc={backGreenIcon} />
       <ASOptionsPanel activeButton={activeButton} setActiveButton={setActiveButton} />
       {activeButton === 'Progress' ? <Progress /> : <Assessment />}
     </View>
@@ -23,7 +24,7 @@ const Activity = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
-    flex: 1,
+    flex: SPACING.space_1,
   },
 })
 

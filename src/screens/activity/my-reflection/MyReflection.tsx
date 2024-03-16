@@ -1,10 +1,13 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { View } from 'react-native'
+
+import { ASHeader } from '../../../components'
+import { backGreenIcon } from '../../../constants'
 
 const MyReflection = () => {
   return (
     <View>
-      <Text>MyReflection</Text>
+      <ASHeader title="My Reflection" canGoBack={true} imgSrc={backGreenIcon} />
     </View>
   )
 }

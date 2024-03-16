@@ -3,6 +3,6 @@ export const PROGRESS_CARD_IMAGE_SOURCE: { [key: string]: number } = {
   Courage: require('../assets/icons/courage.png'),
   Compassion: require('../assets/icons/compassion.png'),
   Curiosity: require('../assets/icons/curiosity.png'),
-  Procrastinator: require('../assets/icons/procastinator.png'),
+  Procrastinator: require('../assets/icons/procrastinator.png'),
   Distractor: require('../assets/icons/distractor.png'),
 }

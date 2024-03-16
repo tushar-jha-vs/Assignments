@@ -1,10 +1,11 @@
-import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { styles } from './asProgressLisrCard-styles'
-import { ResizeMode, PROGRESS_CARD_IMAGE_SOURCE } from '../../constants'
+import { View, Text, Image } from 'react-native'
 import * as Progress from 'react-native-progress'
-import { COLORS } from '../../theme/colors'
-import { SPACING } from '../../theme'
+
+import { ResizeMode, PROGRESS_CARD_IMAGE_SOURCE, nextIcon } from '../../constants'
+import { COLORS,SPACING } from '../../theme'
+
+import { styles } from './asProgressListCard-styles'
 
 interface IASProgressListCardProps {
   title: string
@@ -16,23 +17,26 @@ const ASProgressListCard = (props: IASProgressListCardProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
-        <Image
-          style={styles.image}
-          resizeMode={ResizeMode.Contain}
-          source={PROGRESS_CARD_IMAGE_SOURCE[title]}
-        />
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.image}
+            resizeMode={ResizeMode.Contain}
+            source={PROGRESS_CARD_IMAGE_SOURCE[title]}
+          />
+        </View>
         <Text style={styles.title}>{title}</Text>
       </View>
       <View style={styles.progress}>
         <Text style={styles.percentLabel}>{progress}%</Text>
         <Progress.Pie
+          style={styles.pieChart}
           size={SPACING.space_16}
           progress={progressPercentage}
           color={COLORS.secondary[400]}
         />
         <Image
           style={styles.icon}
-          source={require('../../assets/icons/next.png')}
+          source={nextIcon}
           resizeMode={ResizeMode.Contain}
         />
       </View>

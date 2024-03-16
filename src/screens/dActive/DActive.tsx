@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FlatList, View } from 'react-native'
 
 import { IASDActiveCardProps } from '../../types'
-import { DACTIVE_BASE_URL, HeaderTitle } from '../../constants'
+import { DACTIVE_BASE_URL, HeaderTitle, backGreenIcon } from '../../constants'
 import { ASHeader, ASDActiveCard } from '../../components'
 import { getListDataFromURL } from '../../services'
 
@@ -24,7 +24,7 @@ const DActive = () => {
 
   return (
     <View style={styles.container}>
-      <ASHeader title={HeaderTitle.DActive} />
+      <ASHeader title={HeaderTitle.DActive} imgSrc={backGreenIcon} />
       <FlatList
         style={styles.subContainer}
         data={dActiveList}

@@ -12,11 +12,11 @@ import { styles } from './tabNavigator-styles'
 const Tab = createBottomTabNavigator<RootTabParamsList>()
 
 const TabNavigator = () => {
-  const tabBarIcon = (name: HeaderTitle) => () =>
+  const tabBarIcon = (title: HeaderTitle) => () =>
     (
       <Image
         style={styles.tabBarIcon}
-        source={TAB_ICON_SOURCE[name]}
+        source={TAB_ICON_SOURCE[title]}
         resizeMode={ResizeMode.Contain}
       />
     )
