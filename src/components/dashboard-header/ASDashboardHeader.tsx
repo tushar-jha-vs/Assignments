@@ -6,6 +6,7 @@ import { getCurrentDate } from '../../utils/common-utils'
 const imageSource = require('../../assets/images/hero.png')
 const calendarIcon = require('../../assets/icons/calendar.png')
 const overthinker = require('../../assets/icons/overthinker-white.png')
+
 const ASDashboardHeader = () => {
   return (
     <ImageBackground source={imageSource} style={styles.imageBackground} resizeMode="cover">

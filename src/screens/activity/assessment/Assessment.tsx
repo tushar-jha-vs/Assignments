@@ -1,12 +1,11 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-// import ASAssessmentCard from '../../../components/assessment-card/ASAssessmentCard'
-import ASCardStack from '../../../components/card-stack/ASCardStack'
+import ASAssessmentCard from '../../../components/assessment-card/ASAssessmentCard'
+
 const Assessment = () => {
   return (
-    <View style={{ flex: 1 }}>
-      {/* <ASAssessmentCard/> */}
-      <ASCardStack />
+    <View style={{flex:1}}>
+      <ASAssessmentCard/>
     </View>
   )
 }

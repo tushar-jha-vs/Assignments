@@ -8,6 +8,7 @@ import { COLORS } from '../../theme'
 
 const PROCRASTINATOR = require('../../assets/icons/procrastinator.png')
 const LINK = require('../../assets/icons/link.png')
+
 const ASAssessmentTopWreckersCard = () => {
   const renderWreckersCards = () => {
     const wreckerData = [1, 2, 3]

@@ -60,6 +60,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: SPACING.space_16,
+    lineHeight: SPACING.space_20,
     fontFamily: Typography.secondary.bold,
     color: COLORS.neutral['700'],
   },
