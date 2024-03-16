@@ -1,1 +1,1 @@
-export * from './api/get-notification-dActive-data'
+export * from './api/get-list-data-from-url'

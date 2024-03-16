@@ -47,4 +47,5 @@ export const palette = {
     '300': '#FFFFFF',
   },
   tundora: '#454545',
+  charcoal: '#2B3F57'
 }
