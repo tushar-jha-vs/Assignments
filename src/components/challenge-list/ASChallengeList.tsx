@@ -11,6 +11,8 @@ const ASChallengeList = () => {
             <ASChallengeCard/>
             <ASChallengeCard/>
             <ASChallengeCard/>
+            <ASChallengeCard/>
+            <ASChallengeCard/>
           </ScrollView>
         }
         data={[]}
