@@ -13,7 +13,7 @@ const ASProfileCard = (props: IASProfileCardProps) => {
   const { title } = props
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{title}</Text>
+      <Text style={styles.title}>{title}</Text>
       <Image style={styles.icon} source={nextIcon} />
     </View>
   )

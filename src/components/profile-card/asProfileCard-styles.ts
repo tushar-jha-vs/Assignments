@@ -3,7 +3,7 @@ import { COLORS, SPACING, Typography } from "../../theme";
 
 interface Styles {
     container: ViewStyle;
-    text: TextStyle;
+    title: TextStyle;
     icon: ViewStyle;
 }
 
@@ -12,14 +12,14 @@ const styles : Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingVertical: SPACING.space_20,
-        borderBottomColor: '#D0F7F1',
-        borderBottomWidth: 0.5,
+        borderBottomColor: COLORS.primary[100],
+        borderBottomWidth: SPACING.space_1,
     },
-    text: {
+    title: {
         fontFamily: Typography.primary.bold,
         fontSize: SPACING.space_16,
         lineHeight: SPACING.space_24,
-        color: COLORS.neutral[700]
+        color: COLORS.neutral[700],
     },
     icon: {
         height: SPACING.space_16,

@@ -4,7 +4,6 @@ import { COLORS, Typography, SPACING } from '../../theme'
 
 interface Styles {
   container: ViewStyle
-  bgImage: ImageStyle
   header: ViewStyle
   image: ImageStyle
   title: TextStyle
@@ -14,9 +13,6 @@ interface Styles {
 const styles: Styles = StyleSheet.create({
   container: {
     flex: SPACING.space_1,
-  },
-  bgImage: {
-    resizeMode: 'contain',
   },
   header: {
     alignItems: 'center',

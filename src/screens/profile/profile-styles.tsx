@@ -8,7 +8,7 @@ interface Styles {
 
 const styles: Styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: SPACING.space_1,
     marginBottom: SPACING.space_88,
     backgroundColor: COLORS.white,
   },

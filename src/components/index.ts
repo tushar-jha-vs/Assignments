@@ -8,3 +8,4 @@ export { default as ASNotificationCard } from './notification-card/ASNotificatio
 export { default as ASHeader } from './header/ASHeader'
 export { default as ASOptionsPanel } from './options-panel/ASOptionsPanel'
 export { default as ASProgressListCard } from './progress-list-card/ASProgressListCard'
+export {default as ASMyReflectionCard} from './my-reflection-card/ASMyReflectionCard'

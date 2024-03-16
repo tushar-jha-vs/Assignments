@@ -3,3 +3,9 @@ export interface IProgressProps {
   progress: string
   description: string
 }
+
+export interface IMyReflectionsProps {
+  id: string
+  date: string
+  title: string
+}
