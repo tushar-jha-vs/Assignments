@@ -6,7 +6,7 @@ import { Bar } from 'react-native-progress'
 import { styles } from './asAssessmentTopWreckersCard-styles'
 import { COLORS } from '../../theme'
 
-const PROCRASTINATOR = require('../../assets/icons/procastinator.png')
+const PROCRASTINATOR = require('../../assets/icons/procrastinator.png')
 const LINK = require('../../assets/icons/link.png')
 const ASAssessmentTopWreckersCard = () => {
   const renderWreckersCards = () => {

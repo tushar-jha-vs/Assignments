@@ -2,21 +2,23 @@ import React from 'react'
 import { Image, Text, View } from 'react-native'
 import {Bar} from 'react-native-progress';
 
+import { COLORS, SPACING } from '../../theme';
 
-import { ResizeMode } from '../../constants'
+import { ASSESSMENT_SCREEN_IMAGE, ResizeMode } from '../../constants'
 
 import {styles} from './asAssessmentScoreCard-styles'
-import { COLORS, SPACING } from '../../theme';
 
 const SURVIVING = require('../../assets/icons/surviving.png')
 const THRIVING = require('../../assets/icons/thriving.png')
+
+
 
 const ASAssessmentScoreCard = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.headerImageContainer}>
-          <Image source={SURVIVING} resizeMode={ResizeMode.Contain} style={styles.headerImageContainerImage}/>
+          <Image source={ASSESSMENT_SCREEN_IMAGE['Surviving']} resizeMode={ResizeMode.Contain} style={styles.headerImageContainerImage}/>
           <Text style={styles.headerImageContainertitle}>Surviving</Text>
         </View>
         <View style={styles.headerProgressContainer}>

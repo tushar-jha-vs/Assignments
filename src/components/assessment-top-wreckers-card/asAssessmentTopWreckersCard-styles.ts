@@ -34,6 +34,8 @@ export const styles = StyleSheet.create({
         height:SPACING.space_76,
         width:SPACING.space_76,
         marginBottom:SPACING.space_8,
+        backgroundColor:COLORS.white,
+        borderRadius:SPACING.space_50,
     },
     detailSubContainerFooter:{
         gap:SPACING.space_12,
