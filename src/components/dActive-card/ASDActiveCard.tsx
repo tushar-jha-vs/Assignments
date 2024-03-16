@@ -4,7 +4,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import { IASDActiveCardProps } from '../../types'
 import { D_ACTIVE_CARD_INFO, BUTTONS_TEXT_DATA } from '../../constants'
 import { COLORS } from '../../theme'
-import { CustomButton } from '..'
+import { ASCustomButton } from '..'
 
 import { styles } from './asDActiveCard-styles'
 
@@ -12,7 +12,7 @@ const ASDActiveCard = (props: IASDActiveCardProps) => {
   const { title } = props
   const renderDActiveButtons = () => {
     return BUTTONS_TEXT_DATA.map((item, index) => (
-      <CustomButton key={index} label={item} onPress={() => Alert.alert('Button Pressed')} />
+      <ASCustomButton key={index} label={item} onPress={() => Alert.alert('Button Pressed')} />
     ))
   }
   return (

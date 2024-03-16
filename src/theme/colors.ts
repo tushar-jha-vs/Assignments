@@ -9,6 +9,7 @@ const Colors = {
   success: palette.genoa,
   white: palette.white['300'],
   tundora: palette.tundora,
+  charcoal: palette.charcoal,
   //TODO: Use colors from the palette
   dActiveButtonGradient: ['#FFFFFF00', '#FFFFFFCC'],
   dActiveTextGradient: ['#FFFFFF8F', '#FFFFFF1E', '#FFFFFF00'],
