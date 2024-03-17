@@ -8,7 +8,6 @@ import { styles } from './dashboard-styles'
 const Dashboard = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
       <ASDashboardHeader />
       <ASDashboardCard />
       <ASChallengeList />
