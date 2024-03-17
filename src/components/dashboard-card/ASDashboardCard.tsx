@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Image, Modal, Text, TouchableOpacity, View } from 'react-native'
 import WebView from 'react-native-webview'
 
-import { DASHBOARD_CARD_IMAGE_SOURCE } from '../../constants'
+import { DASHBOARD_CARD_IMAGE_SOURCE, WEBVIEW_DASHBOARD_CARD_URI } from '../../constants'
 
 import { styles } from './asDashboardCard-styles'
 
@@ -42,7 +42,7 @@ const ASDashboardCard = () => {
               transparent={true}>
               <WebView
                 source={{
-                  uri: 'https://youtu.be/0EvRSD1-jII',
+                  uri: WEBVIEW_DASHBOARD_CARD_URI,
                 }}
               />
             </Modal>

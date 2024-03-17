@@ -3,8 +3,7 @@ import { Image, Text, View } from 'react-native'
 import { Bar } from 'react-native-progress'
 
 import { COLORS, SPACING } from '../../theme'
-
-import { ASSESSMENT_SCREEN_IMAGE, ResizeMode } from '../../constants'
+import { ASSESSMENT_IMAGE_TITLE, ASSESSMENT_SCREEN_IMAGE, ResizeMode } from '../../constants'
 
 import { styles } from './asAssessmentScoreCard-styles'
 
@@ -15,10 +14,10 @@ const ASAssessmentScoreCard = () => {
         <View style={styles.headerImageContainer}>
           <Image
             resizeMode={ResizeMode.Contain}
-            source={ASSESSMENT_SCREEN_IMAGE['Surviving']}
+            source={ASSESSMENT_SCREEN_IMAGE[ASSESSMENT_IMAGE_TITLE.Surviving]}
             style={styles.headerImageContainerImage}
           />
-          <Text style={styles.headerImageContainerTitle}>Surviving</Text>
+          <Text style={styles.headerImageContainerTitle}>{ASSESSMENT_IMAGE_TITLE.Surviving}</Text>
         </View>
         <View style={styles.headerProgressContainer}>
           <Text style={styles.headerProgressContainerTitle}>50/100</Text>
@@ -34,10 +33,10 @@ const ASAssessmentScoreCard = () => {
         <View style={styles.headerImageContainer}>
           <Image
             resizeMode={ResizeMode.Contain}
-            source={ASSESSMENT_SCREEN_IMAGE['Thriving']}
+            source={ASSESSMENT_SCREEN_IMAGE[ASSESSMENT_IMAGE_TITLE.Thriving]}
             style={[styles.headerImageContainerImage, { width: SPACING.space_50 }]}
           />
-          <Text style={styles.headerImageContainerTitle}>Thriving</Text>
+          <Text style={styles.headerImageContainerTitle}>{ASSESSMENT_IMAGE_TITLE.Thriving}</Text>
         </View>
       </View>
       <View style={styles.bottomContainer}>

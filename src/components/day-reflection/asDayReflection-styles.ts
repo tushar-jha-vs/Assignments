@@ -2,7 +2,7 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-interface IStyleProps {
+interface IStyles {
   bottomContainer: ViewStyle
   bottomContainerButtons: ViewStyle
   bottomContainerContent: ViewStyle
@@ -17,7 +17,7 @@ interface IStyleProps {
   headerContainerRange: TextStyle
 }
 
-export const styles: IStyleProps = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   bottomContainer: {
     backgroundColor: COLORS.white,
     borderRadius: SPACING.space_16,

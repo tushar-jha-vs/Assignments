@@ -3,7 +3,7 @@ import { SafeAreaView, StatusBar } from 'react-native'
 
 import { backWhiteIcon } from '../../../constants'
 
-import ASDayReflection from '../../../components/day-reflection/ASDayReflection'
+import { ASDayReflection } from '../../../components'
 import { ASHeader } from '../../../components'
 
 import { styles } from './dailyReflection-styles'

@@ -2,7 +2,7 @@ import React from 'react'
 import { Image, ImageBackground, Text, View } from 'react-native'
 
 import { DASHBOARD_HEADER_IMAGE_SOURCE, ResizeMode } from '../../constants'
-import { getCurrentDate } from '../../utils/common-utils'
+import { getCurrentDate } from '../../utils'
 
 import { styles } from './asDashboardHeader-styles'
 

@@ -2,11 +2,11 @@ import { StyleSheet, ViewStyle } from 'react-native'
 
 import { SPACING } from '../../theme'
 
-interface IStyleProps {
+interface IStyles {
   container: ViewStyle
 }
 
-export const styles: IStyleProps = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
     flexGrow: SPACING.space_1,
     marginHorizontal: SPACING.space_20,

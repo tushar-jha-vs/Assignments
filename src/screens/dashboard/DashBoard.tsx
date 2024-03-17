@@ -1,9 +1,7 @@
 import React from 'react'
 import { SafeAreaView, StatusBar } from 'react-native'
 
-import ASChallengeList from '../../components/challenge-list/ASChallengeList'
-import ASDashboardCard from '../../components/dashboard-card/ASDashboardCard'
-import ASDashboardHeader from '../../components/dashboard-header/ASDashboardHeader'
+import { ASChallengeList, ASDashboardCard, ASDashboardHeader } from '../../components'
 
 import { styles } from './dashboard-styles'
 

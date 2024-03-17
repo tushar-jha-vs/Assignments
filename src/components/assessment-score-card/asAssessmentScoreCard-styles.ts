@@ -2,7 +2,7 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-interface IStyleProps {
+interface IStyles {
   container: ViewStyle
   bottomContainer: ViewStyle
   bottomContainerTitle: TextStyle
@@ -14,7 +14,7 @@ interface IStyleProps {
   headerProgressContainerTitle: TextStyle
 }
 
-export const styles: IStyleProps = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     marginBottom: SPACING.space_28,

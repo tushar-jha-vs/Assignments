@@ -1,7 +1,8 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+
 import { COLORS, SPACING, Typography } from '../../theme'
 
-interface IStyleProps {
+interface IStyles {
   bottomContainer: ViewStyle
   bottomContainerImage: ImageStyle
   bottomContainerTitle: TextStyle
@@ -11,7 +12,7 @@ interface IStyleProps {
   subContainerTitle: TextStyle
 }
 
-export const styles: IStyleProps = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   bottomContainer: {
     alignItems: 'center',
     flexDirection: 'row',

@@ -1,68 +1,87 @@
 import React, { useState } from 'react'
-import { KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { Bar } from 'react-native-progress'
 
-import { COLORS } from '../../theme'
+import { DAILY_REFLECTIONS_QUESTIONS } from '../../constants'
+import { COLORS, SPACING } from '../../theme'
 
-import { styles } from './asDayReflection'
+import { styles } from './asDayReflection-styles'
 
 const ASDayReflection = () => {
-  const questions = [
-    'What is your favourite food?',
-    'What is your favorite activity?',
-    'What is your favourite exercise?',
-    'What is your favourite protein name?',
-  ]
   const [answer, setAnswer] = useState<string>('')
   const [answers, setAnswers] = useState<string[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [progressValue, setProgressValue] = useState(0)
   const handlePrevious = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prevIndex => prevIndex - 1)
-      setProgressValue(progressValue - 1 / questions.length)
-      if (answers.length > currentIndex) {
-        setAnswer(answers[currentIndex])
+      if (answers.length > currentIndex - 1) {
+        setAnswer(answers[currentIndex - 1])
       }
+      answers[currentIndex] = answer
+      setAnswers([...answers])
+      setCurrentIndex(prevIndex => prevIndex - 1)
+      setProgressValue(prevProgressValue => {
+        return prevProgressValue - 1 / DAILY_REFLECTIONS_QUESTIONS.length
+      })
     }
   }
   const handleNext = () => {
     if (answer.trim() === '') {
       setAnswer('')
-      alert('Please enter a answer!!!')
+      Alert.alert('Please enter a answer!!!')
       return
     }
-    if (currentIndex < questions.length - 1) {
-      setAnswers([...answers, answer])
-      setCurrentIndex(currentIndex + 1)
-      setProgressValue(progressValue + 1 / questions.length)
+    if (currentIndex + 1 < answers.length) {
+      answers[currentIndex] = answer
+      setAnswer(answers[currentIndex + 1])
+      setAnswers([...answers])
+      setCurrentIndex(prevIndex => prevIndex + 1)
+      setProgressValue(prevProgressValue => {
+        return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
+      })
+      return
+    }
+    if (currentIndex < DAILY_REFLECTIONS_QUESTIONS.length - 1) {
+      setAnswers(prevAnswers => [...prevAnswers, answer])
+      setCurrentIndex(prevIndex => prevIndex + 1)
+      setProgressValue(prevProgressValue => {
+        return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
+      })
       setAnswer('')
     }
   }
   const showSubmit = () => {
-    setAnswers([...answers, answer])
-    setProgressValue(progressValue + 1 / questions.length)
-    // console.log(answers)
-    // setAnswers('')
+    if (currentIndex < answers.length) {
+      answers[currentIndex] = answer
+    } else {
+      answers.push(answer)
+    }
+    setAnswers([...answers])
+    setProgressValue(prevProgressValue => {
+      return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
+    })
+    console.log(answers)
   }
   return (
     <KeyboardAvoidingView style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerContainerRange}>
-          {currentIndex + 1}/{questions.length}
+          {currentIndex + 1}/{DAILY_REFLECTIONS_QUESTIONS.length}
         </Text>
         <Bar
           progress={progressValue}
-          borderRadius={8}
-          height={8}
-          width={300}
+          borderRadius={SPACING.space_8}
+          height={SPACING.space_8}
+          width={SPACING.space_300}
           unfilledColor={COLORS.secondary['50']}
           color={COLORS.primary['300']}
         />
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomContainerContent}>
-          <Text style={styles.bottomContainerTitle}>{questions[currentIndex]}</Text>
+          <Text style={styles.bottomContainerTitle}>
+            {DAILY_REFLECTIONS_QUESTIONS[currentIndex]}
+          </Text>
           <TextInput
             editable
             multiline
@@ -78,10 +97,12 @@ const ASDayReflection = () => {
             <Text style={styles.buttonTitle}>{currentIndex !== 0 ? 'Previous' : ''}</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={currentIndex !== questions.length - 1 ? handleNext : showSubmit}
+            onPress={
+              currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? handleNext : showSubmit
+            }
             style={styles.button}>
             <Text style={styles.buttonTitle}>
-              {currentIndex !== questions.length - 1 ? 'Next' : 'Submit'}
+              {currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? 'Next' : 'Submit'}
             </Text>
           </TouchableOpacity>
         </View>

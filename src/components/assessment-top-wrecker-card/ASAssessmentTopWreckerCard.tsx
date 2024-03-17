@@ -3,18 +3,12 @@ import { Image, Text, View } from 'react-native'
 import { Bar } from 'react-native-progress'
 
 import { PROGRESS_CARD_IMAGE_SOURCE, ResizeMode } from '../../constants'
-
-import { COLORS } from '../../theme'
+import { IProgressProps } from '../../types'
+import { COLORS, SPACING } from '../../theme'
 
 import { styles } from './asAssessmentTopWreckerCard-styles'
 
-interface IASWreckersListCardProps {
-  title: string
-  progress: string
-  description: string
-}
-
-const ASAssessmentTopWreckerCard = (props: IASWreckersListCardProps) => {
+const ASAssessmentTopWreckerCard = (props: IProgressProps) => {
   const { title, progress } = props
   return (
     <View style={styles.detailSubContainer}>
@@ -25,12 +19,12 @@ const ASAssessmentTopWreckerCard = (props: IASWreckersListCardProps) => {
       />
       <View style={styles.detailSubContainerFooter}>
         <View style={styles.detailSubContainerFooterProgress}>
-          <Text style={styles.detailSubContainerFooterProgressTitle}>{progress}</Text>
+          <Text style={styles.detailSubContainerFooterProgressTitle}>{progress}%</Text>
           <Bar
             progress={Number(progress) / 100}
-            borderRadius={2}
-            height={12}
-            width={51}
+            borderRadius={SPACING.space_2}
+            height={SPACING.space_12}
+            width={SPACING.space_52}
             color={COLORS.secondary['500']}
             unfilledColor={COLORS.secondary['300']}
           />

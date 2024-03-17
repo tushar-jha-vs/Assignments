@@ -1,7 +1,8 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+
 import { COLORS, SPACING, Typography } from '../../theme'
 
-interface IStyleProps {
+interface IStyles {
   detailSubContainer: ViewStyle
   detailSubContainerFooter: ViewStyle
   detailSubContainerFooterProgress: ViewStyle
@@ -10,9 +11,10 @@ interface IStyleProps {
   detailSubContainerImage: ImageStyle
 }
 
-export const styles: IStyleProps = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   detailSubContainer: {
     alignItems: 'center',
+    marginHorizontal: SPACING.space_24,
   },
   detailSubContainerFooter: {
     gap: SPACING.space_12,

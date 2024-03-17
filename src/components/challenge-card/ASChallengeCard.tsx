@@ -6,20 +6,13 @@ import {
   CHALLENGE_IMAGE_SOURCE,
   CHALLENGE_CARD_COLOR,
   NOTIFICATION_IMAGE_SOURCE,
+  WEBVIEW_CHALLENGE_CARD_URI,
 } from '../../constants'
+import { IDashboardProps } from '../../types'
 
 import { styles } from './asChallengeCard-styles'
 
-interface IASDashboardListCardProps {
-  id: string
-  title: string
-  isFav: string
-  startingTime: string
-  endingTime: string
-  isCompleted: string
-}
-
-const ASChallengeCard = (props: IASDashboardListCardProps) => {
+const ASChallengeCard = (props: IDashboardProps) => {
   const { id, title, isFav, startingTime, endingTime, isCompleted } = props
   const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
   return (
@@ -65,7 +58,7 @@ const ASChallengeCard = (props: IASDashboardListCardProps) => {
                 transparent={true}>
                 <WebView
                   source={{
-                    uri: 'https://youtu.be/p4YBeXhkmyI',
+                    uri: WEBVIEW_CHALLENGE_CARD_URI,
                   }}
                 />
               </Modal>
