@@ -1,26 +1,35 @@
-import { View, Text, ImageBackground, Image } from 'react-native'
 import React from 'react'
-import { styles } from './asDashboardHeader-styles'
+import { Image, ImageBackground, Text, View } from 'react-native'
+
+import { DASHBOARD_HEADER_IMAGE_SOURCE, ResizeMode } from '../../constants'
 import { getCurrentDate } from '../../utils/common-utils'
 
-const imageSource = require('../../assets/images/hero.png')
-const calendarIcon = require('../../assets/icons/calendar.png')
-const overthinker = require('../../assets/icons/overthinker-white.png')
+import { styles } from './asDashboardHeader-styles'
 
 const ASDashboardHeader = () => {
   return (
-    <ImageBackground source={imageSource} style={styles.imageBackground} resizeMode="cover">
+    <ImageBackground
+      resizeMode={ResizeMode.Cover}
+      source={DASHBOARD_HEADER_IMAGE_SOURCE['header']}
+      style={styles.imageBackground}>
       <View style={styles.container}>
         <View style={styles.subContainer}>
-          <Image source={calendarIcon} style={styles.image} />
-          <Text style={styles.text}>{getCurrentDate()}</Text>
+          <Image
+            source={DASHBOARD_HEADER_IMAGE_SOURCE['calendar']}
+            style={styles.subContainerImage}
+          />
+          <Text style={styles.subContainerDate}>{getCurrentDate()}</Text>
         </View>
         <View style={styles.bottomSubContainer}>
           <View style={styles.textContainer}>
-            <Text style={styles.title}>Overthinker</Text>
-            <Text style={styles.days}>Day 1 of 24</Text>
+            <Text style={styles.textContainerTitle}>Overthinker</Text>
+            <Text style={styles.textContainerDay}>Day 1 of 24</Text>
           </View>
-          <Image source={overthinker} style={styles.heroImage} />
+          <Image
+            source={DASHBOARD_HEADER_IMAGE_SOURCE['overthinker']}
+            style={styles.image}
+            resizeMode={ResizeMode.Contain}
+          />
         </View>
       </View>
     </ImageBackground>

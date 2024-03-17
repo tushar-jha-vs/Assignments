@@ -1,10 +1,15 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, ViewStyle } from 'react-native'
 
-import { SPACING } from "../../theme";
+import { SPACING } from '../../theme'
 
-export const styles = StyleSheet.create({
-    container:{
-        flexGrow:SPACING.space_1,
-        marginHorizontal:SPACING.space_20,
-    },
+interface IStyleProps {
+  container: ViewStyle
+}
+
+export const styles: IStyleProps = StyleSheet.create({
+  container: {
+    flexGrow: SPACING.space_1,
+    marginHorizontal: SPACING.space_20,
+    marginTop: SPACING.space_16,
+  },
 })

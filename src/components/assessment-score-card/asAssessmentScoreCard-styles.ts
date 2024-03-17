@@ -1,8 +1,20 @@
-import { StyleSheet } from 'react-native'
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-export const styles = StyleSheet.create({
+interface IStyleProps {
+  container: ViewStyle
+  bottomContainer: ViewStyle
+  bottomContainerTitle: TextStyle
+  headerContainer: ViewStyle
+  headerImageContainer: ViewStyle
+  headerImageContainerImage: ImageStyle
+  headerImageContainerTitle: TextStyle
+  headerProgressContainer: ViewStyle
+  headerProgressContainerTitle: TextStyle
+}
+
+export const styles: IStyleProps = StyleSheet.create({
   container: {
     justifyContent: 'space-between',
     marginBottom: SPACING.space_28,
@@ -31,7 +43,7 @@ export const styles = StyleSheet.create({
     height: SPACING.space_40,
     width: SPACING.space_40,
   },
-  headerImageContainertitle: {
+  headerImageContainerTitle: {
     color: COLORS.primary['50'],
     fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_14,
@@ -41,7 +53,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  headerProgressContainertitle: {
+  headerProgressContainerTitle: {
     color: COLORS.white,
     fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_32,

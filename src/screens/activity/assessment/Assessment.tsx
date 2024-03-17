@@ -1,11 +1,14 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { View } from 'react-native'
+
 import ASAssessmentCard from '../../../components/assessment-card/ASAssessmentCard'
+
+import { styles } from './assessment-styles'
 
 const Assessment = () => {
   return (
-    <View style={{flex:1}}>
-      <ASAssessmentCard/>
+    <View style={styles.container}>
+      <ASAssessmentCard />
     </View>
   )
 }

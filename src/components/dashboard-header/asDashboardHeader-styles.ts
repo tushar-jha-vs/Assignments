@@ -1,56 +1,67 @@
-import { StatusBar, StyleSheet } from 'react-native'
-import { Typography } from '../../theme/typography'
-import { COLORS } from '../../theme/colors'
-import { SPACING } from '../../theme'
+import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-export const styles = StyleSheet.create({
-  imageBackground: {
-    flexDirection: 'column',
-    width: '100%',
-    height: SPACING.space_248,
+import { COLORS, SPACING, Typography } from '../../theme'
+
+interface IStyleProps {
+  bottomSubContainer: ViewStyle
+  container: ViewStyle
+  image: ImageStyle
+  imageBackground: ImageStyle
+  subContainer: ViewStyle
+  subContainerDate: TextStyle
+  subContainerImage: ImageStyle
+  textContainer: ViewStyle
+  textContainerDay: TextStyle
+  textContainerTitle: TextStyle
+}
+
+export const styles: IStyleProps = StyleSheet.create({
+  bottomSubContainer: {
+    alignItems: 'flex-end',
+    flexDirection: 'row',
     justifyContent: 'space-between',
+    paddingHorizontal: SPACING.space_20,
   },
-
   container: {
     flex: SPACING.space_1,
     paddingTop: StatusBar.currentHeight,
   },
-  subContainer: {
-    flexDirection: 'row',
-    gap: SPACING.space_12,
-    alignItems: 'center',
-    padding: SPACING.space_20,
-  },
   image: {
-    height: SPACING.space_16,
-    width: SPACING.space_16,
-  },
-  text: {
-    fontFamily: Typography.primary.bold,
-    fontSize: SPACING.space_14,
-    color: COLORS.white,
-  },
-  bottomSubContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    justifyContent: 'space-between',
-    paddingHorizontal: SPACING.space_20,
-  },
-  heroImage: {
     height: SPACING.space_148,
     width: SPACING.space_148,
   },
-  title: {
-    fontFamily: Typography.secondary.bold,
-    color: COLORS.secondary[100],
-    fontSize: SPACING.space_24,
+  imageBackground: {
+    flexDirection: 'column',
+    height: SPACING.space_248,
+    justifyContent: 'space-between',
+    width: '100%',
   },
-  days: {
+  subContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: SPACING.space_12,
+    padding: SPACING.space_20,
+  },
+  subContainerDate: {
+    color: COLORS.white,
     fontFamily: Typography.primary.bold,
     fontSize: SPACING.space_14,
-    color: COLORS.white,
+  },
+  subContainerImage: {
+    height: SPACING.space_16,
+    width: SPACING.space_16,
   },
   textContainer: {
     marginBottom: SPACING.space_24,
+  },
+  textContainerDay: {
+    color: COLORS.white,
+    fontFamily: Typography.primary.bold,
+    fontSize: SPACING.space_14,
+  },
+  textContainerTitle: {
+    color: COLORS.secondary[100],
+    fontFamily: Typography.secondary.bold,
+    fontSize: SPACING.space_24,
   },
 })

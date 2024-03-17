@@ -1,8 +1,14 @@
-import { StyleSheet } from "react-native";
-import { SPACING } from "../../theme";
+import { StyleSheet, ViewStyle } from 'react-native'
 
-export const styles = StyleSheet.create({
-    container:{
-        flex:SPACING.space_1,
-    }
+import { COLORS, SPACING } from '../../theme'
+
+interface IStylesProps {
+  container: ViewStyle
+}
+
+export const styles: IStylesProps = StyleSheet.create({
+  container: {
+    flex: SPACING.space_1,
+    backgroundColor: COLORS.white,
+  },
 })
