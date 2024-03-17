@@ -1,4 +1,3 @@
-export const nextIcon = require('../assets/icons/next.png')
 export const backIcon = require('../assets/icons/back.png')
 export const profileBackground = require('../assets/images/profile-background.png')
 

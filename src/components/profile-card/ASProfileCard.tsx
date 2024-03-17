@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 
-import { nextIcon } from '../../constants/profile-constants'
+import { nextIcon } from '../../constants'
 
 import styles from './asProfileCard-styles'
 

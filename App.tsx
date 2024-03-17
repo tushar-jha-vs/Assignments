@@ -15,8 +15,6 @@ const App = () => {
         <StatusBar backgroundColor={COLORS.white} barStyle="dark-content" />
         <StackNavigator />
       </NavigationContainer>
-      
-      {/* <MyReflection /> */}
     </SafeAreaProvider>
   )
 }

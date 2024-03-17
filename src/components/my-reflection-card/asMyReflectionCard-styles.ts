@@ -10,13 +10,13 @@ interface Styles {
   icon: ImageStyle
 }
 
-export const styles: Styles = StyleSheet.create({
+const styles: Styles = StyleSheet.create({
   container: {
     paddingHorizontal: SPACING.space_12,
     paddingTop: SPACING.space_12,
     paddingBottom: SPACING.space_4,
     borderBottomColor: COLORS.primary[100],
-    borderBottomWidth: 0.5,
+    borderBottomWidth: SPACING.space_1,
   },
   title: {
     fontFamily: Typography.secondary.bold,
@@ -40,3 +40,5 @@ export const styles: Styles = StyleSheet.create({
     width: SPACING.space_16,
   },
 })
+
+export default styles;

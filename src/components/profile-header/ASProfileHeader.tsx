@@ -1,10 +1,11 @@
 import { View, Text, Image, ImageBackground } from 'react-native'
 import React from 'react'
 
-import { ResizeMode, backIcon, profileBackground } from '../../constants'
+//import {backIcon, profileBackground } from '../../constants'
 import { ProfileInfo } from '..'
 
 import styles from './asProfileHeader-styles'
+import { backIcon, profileBackground } from '../../constants'
 
 const ASProfileHeader = () => {
   return (
