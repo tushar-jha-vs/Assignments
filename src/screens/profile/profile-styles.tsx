@@ -1,4 +1,5 @@
 import { StyleSheet, ViewStyle } from 'react-native'
+
 import { COLORS, SPACING } from '../../theme'
 
 interface Styles {
@@ -8,9 +9,9 @@ interface Styles {
 
 const styles: Styles = StyleSheet.create({
   container: {
+    backgroundColor: COLORS.white,
     flex: SPACING.space_1,
     marginBottom: SPACING.space_88,
-    backgroundColor: COLORS.white,
   },
   subContainer: {
     marginHorizontal: SPACING.space_20,

@@ -1,4 +1,5 @@
 import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
+
 import { COLORS, SPACING, Typography } from '../../theme'
 
 interface Styles {
@@ -9,20 +10,20 @@ interface Styles {
 
 const styles: Styles = StyleSheet.create({
   container: {
-    marginLeft: SPACING.space_21,
     marginBottom: SPACING.space_36,
+    marginLeft: SPACING.space_21,
     marginTop: SPACING.space_28,
   },
   title: {
+    color: COLORS.white,
     fontFamily: Typography.primary.bold,
     fontSize: SPACING.space_16,
-    color: COLORS.white,
     marginBottom: SPACING.space_12,
   },
   subTitle: {
+    color: COLORS.white,
     fontFamily: Typography.primary.medium,
     fontSize: SPACING.space_14,
-    color: COLORS.white,
   },
 })
 

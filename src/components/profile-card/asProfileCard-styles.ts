@@ -1,25 +1,26 @@
-import { StyleSheet, ViewStyle, TextStyle } from "react-native";
+import { StyleSheet, ViewStyle, ImageStyle, TextStyle } from "react-native";
+
 import { COLORS, SPACING, Typography } from "../../theme";
 
 interface Styles {
     container: ViewStyle;
     title: TextStyle;
-    icon: ViewStyle;
+    icon: ImageStyle;
 }
 
 const styles : Styles = StyleSheet.create({
     container: {
+        borderBottomColor: COLORS.primary[100],
+        borderBottomWidth: SPACING.space_1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingVertical: SPACING.space_20,
-        borderBottomColor: COLORS.primary[100],
-        borderBottomWidth: SPACING.space_1,
     },
     title: {
+        color: COLORS.neutral[700],
         fontFamily: Typography.primary.bold,
         fontSize: SPACING.space_16,
         lineHeight: SPACING.space_24,
-        color: COLORS.neutral[700],
     },
     icon: {
         height: SPACING.space_16,
