@@ -6,3 +6,5 @@ export const PROGRESS_CARD_IMAGE_SOURCE: { [key: string]: number } = {
   Procrastinator: require('../assets/icons/procrastinator.png'),
   Distractor: require('../assets/icons/distractor.png'),
 }
+
+export const MY_REFLECTIONS_BACKGROUND_IMAGE = require('../assets/images/Reflection.png')
