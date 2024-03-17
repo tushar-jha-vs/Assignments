@@ -8,5 +8,4 @@ export const PROGRESS_LIST_BASE_URL =
 export const MY_REFLECTIONS_BASE_URL =
   'https://65f3d975105614e654a14328.mockapi.io/progress/getAllReflections'
 
-export const DASHBOARD_BASE_URL =
-  'https://65f3d975105614e654a14328.mockapi.io/progress/getAllReflections'
+export const DASHBOARD_BASE_URL = 'https://65f40eaf105614e654a1d144.mockapi.io/dashboard/getCards'
