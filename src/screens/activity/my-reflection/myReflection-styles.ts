@@ -1,3 +1,17 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ImageStyle, ViewStyle } from 'react-native'
 
-export const styles = StyleSheet.create({})
+import { SPACING } from '../../../theme'
+
+interface Styles {
+  bgImage: ImageStyle
+  container: ViewStyle
+}
+
+export const styles: Styles = StyleSheet.create({
+  bgImage: {
+    flex: SPACING.space_1,
+  },
+  container: {
+    marginTop: SPACING.space_16,
+  },
+})

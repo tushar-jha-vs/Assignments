@@ -12,3 +12,9 @@ export interface IDashboardProps {
   endingTime: string
   isCompleted: string
 }
+
+export interface IMyReflectionsProps {
+  id: string
+  date: string
+  title: string
+}

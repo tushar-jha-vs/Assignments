@@ -30,3 +30,4 @@ export const DAILY_REFLECTIONS_QUESTIONS = [
   'What is your favourite exercise?',
   'What is your favourite protein name?',
 ]
+export const MY_REFLECTIONS_BACKGROUND_IMAGE = require('../assets/images/Reflection.png')
