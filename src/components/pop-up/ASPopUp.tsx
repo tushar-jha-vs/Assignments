@@ -30,12 +30,12 @@ const ASPopUp = (props: IASPopUpProps) => {
       onRequestClose={() => {
         setIsModalVisible(!isModalVisible)
       }}>
-      <TouchableOpacity style={styles.container} onPress={handlePress}>
-        <View style={styles.modalOverlay}>
+      <TouchableOpacity style={styles.modalOverlay} onPress={handlePress}>
+        <View style={styles.container}>
           <View style={styles.subContainer}>
             <Image source={imageURL} resizeMode={ResizeMode.Contain} style={styles.image} />
-            <View>
-              <View style={styles.textContainer}>
+            <View style={styles.textContainer}>
+              <View>
                 <Text style={styles.title}> {title} </Text>
                 <Text style={styles.description}> {description} </Text>
               </View>

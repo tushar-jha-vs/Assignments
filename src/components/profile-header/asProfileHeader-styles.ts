@@ -39,4 +39,4 @@ const styles: IStyles = StyleSheet.create({
   },
 })
 
-export default styles
+export default styles;
