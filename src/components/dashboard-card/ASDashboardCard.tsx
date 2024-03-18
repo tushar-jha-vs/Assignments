@@ -36,15 +36,20 @@ const ASDashboardCard = () => {
             style={styles.detailBottomSubContainer}
             onPress={() => setWebViewVisible(true)}>
             <Modal
-              visible={webViewVisible}
               animationType="slide"
               onRequestClose={() => setWebViewVisible(false)}
-              transparent={true}>
+              transparent={true}
+              visible={webViewVisible}>
               <WebView
                 source={{
                   uri: WEBVIEW_DASHBOARD_CARD_URI,
                 }}
               />
+              <TouchableOpacity
+                onPress={() => setWebViewVisible(false)}
+                style={styles.detailBottomSubContainerButton}>
+                <Text>Close</Text>
+              </TouchableOpacity>
             </Modal>
             <Image
               source={DASHBOARD_CARD_IMAGE_SOURCE['playButton']}

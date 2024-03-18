@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { SafeAreaView, StyleSheet } from 'react-native'
 
 import { ASHeader } from '../../components'
 import { COLORS, SPACING } from '../../theme'
@@ -13,11 +13,11 @@ const Activity = () => {
   const [activeButton, setActiveButton] = useState<string>('Progress')
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ASHeader title="Your Activity" imgSrc={backGreenIcon} />
       <ASOptionsPanel activeButton={activeButton} setActiveButton={setActiveButton} />
       {activeButton === 'Progress' ? <Progress /> : <Assessment />}
-    </View>
+    </SafeAreaView>
   )
 }
 

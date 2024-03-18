@@ -15,6 +15,7 @@ import { styles } from './asChallengeCard-styles'
 const ASChallengeCard = (props: IDashboardProps) => {
   const { id, title, isFav, startingTime, endingTime, isCompleted } = props
   const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
+  const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
   return (
     <View style={[styles.container, { backgroundColor: CHALLENGE_CARD_COLOR[id] }]}>
       <View style={styles.subContainer}>
@@ -33,14 +34,19 @@ const ASChallengeCard = (props: IDashboardProps) => {
                   />
                 ) : null}
               </View>
-              <Image
-                source={
-                  isFav === 'true'
-                    ? CHALLENGE_IMAGE_SOURCE['bookmark']
-                    : CHALLENGE_IMAGE_SOURCE['removeBookmark']
-                }
-                style={styles.headerSubContainerImage}
-              />
+              <TouchableOpacity onPress={() => setIsFavourite(prev => !prev)}>
+                {isFavourite ? (
+                  <Image
+                    source={CHALLENGE_IMAGE_SOURCE['bookmark']}
+                    style={styles.headerSubContainerImage}
+                  />
+                ) : (
+                  <Image
+                    source={CHALLENGE_IMAGE_SOURCE['removeBookmark']}
+                    style={styles.headerSubContainerImage}
+                  />
+                )}
+              </TouchableOpacity>
             </View>
             <Text style={styles.title}>{title}</Text>
           </View>
@@ -52,15 +58,20 @@ const ASChallengeCard = (props: IDashboardProps) => {
               style={styles.bottomSubContainer}
               onPress={() => setWebViewVisible(true)}>
               <Modal
-                visible={webViewVisible}
                 animationType="slide"
                 onRequestClose={() => setWebViewVisible(false)}
-                transparent={true}>
+                transparent={true}
+                visible={webViewVisible}>
                 <WebView
                   source={{
                     uri: WEBVIEW_CHALLENGE_CARD_URI,
                   }}
                 />
+                <TouchableOpacity
+                  onPress={() => setWebViewVisible(false)}
+                  style={styles.bottomSubContainerButton}>
+                  <Text>Close</Text>
+                </TouchableOpacity>
               </Modal>
               <Image
                 source={CHALLENGE_IMAGE_SOURCE['playButton']}
