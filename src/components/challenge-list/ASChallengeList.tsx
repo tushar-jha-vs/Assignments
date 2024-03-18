@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 import { RootState, useAppDispatch } from '../../redux/store'
 import { fetchDashboardListData } from '../../redux/features/dashboard-slice'
-
 import ASChallengeCard from '../challenge-card/ASChallengeCard'
 
 import { styles } from './asChallengeList-styles'

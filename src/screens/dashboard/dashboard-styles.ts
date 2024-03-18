@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle } from 'react-native'
+import { StatusBar, StyleSheet, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING } from '../../theme'
 
@@ -10,5 +10,6 @@ export const styles: IStyles = StyleSheet.create({
   container: {
     flex: SPACING.space_1,
     backgroundColor: COLORS.white,
+    // paddingTop: StatusBar.currentHeight,
   },
 })

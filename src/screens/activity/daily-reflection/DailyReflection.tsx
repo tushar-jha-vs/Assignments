@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
+import { View } from 'react-native'
 
 import { backWhiteIcon } from '../../../constants'
 import { ASDayReflection } from '../../../components'
@@ -10,7 +10,7 @@ import { styles } from './dailyReflection-styles'
 
 const DailyReflection = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ASHeader
         title="Day 1"
         titleColor={COLORS.white}
@@ -19,7 +19,7 @@ const DailyReflection = () => {
         imgSrc={backWhiteIcon}
       />
       <ASDayReflection />
-    </SafeAreaView>
+    </View>
   )
 }
 

@@ -5,8 +5,7 @@ import { useSelector } from 'react-redux'
 import { ASSESSMENT_SCREEN_IMAGE, ResizeMode, ASSESSMENT_IMAGE_TITLE } from '../../constants'
 import { RootState, useAppDispatch } from '../../redux/store'
 import { fetchWreckersListData } from '../../redux/features/wreckers-slice'
-
-import ASAssessmentTopWreckerCard from '../assessment-top-wrecker-card/ASAssessmentTopWreckerCard'
+import { ASAssessmentTopWreckerCard } from '..'
 
 import { styles } from './asAssessmentTopWreckersList-styles'
 
