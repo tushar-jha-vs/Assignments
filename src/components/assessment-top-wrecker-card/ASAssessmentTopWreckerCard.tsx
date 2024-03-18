@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Image, Text, View, TouchableOpacity } from 'react-native'
 import { Bar } from 'react-native-progress'
 
-import ASPopUp from '../pop-up/ASPopUp'
 import { PROGRESS_CARD_IMAGE_SOURCE, ResizeMode } from '../../constants'
 import { IProgressProps } from '../../types'
 import { COLORS, SPACING } from '../../theme'
+
+import ASPopUp from '../pop-up/ASPopUp'
 
 import { styles } from './asAssessmentTopWreckerCard-styles'
 

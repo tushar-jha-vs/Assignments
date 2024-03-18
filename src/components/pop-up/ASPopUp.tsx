@@ -1,16 +1,16 @@
-import { View, Text, Modal, Image, TouchableOpacity, GestureResponderEvent } from 'react-native'
-import React from 'react'
-
+import { View, Text, Modal, Image, TouchableOpacity, ImageSourcePropType } from 'react-native'
+import React, { Dispatch, SetStateAction } from 'react'
 import { Bar } from 'react-native-progress'
+
 import { COLORS, SPACING } from '../../theme'
+import { ResizeMode } from '../../constants'
 
 import styles from './asPopUp-styles'
-import { ResizeMode } from '../../constants'
 
 interface IASPopUpProps {
   isModalVisible: boolean
-  setIsModalVisible: (visible: boolean) => void
-  imageURL: any
+  setIsModalVisible: Dispatch<SetStateAction<boolean>>
+  imageURL: ImageSourcePropType
   title: string
   description: string
   progress: number
@@ -30,11 +30,11 @@ const ASPopUp = (props: IASPopUpProps) => {
       onRequestClose={() => {
         setIsModalVisible(!isModalVisible)
       }}>
-      <TouchableOpacity style={{ flex: SPACING.space_1 }} onPress={handlePress}>
+      <TouchableOpacity style={styles.container} onPress={handlePress}>
         <View style={styles.modalOverlay}>
-          <View style={styles.container}>
+          <View style={styles.subContainer}>
             <Image source={imageURL} resizeMode={ResizeMode.Contain} style={styles.image} />
-            <View style={styles.subContainer}>
+            <View>
               <View style={styles.textContainer}>
                 <Text style={styles.title}> {title} </Text>
                 <Text style={styles.description}> {description} </Text>
