@@ -13,7 +13,7 @@ export const styles: Styles = StyleSheet.create({
   tabBarStyle: {
     borderTopLeftRadius: SPACING.space_16,
     borderTopRightRadius: SPACING.space_16,
-    height: Platform.OS === 'android' ? SPACING.space_88 : SPACING.space_100,
+    height: Platform.OS === 'android' ? SPACING.space_88 : SPACING.space_76,
     paddingHorizontal: SPACING.space_24,
     paddingVertical: SPACING.space_20,
     position: 'absolute',

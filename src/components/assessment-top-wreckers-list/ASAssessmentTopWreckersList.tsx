@@ -5,8 +5,7 @@ import { useSelector } from 'react-redux'
 import { ASSESSMENT_SCREEN_IMAGE, ResizeMode, ASSESSMENT_IMAGE_TITLE } from '../../constants'
 import { RootState, useAppDispatch } from '../../redux/store'
 import { fetchWreckersListData } from '../../redux/features/wreckers-slice'
-
-import ASAssessmentTopWreckerCard from '../assessment-top-wrecker-card/ASAssessmentTopWreckerCard'
+import { ASAssessmentTopWreckerCard } from '..'
 
 import { styles } from './asAssessmentTopWreckersList-styles'
 
@@ -22,7 +21,6 @@ const ASAssessmentTopWreckersList = ({ setAverageValue }) => {
     const totalProgress = wreckersList.reduce((acc, data) => acc + Number(data.progress), 0)
     const average = totalProgress / wreckersList.length
     setAverageValue(Math.floor(average))
-    console.log(Math.floor(average))
     return TopThreeWreckers.map((item, index) => (
       <ASAssessmentTopWreckerCard key={index} {...item} />
     ))

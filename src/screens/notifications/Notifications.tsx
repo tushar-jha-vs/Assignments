@@ -19,7 +19,7 @@ const Notifications = () => {
   }, [])
 
   return (
-    <SafeAreaView>
+    <>
       <ASHeader title={HeaderTitle.Notifications} imgSrc={backGreenIcon} />
       <View style={styles.container}>
         <FlatList
@@ -31,7 +31,7 @@ const Notifications = () => {
           keyExtractor={item => item.id.toString()}
         />
       </View>
-    </SafeAreaView>
+    </>
   )
 }
 

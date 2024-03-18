@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react'
-import { FlatList, SafeAreaView, Text } from 'react-native'
+import { FlatList, SafeAreaView } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import { HeaderTitle, backGreenIcon } from '../../constants'
-import { ASHeader, ASDActiveCard } from '../../components'
-
+import { ASHeader, ASDActiveCard, ASLoader } from '../../components'
 import { RootState, useAppDispatch } from '../../redux/store'
+import { fetchDActiveListData } from '../../redux/features/dActive-slice'
 
 import { styles } from './dActive-styles'
-import { fetchDActiveListData } from '../../redux/features/dActive-slice'
 
 const DActive = () => {
   const dActiveList = useSelector((state: RootState) => state.dActive.dActiveList)
@@ -25,7 +24,7 @@ const DActive = () => {
         style={styles.subContainer}
         data={dActiveList}
         showsVerticalScrollIndicator={false}
-        ListEmptyComponent={() => <Text>Loading..</Text>}
+        ListEmptyComponent={() => <ASLoader />}
         renderItem={({ item }) => <ASDActiveCard {...item} />}
         keyExtractor={item => String(item.id)}
       />

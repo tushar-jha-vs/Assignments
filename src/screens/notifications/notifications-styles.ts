@@ -10,7 +10,7 @@ interface IStyles {
 export const styles: IStyles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    marginBottom: SPACING.space_88,
+    marginBottom: SPACING.space_148,
   },
   subContainer: {
     flexGrow: SPACING.space_1,

@@ -23,6 +23,8 @@ const styles : IStyles = StyleSheet.create({
     },
     container: {
         flex: SPACING.space_1,
+        marginHorizontal: SPACING.space_24,
+        marginVertical: SPACING.space_172,
     },
     image: {
         height: SPACING.space_267,
@@ -35,11 +37,11 @@ const styles : IStyles = StyleSheet.create({
         backgroundColor:COLORS.white,
         borderRadius: SPACING.space_16,
         justifyContent: 'center',
-        padding:SPACING.space_16,
     },
     textContainer: {
         marginHorizontal: SPACING.space_24,
         marginTop: SPACING.space_20,
+        marginBottom: SPACING.space_40,
     },
     title: {
         color: COLORS.neutral[700],

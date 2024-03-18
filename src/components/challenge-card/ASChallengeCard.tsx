@@ -16,6 +16,7 @@ const ASChallengeCard = (props: IDashboardProps) => {
   const { id, title, isFav, startingTime, endingTime, isCompleted } = props
   const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
   const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
+
   return (
     <View style={[styles.container, { backgroundColor: CHALLENGE_CARD_COLOR[id] }]}>
       <View style={styles.subContainer}>

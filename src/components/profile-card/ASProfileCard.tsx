@@ -46,4 +46,3 @@ const ASProfileCard = (props: IASProfileCardProps) => {
 };
 
 export default ASProfileCard;
-
