@@ -4,7 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
 
-import { ASProgressListCard } from '../../../components'
+import { ASLoader, ASProgressListCard } from '../../../components'
 import { RootStackParamList } from '../../../types'
 import { RootState, useAppDispatch } from '../../../redux/store'
 import { fetchWreckersListData } from '../../../redux/features/wreckers-slice'
@@ -43,7 +43,7 @@ const Progress = () => {
           </View>
         </>
       ) : (
-        <Text>Loading..</Text>
+        <ASLoader />
       )}
     </View>
   )

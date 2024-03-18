@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import { FlatList, Text } from 'react-native'
+import { FlatList } from 'react-native'
 import { useSelector } from 'react-redux'
 
+import { ASLoader } from '..'
 import { RootState, useAppDispatch } from '../../redux/store'
 import { fetchDashboardListData } from '../../redux/features/dashboard-slice'
 import ASChallengeCard from '../challenge-card/ASChallengeCard'
@@ -21,7 +22,7 @@ const ASChallengeList = () => {
   return (
     <FlatList
       style={styles.container}
-      ListEmptyComponent={() => <Text>Loading...</Text>}
+      ListEmptyComponent={() => <ASLoader />}
       data={dashboardChallengesList}
       scrollEnabled
       keyExtractor={item => item.id.toString()}
