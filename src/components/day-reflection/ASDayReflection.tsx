@@ -45,7 +45,7 @@ const ASDayReflection = () => {
       setAnswers(prevAnswers => [...prevAnswers, answer])
       setCurrentIndex(prevIndex => prevIndex + 1)
       setProgressValue(prevProgressValue => {
-        return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
+        return (prevProgressValue + 1) / DAILY_REFLECTIONS_QUESTIONS.length
       })
       setAnswer('')
     }

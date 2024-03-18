@@ -8,7 +8,7 @@ interface IStyles {
 
 export const styles: IStyles = StyleSheet.create({
   container: {
-    flexGrow: SPACING.space_1,
+    flex: SPACING.space_1,
     marginHorizontal: SPACING.space_20,
     marginTop: SPACING.space_16,
   },

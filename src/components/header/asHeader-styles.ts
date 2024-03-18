@@ -1,18 +1,17 @@
 import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
-import { COLORS, Typography, SPACING } from '../../theme'
+import { Typography, SPACING } from '../../theme'
 
-interface Styles {
+interface IStyles {
   header: ViewStyle
   image: ImageStyle
   title: TextStyle
   icon: ViewStyle
 }
 
-export const styles: Styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   header: {
     alignItems: 'center',
-    backgroundColor: COLORS.white,
     flexDirection: 'row',
     gap: SPACING.space_16,
     justifyContent: 'space-between',
@@ -34,7 +33,6 @@ export const styles: Styles = StyleSheet.create({
     width: SPACING.space_24,
   },
   title: {
-    color: COLORS.neutral[700],
     fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_18,
     textAlign: 'center',

@@ -2,7 +2,7 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, Typography, SPACING } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   header: ViewStyle
   image: ImageStyle
@@ -10,7 +10,7 @@ interface Styles {
   icon: ViewStyle
 }
 
-const styles: Styles = StyleSheet.create({
+const styles: IStyles = StyleSheet.create({
   container: {
     flex: SPACING.space_1,
   },

@@ -66,6 +66,7 @@ export const styles: IStyles = StyleSheet.create({
     gap: SPACING.space_8,
   },
   headerSubContainerContentTitle: {
+    fontSize: SPACING.space_12,
     color: COLORS.neutral['500'],
     fontFamily: Typography.primary.bold,
   },
@@ -78,8 +79,6 @@ export const styles: IStyles = StyleSheet.create({
     width: SPACING.space_52,
   },
   imageContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: SPACING.space_8,
     paddingVertical: SPACING.space_16,
   },

@@ -1,36 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { FlatList, Text } from 'react-native'
+import { useSelector } from 'react-redux'
 
-import { IDashboardProps } from '../../types'
-import { getListDataFromURL } from '../../services'
-import { DASHBOARD_BASE_URL } from '../../constants'
+import { RootState, useAppDispatch } from '../../redux/store'
+import { fetchDashboardListData } from '../../redux/features/dashboard-slice'
 
 import ASChallengeCard from '../challenge-card/ASChallengeCard'
 
 import { styles } from './asChallengeList-styles'
 
 const ASChallengeList = () => {
-  const [challengesList, setChallengesList] = useState<IDashboardProps[]>([])
-  const getAllChallengesData = async () => {
-    const res = await getListDataFromURL(DASHBOARD_BASE_URL)
-    if (res.success) {
-      setChallengesList(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
+  const dashboardChallengesList = useSelector(
+    (state: RootState) => state.dashboard.dashboardChallengesList,
+  )
+  const dispatch = useAppDispatch()
+
   useEffect(() => {
-    getAllChallengesData()
+    dispatch(fetchDashboardListData())
   }, [])
 
   return (
     <FlatList
+      style={styles.container}
       ListEmptyComponent={() => <Text>Loading...</Text>}
-      data={challengesList}
+      data={dashboardChallengesList}
+      scrollEnabled
       keyExtractor={item => item.id.toString()}
       renderItem={({ item }) => <ASChallengeCard {...item} />}
-      scrollEnabled
-      style={styles.container}
     />
   )
 }

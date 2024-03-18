@@ -2,7 +2,7 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   title: TextStyle
   subContainer: ViewStyle
@@ -10,7 +10,7 @@ interface Styles {
   icon: ImageStyle
 }
 
-const styles: Styles = StyleSheet.create({
+const styles: IStyles = StyleSheet.create({
   container: {
     borderBottomColor: COLORS.primary[100],
     borderBottomWidth: SPACING.space_1,
