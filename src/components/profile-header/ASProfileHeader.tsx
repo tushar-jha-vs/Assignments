@@ -20,7 +20,6 @@ const ASProfileHeader = () => {
         <Text style={styles.title}>Profile</Text>
         <View style={styles.icon} />
       </View>
-
       <ProfileInfo />
     </ImageBackground>
   )
