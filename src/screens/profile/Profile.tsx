@@ -17,6 +17,7 @@ const Profile = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ProfileHeader />
+
       <View style={styles.subContainer}>
         {renderItems()}
       </View>

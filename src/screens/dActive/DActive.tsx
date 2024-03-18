@@ -1,25 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { FlatList, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { FlatList, Text, View } from 'react-native'
+import { useSelector } from 'react-redux'
 
-import { IASDActiveCardProps } from '../../types'
-import { DACTIVE_BASE_URL, HeaderTitle, backGreenIcon } from '../../constants'
+import { HeaderTitle, backGreenIcon } from '../../constants'
 import { ASHeader, ASDActiveCard } from '../../components'
-import { getListDataFromURL } from '../../services'
+
+import { RootState, useAppDispatch } from '../../redux/store'
 
 import { styles } from './dActive-styles'
+import { fetchDActiveListData } from '../../redux/features/dActive-slice'
 
 const DActive = () => {
-  const [dActiveList, setDActiveList] = useState<IASDActiveCardProps[]>([])
-  const getDActiveListData = async () => {
-    const res = await getListDataFromURL(DACTIVE_BASE_URL)
-    if (res.success) {
-      setDActiveList(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
+  const dActiveList = useSelector((state: RootState) => state.dActive.dActiveList)
+  const dispatch = useAppDispatch()
+
   useEffect(() => {
-    getDActiveListData()
+    dispatch(fetchDActiveListData())
   }, [])
 
   return (
@@ -29,6 +25,7 @@ const DActive = () => {
         style={styles.subContainer}
         data={dActiveList}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => <Text>Loading..</Text>}
         renderItem={({ item }) => <ASDActiveCard {...item} />}
         keyExtractor={item => String(item.id)}
       />

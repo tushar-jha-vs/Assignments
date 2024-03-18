@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { ImageBackground, FlatList, Text, View } from 'react-native'
+import { useSelector } from 'react-redux'
 
 import { ASHeader, ASMyReflectionCard } from '../../../components'
-import {MY_REFLECTIONS_BACKGROUND_IMAGE,MY_REFLECTIONS_BASE_URL,backGreenIcon} from '../../../constants'
-import { IMyReflectionsProps } from '../../../types'
-import { getListDataFromURL } from '../../../services'
+import { MY_REFLECTIONS_BACKGROUND_IMAGE, backGreenIcon } from '../../../constants'
+import { RootState, useAppDispatch } from '../../../redux/store'
+import { fetchReflectionsListData } from '../../../redux/features/reflections-slice'
 
 import { styles } from './myReflection-styles'
 
 const MyReflection = () => {
-  const [myReflectionsList, setMyReflectionsList] = useState<IMyReflectionsProps[]>([])
+  const myReflectionsList = useSelector((state: RootState) => state.reflection.reflectionList)
+  const dispatch = useAppDispatch()
 
-  const getMyReflectionsListData = async () => {
-    const res = await getListDataFromURL(MY_REFLECTIONS_BASE_URL)
-    if (res.success) {
-      setMyReflectionsList(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
   useEffect(() => {
-    getMyReflectionsListData()
+    dispatch(fetchReflectionsListData())
   }, [])
 
   return (

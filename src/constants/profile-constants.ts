@@ -8,3 +8,5 @@ export const PROFILE_USER = {
     "email" : "rohan@gmail.com",
     "phoneNumber" : "+91 0987654321",
 }
+
+export const PROFILE_CARD_URL = 'https://www.youtube.com/watch?v=Uszj_k0DGsg&ab_channel=freeCodeCamp.org';

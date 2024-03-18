@@ -1,10 +1,12 @@
-import { View, Text, Image, Button } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import React,{useState} from 'react'
 
 import { nextIcon } from '../../constants'
 
 import styles from './asMyReflectionCard-styles'
-import ASPopUp from '../pop-up/ASPopUp'
+import { RootStackParamList } from '../../types'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { useNavigation } from '@react-navigation/core'
 
 interface IASMyReflectionsCardProps {
   date: string
@@ -12,16 +14,20 @@ interface IASMyReflectionsCardProps {
 }
 
 const ASMyReflectionCard = (props: IASMyReflectionsCardProps) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+
   const { date, title } = props
   const [modal, setModal] = useState(false)
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> {date} </Text>
-      <View style={styles.subContainer}>
-        <Text style={styles.subTitle}> {title} </Text>
-        <Image source={nextIcon} style={styles.icon} />
+    <TouchableOpacity onPress={() => navigation.navigate('Daily Reflection')}>
+      <View style={styles.container}>
+        <Text style={styles.title}> {date} </Text>
+        <View style={styles.subContainer}>
+          <Text style={styles.subTitle}> {title} </Text>
+          <Image source={nextIcon} style={styles.icon} />
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 

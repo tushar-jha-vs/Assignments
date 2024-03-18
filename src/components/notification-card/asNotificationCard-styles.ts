@@ -2,7 +2,7 @@ import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native'
 
 import { SPACING, COLORS, Typography } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
   image: ImageStyle
@@ -11,7 +11,7 @@ interface Styles {
   subText: TextStyle
 }
 
-export const styles: Styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
     paddingHorizontal: SPACING.space_20,
     paddingVertical: SPACING.space_16,

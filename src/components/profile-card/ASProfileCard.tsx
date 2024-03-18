@@ -1,22 +1,49 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import { View, Text, Image, Button, TouchableOpacity, Modal } from 'react-native';
+import React, { useState } from 'react';
+import WebView from 'react-native-webview';
 
-import { nextIcon } from '../../constants'
+import { PROFILE_CARD_URL, nextIcon } from '../../constants';
 
-import styles from './asProfileCard-styles'
+import styles from './asProfileCard-styles';
 
 interface IASProfileCardProps {
-  title: string
+  title: string;
 }
 
 const ASProfileCard = (props: IASProfileCardProps) => {
-  const { title } = props
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
-      <Image style={styles.icon} source={nextIcon} />
-    </View>
-  )
-}
+  const [showWebView, setShowWebView] = useState(false);
+  const { title } = props;
 
-export default ASProfileCard
+  const toggleWebView = () => {
+    setShowWebView(!showWebView);
+  };
+
+  return (
+    <>
+      <TouchableOpacity onPress={toggleWebView}>
+        <View style={styles.container}>
+          <Text style={styles.title}>{title}</Text>
+          <Image style={styles.icon} source={nextIcon} />
+        </View>
+      </TouchableOpacity>
+
+      <Modal
+        animationType="slide"
+        transparent={false}
+        visible={showWebView}
+        onRequestClose={toggleWebView}>
+        <View style={styles.modalContainer}>
+          <View>
+            <Button title="Close" onPress={toggleWebView} />
+          </View>
+          <View style={styles.webViewContainer}>
+          <WebView source={{ uri: PROFILE_CARD_URL }}  />
+          </View>
+        </View>
+      </Modal>
+    </>
+  );
+};
+
+export default ASProfileCard;
+

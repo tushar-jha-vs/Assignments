@@ -2,20 +2,20 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../../theme'
 
-interface Styles {
-  mainContainer: ViewStyle,
-  imageContainer: ViewStyle,
-  image: ViewStyle,
-  reflectionButton: ViewStyle,
+interface IStyles {
+  mainContainer: ViewStyle
+  imageContainer: ViewStyle
+  image: ViewStyle
+  reflectionsButton: ViewStyle
   label: TextStyle
 }
 
-export const styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   mainContainer: {
-    paddingHorizontal: 20,
+    paddingHorizontal: SPACING.space_20,
     marginBottom: SPACING.space_172,
     gap: SPACING.space_32,
-    flex: 1,
+    flex: SPACING.space_1,
   },
   imageContainer: {
     height: SPACING.space_154,

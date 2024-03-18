@@ -2,11 +2,18 @@ import { StyleSheet } from "react-native";
 import { COLORS, SPACING, Typography } from "../../theme";
 
 const styles = StyleSheet.create({
-    container: {
+    modalOverlay: {
         flex: SPACING.space_1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor:'#00000066'
+    },
+    container: {
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: SPACING.space_16,
+        padding:SPACING.space_16,
+        backgroundColor:COLORS.white
     },
     overlay: {
         ...StyleSheet.absoluteFillObject,

@@ -2,13 +2,13 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   title: TextStyle
   subTitle: TextStyle
 }
 
-const styles: Styles = StyleSheet.create({
+const styles: IStyles = StyleSheet.create({
   container: {
     marginBottom: SPACING.space_36,
     marginLeft: SPACING.space_21,

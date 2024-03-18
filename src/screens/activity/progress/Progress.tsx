@@ -2,36 +2,31 @@ import React, { useEffect, useState } from 'react'
 import { View, FlatList, ImageBackground, Text, TouchableOpacity } from 'react-native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { useNavigation } from '@react-navigation/native'
+import { useSelector } from 'react-redux'
 
 import { ASProgressListCard } from '../../../components'
 import { RootStackParamList, IProgressProps } from '../../../types'
-import { getListDataFromURL } from '../../../services'
-import { PROGRESS_LIST_BASE_URL } from '../../../constants'
 
 import { styles } from './progress-styles'
+import { RootState, useAppDispatch } from '../../../redux/store'
+import { fetchWreckersListData } from '../../../redux/features/wreckers-slice'
 
 const Progress = () => {
-  const [progressList, setProgressList] = useState<IProgressProps[]>([])
+  const wreckersList = useSelector((state: RootState) => state.wreckers.wreckersList)
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
+  const dispatch = useAppDispatch()
 
-  const getProgressListData = async () => {
-    const res = await getListDataFromURL(PROGRESS_LIST_BASE_URL)
-    if (res.success) {
-      setProgressList(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
   useEffect(() => {
-    getProgressListData()
+    dispatch(fetchWreckersListData())
   }, [])
+
 
   return (
     <View style={styles.mainContainer}>
       <FlatList
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => <Text>Loading...</Text>}
-        data={progressList}
+        data={wreckersList}
         renderItem={({ item }) => <ASProgressListCard {...item} />}
       />
       <View style={styles.imageContainer}>
