@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, FlatList, ImageBackground, Text, TouchableOpacity } from 'react-native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { useNavigation } from '@react-navigation/native'
@@ -19,6 +19,7 @@ const Progress = () => {
   useEffect(() => {
     dispatch(fetchWreckersListData())
   }, [])
+
 
   return (
     <View style={styles.mainContainer}>

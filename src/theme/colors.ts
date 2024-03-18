@@ -13,6 +13,7 @@ const Colors = {
   //TODO: Use colors from the palette
   dActiveButtonGradient: ['#FFFFFF00', '#FFFFFFCC'],
   dActiveTextGradient: ['#FFFFFF8F', '#FFFFFF1E', '#FFFFFF00'],
+  grey: palette.grey,
 }
 
 export const COLORS = Colors

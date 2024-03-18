@@ -1,16 +1,23 @@
-import React from 'react'
-import { Image, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { Image, Text, View, TouchableOpacity } from 'react-native'
 import { Bar } from 'react-native-progress'
 
 import { PROGRESS_CARD_IMAGE_SOURCE, ResizeMode } from '../../constants'
 import { IProgressProps } from '../../types'
 import { COLORS, SPACING } from '../../theme'
 
+import ASPopUp from '../pop-up/ASPopUp'
+
 import { styles } from './asAssessmentTopWreckerCard-styles'
 
 const ASAssessmentTopWreckerCard = (props: IProgressProps) => {
-  const { title, progress } = props
+  const { title, progress, description } = props
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const handlePress = () => {
+    setIsModalVisible(true)
+  }
   return (
+    <TouchableOpacity onPress={handlePress}>
     <View style={styles.detailSubContainer}>
       <Image
         source={PROGRESS_CARD_IMAGE_SOURCE[title]}
@@ -32,6 +39,17 @@ const ASAssessmentTopWreckerCard = (props: IProgressProps) => {
         <Text style={styles.detailSubContainerFooterTitle}>{title}</Text>
       </View>
     </View>
+    {isModalVisible && (
+        <ASPopUp
+          isModalVisible={isModalVisible}
+          setIsModalVisible={setIsModalVisible}
+          imageURL={PROGRESS_CARD_IMAGE_SOURCE[title]}
+          title={title}
+          description={description}
+          progress={Number(progress)}
+        />
+      )}
+    </TouchableOpacity>
   )
 }
 

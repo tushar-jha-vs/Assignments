@@ -1,12 +1,12 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-
-import { nextIcon } from '../../constants'
-
-import styles from './asMyReflectionCard-styles'
-import { RootStackParamList } from '../../types'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { useNavigation } from '@react-navigation/core'
+
+import { nextIcon } from '../../constants'
+import { RootStackParamList } from '../../types'
+
+import styles from './asMyReflectionCard-styles'
 
 interface IASMyReflectionsCardProps {
   date: string
