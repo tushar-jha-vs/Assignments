@@ -1,6 +1,7 @@
 export type RootStackParamList = {
   'TabNavigator': undefined
   'My Reflection': undefined
+  'Daily Reflection': undefined
 }
 
 export type RootTabParamsList = {

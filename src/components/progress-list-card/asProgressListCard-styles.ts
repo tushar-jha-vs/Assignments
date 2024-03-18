@@ -1,8 +1,20 @@
-import { StyleSheet } from 'react-native'
+import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle
+  subContainer: ViewStyle
+  imageContainer: ViewStyle
+  image: ImageStyle
+  title: TextStyle
+  progress: ViewStyle
+  pieChart: ViewStyle
+  percentLabel: TextStyle
+  icon: ImageStyle
+}
+
+export const styles: IStyles = StyleSheet.create({
   container: {
     borderBottomColor: COLORS.primary[100],
     borderBottomWidth: SPACING.space_1,

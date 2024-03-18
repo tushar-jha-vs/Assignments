@@ -2,13 +2,13 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   button: ViewStyle
   label: TextStyle
 }
 
-export const styles: Styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     backgroundColor: COLORS.neutral['50'],

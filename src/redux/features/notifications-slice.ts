@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+
 import { IASNotificationCardProps } from '../../types'
 import { NOTIFICATIONS_BASE_URL } from '../../constants'
 

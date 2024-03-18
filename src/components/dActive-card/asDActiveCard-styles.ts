@@ -2,14 +2,14 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { SPACING, Typography } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   textContainer: ViewStyle
   buttonContainer: ViewStyle
   title: TextStyle
 }
 
-export const styles: Styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
     borderRadius: SPACING.space_20,
     flex: SPACING.space_1,

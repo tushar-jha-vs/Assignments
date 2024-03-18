@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FlatList, View } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import { HeaderTitle, backGreenIcon } from '../../constants'
@@ -25,6 +25,7 @@ const DActive = () => {
         style={styles.subContainer}
         data={dActiveList}
         showsVerticalScrollIndicator={false}
+        ListEmptyComponent={() => <Text>Loading..</Text>}
         renderItem={({ item }) => <ASDActiveCard {...item} />}
         keyExtractor={item => String(item.id)}
       />

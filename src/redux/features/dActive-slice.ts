@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { IASDActiveCardProps, IDActiveCardInfoType } from '../../types'
+
+import { IASDActiveCardProps } from '../../types'
 import { DACTIVE_BASE_URL } from '../../constants'
 
 export const fetchDActiveListData = createAsyncThunk('fetchDActiveListData', async () => {

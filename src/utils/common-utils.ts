@@ -6,6 +6,8 @@ import {
   SECONDS_IN_WEEK,
   SECONDS_IN_YEAR,
 } from '../constants'
+const { format } = require('date-fns')
+
 export const getTime = (timestamp: number) => {
   const currentTime = new Date().getTime()
   const difference = currentTime - timestamp
@@ -38,8 +40,6 @@ export const getTime = (timestamp: number) => {
 
   return timeAgo
 }
-
-const { format } = require('date-fns')
 
 export const getCurrentDate = () => {
   const currentDate = new Date().toDateString()

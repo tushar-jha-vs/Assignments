@@ -1,14 +1,15 @@
-import React from 'react'
 import { View } from 'react-native'
+import React from 'react'
 
-import { ASAssessmentCard } from '../../../components'
+import { ASAssessmentScoreCard, ASAssessmentTopWreckersList } from '../../../components'
 
 import { styles } from './assessment-styles'
 
 const Assessment = () => {
   return (
     <View style={styles.container}>
-      <ASAssessmentCard />
+      <ASAssessmentScoreCard />
+      <ASAssessmentTopWreckersList />
     </View>
   )
 }

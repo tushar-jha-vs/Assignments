@@ -23,7 +23,6 @@ export const styles: IStyles = StyleSheet.create({
     paddingHorizontal: SPACING.space_20,
   },
   container: {
-    flex: SPACING.space_1,
     paddingTop: StatusBar.currentHeight,
   },
   image: {
@@ -34,7 +33,6 @@ export const styles: IStyles = StyleSheet.create({
     flexDirection: 'column',
     height: SPACING.space_248,
     justifyContent: 'space-between',
-    width: '100%',
   },
   subContainer: {
     alignItems: 'center',

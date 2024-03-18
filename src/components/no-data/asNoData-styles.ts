@@ -2,14 +2,14 @@ import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native'
 
 import { SPACING, Typography } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
   image: ImageStyle
   text: TextStyle
   subText: TextStyle
 }
-export const styles = StyleSheet.create<Styles>({
+export const styles: IStyles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: SPACING.space_1,

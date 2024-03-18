@@ -7,18 +7,27 @@ import { ResizeMode } from '../../constants'
 import { RootTabParamsList } from '../../types'
 
 import { styles } from './asHeader-styles'
+import { COLORS } from '../../theme'
 
 interface IASHeaderProps {
   title: string
   imgSrc?: number
   canGoBack?: boolean
+  bgColor?: string
+  titleColor?: string
 }
 
 const ASHeader = (props: IASHeaderProps) => {
   const navigation = useNavigation<StackNavigationProp<RootTabParamsList>>()
-  const { title, canGoBack = false, imgSrc } = props
+  const {
+    title,
+    canGoBack = false,
+    imgSrc,
+    bgColor = COLORS.white,
+    titleColor = COLORS.neutral[700],
+  } = props
   return (
-    <View style={styles.header}>
+    <View style={[styles.header, { backgroundColor: bgColor }]}>
       {imgSrc ? (
         <TouchableOpacity
           onPress={() => (canGoBack ? navigation.goBack() : navigation.navigate('Dashboard'))}>
@@ -27,7 +36,7 @@ const ASHeader = (props: IASHeaderProps) => {
       ) : (
         <View style={styles.icon} />
       )}
-      <Text style={styles.title}>{title}</Text>
+      <Text style={[styles.title, { color: titleColor }]}>{title}</Text>
       <View style={styles.icon} />
     </View>
   )

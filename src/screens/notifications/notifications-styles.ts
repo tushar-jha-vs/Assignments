@@ -2,12 +2,12 @@ import { StyleSheet, ViewStyle } from 'react-native'
 
 import { SPACING } from '../../theme'
 
-interface Styles {
+interface IStyles {
   container: ViewStyle
   subContainer: ViewStyle
 }
 
-export const styles: Styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     flex: SPACING.space_1,

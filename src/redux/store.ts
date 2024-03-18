@@ -1,12 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit'
-import dActiveReducer from './features/dActive-slice'
-import notificationReducer from './features/notifications-slice'
 import { useDispatch } from 'react-redux'
+
+import {
+  dActiveReducer,
+  dashboardReducer,
+  notificationReducer,
+  reflectionReducer,
+  wreckersReducer,
+} from './reducers'
 
 export const store = configureStore({
   reducer: {
     dActive: dActiveReducer,
     notification: notificationReducer,
+    dashboard: dashboardReducer,
+    reflection: reflectionReducer,
+    wreckers: wreckersReducer,
   },
 })
 

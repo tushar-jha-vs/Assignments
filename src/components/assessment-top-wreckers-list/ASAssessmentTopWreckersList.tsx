@@ -1,34 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import { Image, Modal, Text, TouchableOpacity, View } from 'react-native'
 import WebView from 'react-native-webview'
+import { useSelector } from 'react-redux'
 
 import {
   ASSESSMENT_SCREEN_IMAGE,
   ResizeMode,
-  PROGRESS_LIST_BASE_URL,
   ASSESSMENT_IMAGE_TITLE,
   WEBVIEW_ALL_WRECKER_URI,
 } from '../../constants'
-import { IProgressProps } from '../../types'
-import { getListDataFromURL } from '../../services'
+import { RootState, useAppDispatch } from '../../redux/store'
+import { fetchWreckersListData } from '../../redux/features/wreckers-slice'
 
 import ASAssessmentTopWreckerCard from '../assessment-top-wrecker-card/ASAssessmentTopWreckerCard'
 
 import { styles } from './asAssessmentTopWreckersList-styles'
 
 const ASAssessmentTopWreckersList = () => {
-  const [wreckersList, setWreckersList] = useState<IProgressProps[]>([])
+  const wreckersList = useSelector((state: RootState) => state.wreckers.wreckersList)
   const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
-  const getAllWreckersData = async () => {
-    const res = await getListDataFromURL(PROGRESS_LIST_BASE_URL)
-    if (res.success) {
-      setWreckersList(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
+  const dispatch = useAppDispatch()
+
   useEffect(() => {
-    getAllWreckersData()
+    dispatch(fetchWreckersListData())
   }, [])
   const renderWreckersCards = () => {
     const TopThreeWreckers = wreckersList.slice(0, 3)

@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { FlatList, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
-import { IASNotificationCardProps } from '../../types'
-import { HeaderTitle, NOTIFICATIONS_BASE_URL, backGreenIcon } from '../../constants'
+import { HeaderTitle, backGreenIcon } from '../../constants'
 import { ASNoData, ASNotificationCard, ASHeader } from '../../components'
-import { getListDataFromURL } from '../../services'
 
 import { RootState, useAppDispatch } from '../../redux/store'
 import { fetchNotificationsListData } from '../../redux/features/notifications-slice'
