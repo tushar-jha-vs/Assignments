@@ -38,9 +38,9 @@ export const styles: IStyles = StyleSheet.create({
     margin: SPACING.space_12,
   },
   bottomSubContainerButton: {
+    alignItems: 'center',
     backgroundColor: COLORS.primary['500'],
     color: COLORS.white,
-    alignItems: 'center',
     padding: SPACING.space_14,
   },
   container: {

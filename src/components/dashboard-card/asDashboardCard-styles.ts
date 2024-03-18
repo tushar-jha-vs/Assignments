@@ -55,9 +55,9 @@ export const styles: IStyles = StyleSheet.create({
     width: SPACING.space_12,
   },
   detailBottomSubContainerButton: {
+    alignItems: 'center',
     backgroundColor: COLORS.primary['500'],
     color: COLORS.white,
-    alignItems: 'center',
     padding: SPACING.space_14,
   },
   image: {
