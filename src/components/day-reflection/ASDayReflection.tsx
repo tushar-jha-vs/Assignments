@@ -73,7 +73,7 @@ const ASDayReflection = () => {
     navigation.goBack()
   }
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerContainerRange}>
           {currentIndex + 1}/{DAILY_REFLECTIONS_QUESTIONS.length}
@@ -87,39 +87,40 @@ const ASDayReflection = () => {
           color={COLORS.primary['300']}
         />
       </View>
-      <View style={styles.bottomContainer}>
-        <View style={styles.bottomContainerContent}>
-          <Text style={styles.bottomContainerTitle}>
-            {DAILY_REFLECTIONS_QUESTIONS[currentIndex]}
-          </Text>
-          <TextInput
-            editable
-            multiline
-            numberOfLines={8}
-            onChangeText={text => setAnswer(text)}
-            value={answer}
-            style={styles.bottomContainerInput}
-            placeholder="Write your answer here..."
-          />
-        </View>
-        <View style={styles.bottomContainerButtons}>
-          <TouchableOpacity onPress={handlePrevious} style={styles.button}>
-            <Text style={styles.buttonTitle}>{currentIndex !== 0 ? 'Previous' : ''}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? handleNext : showSubmit
-            }
-            style={styles.button}>
-            <Text style={styles.buttonTitle}>
-              {currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? 'Next' : 'Submit'}
+      <KeyboardAvoidingView enabled behavior="position" keyboardVerticalOffset={SPACING.space_148}>
+        <View style={styles.bottomContainer}>
+          <View style={styles.bottomContainerContent}>
+            <Text style={styles.bottomContainerTitle}>
+              {DAILY_REFLECTIONS_QUESTIONS[currentIndex]}
             </Text>
-          </TouchableOpacity>
+            <TextInput
+              editable
+              multiline
+              onChangeText={text => setAnswer(text)}
+              value={answer}
+              style={styles.bottomContainerInput}
+              placeholder="Write your answer here..."
+            />
+          </View>
+          <View style={styles.bottomContainerButtons}>
+            <TouchableOpacity onPress={handlePrevious} style={styles.button}>
+              <Text style={styles.buttonTitle}>{currentIndex !== 0 ? 'Previous' : ''}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? handleNext : showSubmit
+              }
+              style={styles.button}>
+              <Text style={styles.buttonTitle}>
+                {currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? 'Next' : 'Submit'}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-      <View style={styles.emptyContainerOne}></View>
-      <View style={styles.emptyContainerTwo}></View>
-    </KeyboardAvoidingView>
+        <View style={styles.emptyContainerOne}></View>
+        <View style={styles.emptyContainerTwo}></View>
+      </KeyboardAvoidingView>
+    </View>
   )
 }
 

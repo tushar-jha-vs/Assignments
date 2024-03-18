@@ -12,6 +12,8 @@ interface IStyles {
   headerImageContainerTitle: TextStyle
   headerProgressContainer: ViewStyle
   headerProgressContainerTitle: TextStyle
+  progressBarOuterContainer: ViewStyle
+  progressBarInnerContainer: ViewStyle
 }
 
 export const styles: IStyles = StyleSheet.create({
@@ -59,5 +61,17 @@ export const styles: IStyles = StyleSheet.create({
     fontSize: SPACING.space_32,
     lineHeight: SPACING.space_44,
     marginBottom: SPACING.space_12,
+  },
+  progressBarOuterContainer: {
+    height: SPACING.space_12,
+    color: COLORS.white,
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.white,
+    borderRadius: SPACING.space_100,
+    width: SPACING.space_140,
+  },
+  progressBarInnerContainer: {
+    height: SPACING.space_12,
+    borderRadius: SPACING.space_8,
   },
 })
