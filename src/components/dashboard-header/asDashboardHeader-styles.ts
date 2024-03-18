@@ -1,4 +1,4 @@
-import { ImageStyle, StatusBar, StyleSheet, TextStyle, ViewStyle } from 'react-native'
+import { ImageStyle, Platform, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
@@ -24,7 +24,6 @@ export const styles: IStyles = StyleSheet.create({
   },
   container: {
     paddingTop: SPACING.space_16,
-    gap:SPACING.space_24,
   },
   image: {
     height: SPACING.space_148,
@@ -40,6 +39,8 @@ export const styles: IStyles = StyleSheet.create({
     flexDirection: 'row',
     gap: SPACING.space_12,
     padding: SPACING.space_20,
+    marginTop: Platform.OS === 'android' ? SPACING.space_20 : SPACING.space_1,
+    marginBottom: Platform.OS === 'ios' ? SPACING.space_20 : SPACING.space_1,
   },
   subContainerDate: {
     color: COLORS.white,

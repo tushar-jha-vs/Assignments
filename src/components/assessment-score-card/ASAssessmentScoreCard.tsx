@@ -6,8 +6,9 @@ import { COLORS, SPACING } from '../../theme'
 import { ASSESSMENT_IMAGE_TITLE, ASSESSMENT_SCREEN_IMAGE, ResizeMode } from '../../constants'
 
 import { styles } from './asAssessmentScoreCard-styles'
+import LinearGradient from 'react-native-linear-gradient'
 
-const ASAssessmentScoreCard = () => {
+const ASAssessmentScoreCard = ({ averageValue }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -20,15 +21,18 @@ const ASAssessmentScoreCard = () => {
           <Text style={styles.headerImageContainerTitle}>{ASSESSMENT_IMAGE_TITLE.Surviving}</Text>
         </View>
         <View style={styles.headerProgressContainer}>
-          <Text style={styles.headerProgressContainerTitle}>50/100</Text>
-          <Bar
-            borderRadius={SPACING.space_100}
-            borderWidth={SPACING.space_1}
-            color={COLORS.secondary['500']}
-            height={SPACING.space_12}
-            progress={0.5}
-            unfilledColor={COLORS.white}
-          />
+          <Text style={styles.headerProgressContainerTitle}>{averageValue}/100</Text>
+
+          <View style={styles.progressBarOuterContainer}>
+            <View style={{ width: `${averageValue}%`}}>
+              <LinearGradient
+                colors={COLORS.progressBarGradient}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.progressBarInnerContainer}
+              />
+            </View>
+          </View>
         </View>
         <View style={styles.headerImageContainer}>
           <Image

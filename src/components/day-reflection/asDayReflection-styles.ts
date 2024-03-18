@@ -41,6 +41,9 @@ export const styles: IStyles = StyleSheet.create({
     color: COLORS.neutral['700'],
     fontFamily: Typography.primary.medium,
     fontSize: SPACING.space_16,
+    height: SPACING.space_300,
+    marginTop: SPACING.space_28,
+    textAlignVertical: 'top',
   },
   bottomContainerButtons: {
     justifyContent: 'space-between',

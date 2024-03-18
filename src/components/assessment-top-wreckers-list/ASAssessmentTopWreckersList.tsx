@@ -10,7 +10,7 @@ import ASAssessmentTopWreckerCard from '../assessment-top-wrecker-card/ASAssessm
 
 import { styles } from './asAssessmentTopWreckersList-styles'
 
-const ASAssessmentTopWreckersList = () => {
+const ASAssessmentTopWreckersList = ({ setAverageValue }) => {
   const wreckersList = useSelector((state: RootState) => state.wreckers.wreckersList)
   const dispatch = useAppDispatch()
 
@@ -19,6 +19,10 @@ const ASAssessmentTopWreckersList = () => {
   }, [])
   const renderWreckersCards = () => {
     const TopThreeWreckers = wreckersList.slice(0, 3)
+    const totalProgress = wreckersList.reduce((acc, data) => acc + Number(data.progress), 0)
+    const average = totalProgress / wreckersList.length
+    setAverageValue(Math.floor(average))
+    console.log(Math.floor(average))
     return TopThreeWreckers.map((item, index) => (
       <ASAssessmentTopWreckerCard key={index} {...item} />
     ))
