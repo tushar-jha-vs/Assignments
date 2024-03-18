@@ -3,23 +3,12 @@ import { Image, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { Activity, DActive, Dashboard, Notifications, Profile } from '../../screens'
-import { COLORS } from '../../theme'
 import { HeaderTitle, ResizeMode, TAB_ICON_SOURCE } from '../../constants'
 import { RootTabParamsList } from '../../types'
 
 import { styles } from './tabNavigator-styles'
 
 const Tab = createBottomTabNavigator<RootTabParamsList>()
-
-// tabBarIcon: ({ focused }) => (
-//   <View style={[styles.iconContainer, focused && styles.activeIcon]}>
-//     <Image
-//       source={require('../../assets/icons/nav-profile.png')}
-//       style={styles.icon}
-//       resizeMode={ResizeMode.Contain}
-//     />
-//   </View>
-// ),
 
 const TabNavigator = () => {
   const tabBarIconOptions = (title: HeaderTitle) => {
