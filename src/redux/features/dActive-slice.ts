@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import { IASDActiveCardProps } from '../../types'
 import { DACTIVE_BASE_URL } from '../../constants'
