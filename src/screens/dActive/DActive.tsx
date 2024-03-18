@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { FlatList, SafeAreaView, Text } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import { HeaderTitle, backGreenIcon } from '../../constants'
@@ -19,7 +19,7 @@ const DActive = () => {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ASHeader title={HeaderTitle.DActive} imgSrc={backGreenIcon} />
       <FlatList
         style={styles.subContainer}
@@ -29,7 +29,7 @@ const DActive = () => {
         renderItem={({ item }) => <ASDActiveCard {...item} />}
         keyExtractor={item => String(item.id)}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 

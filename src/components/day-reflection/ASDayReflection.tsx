@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Alert, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { Bar } from 'react-native-progress'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 
 import { DAILY_REFLECTIONS_QUESTIONS } from '../../constants'
 import { COLORS, SPACING } from '../../theme'
+import { RootStackParamList } from '../../types'
 
 import { styles } from './asDayReflection-styles'
 
@@ -12,6 +15,7 @@ const ASDayReflection = () => {
   const [answers, setAnswers] = useState<string[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [progressValue, setProgressValue] = useState(0)
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
   const handlePrevious = () => {
     if (currentIndex > 0) {
       if (answers.length > currentIndex - 1) {
@@ -45,12 +49,17 @@ const ASDayReflection = () => {
       setAnswers(prevAnswers => [...prevAnswers, answer])
       setCurrentIndex(prevIndex => prevIndex + 1)
       setProgressValue(prevProgressValue => {
-        return (prevProgressValue + 1) / DAILY_REFLECTIONS_QUESTIONS.length
+        return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
       })
       setAnswer('')
     }
   }
   const showSubmit = () => {
+    if (answer.trim() === '') {
+      setAnswer('')
+      Alert.alert('Please enter a answer!!!')
+      return
+    }
     if (currentIndex < answers.length) {
       answers[currentIndex] = answer
     } else {
@@ -61,6 +70,7 @@ const ASDayReflection = () => {
       return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
     })
     console.log(answers)
+    navigation.goBack()
   }
   return (
     <KeyboardAvoidingView style={styles.container}>
@@ -69,7 +79,7 @@ const ASDayReflection = () => {
           {currentIndex + 1}/{DAILY_REFLECTIONS_QUESTIONS.length}
         </Text>
         <Bar
-          progress={progressValue}
+          progress={progressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length}
           borderRadius={SPACING.space_8}
           height={SPACING.space_8}
           width={SPACING.space_300}

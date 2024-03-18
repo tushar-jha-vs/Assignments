@@ -23,7 +23,8 @@ export const styles: IStyles = StyleSheet.create({
     paddingHorizontal: SPACING.space_20,
   },
   container: {
-    paddingTop: StatusBar.currentHeight,
+    paddingTop: SPACING.space_16,
+    gap:SPACING.space_24,
   },
   image: {
     height: SPACING.space_148,

@@ -1,14 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Image, Modal, Text, TouchableOpacity, View } from 'react-native'
-import WebView from 'react-native-webview'
+import { Alert, Image, Text, TouchableOpacity, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
-import {
-  ASSESSMENT_SCREEN_IMAGE,
-  ResizeMode,
-  ASSESSMENT_IMAGE_TITLE,
-  WEBVIEW_ALL_WRECKER_URI,
-} from '../../constants'
+import { ASSESSMENT_SCREEN_IMAGE, ResizeMode, ASSESSMENT_IMAGE_TITLE } from '../../constants'
 import { RootState, useAppDispatch } from '../../redux/store'
 import { fetchWreckersListData } from '../../redux/features/wreckers-slice'
 
@@ -18,7 +12,6 @@ import { styles } from './asAssessmentTopWreckersList-styles'
 
 const ASAssessmentTopWreckersList = () => {
   const wreckersList = useSelector((state: RootState) => state.wreckers.wreckersList)
-  const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -37,18 +30,9 @@ const ASAssessmentTopWreckersList = () => {
         <Text style={styles.subContainerTitle}>Your Top Wreckers</Text>
         <View style={styles.detailContainer}>{renderWreckersCards()}</View>
       </View>
-      <TouchableOpacity style={styles.bottomContainer} onPress={() => setWebViewVisible(true)}>
-        <Modal
-          visible={webViewVisible}
-          animationType="slide"
-          onRequestClose={() => setWebViewVisible(false)}
-          transparent={true}>
-          <WebView
-            source={{
-              uri: WEBVIEW_ALL_WRECKER_URI,
-            }}
-          />
-        </Modal>
+      <TouchableOpacity
+        style={styles.bottomContainer}
+        onPress={() => Alert.alert('Coming Soon...')}>
         <Text style={styles.bottomContainerTitle}>View All Wreckers</Text>
         <Image
           source={ASSESSMENT_SCREEN_IMAGE[ASSESSMENT_IMAGE_TITLE.Link]}

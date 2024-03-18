@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { FlatList, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { FlatList, SafeAreaView, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import { HeaderTitle, backGreenIcon } from '../../constants'
@@ -19,7 +19,7 @@ const Notifications = () => {
   }, [])
 
   return (
-    <>
+    <SafeAreaView>
       <ASHeader title={HeaderTitle.Notifications} imgSrc={backGreenIcon} />
       <View style={styles.container}>
         <FlatList
@@ -31,7 +31,7 @@ const Notifications = () => {
           keyExtractor={item => item.id.toString()}
         />
       </View>
-    </>
+    </SafeAreaView>
   )
 }
 

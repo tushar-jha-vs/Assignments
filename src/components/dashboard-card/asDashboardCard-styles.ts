@@ -7,6 +7,7 @@ interface IStyles {
   detailBottomContainer: ViewStyle
   detailBottomSubContainer: ViewStyle
   detailBottomSubContainerImage: ImageStyle
+  detailBottomSubContainerButton: ViewStyle
   detailBottomContainerText: TextStyle
   detailContainer: ViewStyle
   detailTopContainer: ViewStyle
@@ -52,6 +53,12 @@ export const styles: IStyles = StyleSheet.create({
     height: SPACING.space_12,
     margin: SPACING.space_12,
     width: SPACING.space_12,
+  },
+  detailBottomSubContainerButton: {
+    backgroundColor: COLORS.primary['500'],
+    color: COLORS.white,
+    alignItems: 'center',
+    padding: SPACING.space_14,
   },
   image: {
     height: SPACING.space_72,

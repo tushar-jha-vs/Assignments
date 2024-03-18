@@ -6,10 +6,9 @@ import { PROFILE_MENU_ITEMS } from '../../constants'
 
 import styles from './profile-styles'
 
-
 const renderItems = () => {
   return PROFILE_MENU_ITEMS.map((item, index) => {
-    return <ProfileCard title = {item} key={index} />
+    return <ProfileCard title={item} key={index} />
   })
 }
 
@@ -18,9 +17,7 @@ const Profile = () => {
     <SafeAreaView style={styles.container}>
       <ProfileHeader />
 
-      <View style={styles.subContainer}>
-        {renderItems()}
-      </View>
+      <View style={styles.subContainer}>{renderItems()}</View>
     </SafeAreaView>
   )
 }
