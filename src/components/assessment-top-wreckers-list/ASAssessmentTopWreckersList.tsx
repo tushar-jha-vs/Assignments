@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Alert, Image, Text, TouchableOpacity, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
-import { ASSESSMENT_SCREEN_IMAGE, ResizeMode, ASSESSMENT_IMAGE_TITLE } from '../../constants'
+import ASAssessmentTopWreckerCard from '../assessment-top-wrecker-card/ASAssessmentTopWreckerCard'
 import { RootState, useAppDispatch } from '../../redux/store'
 import { fetchWreckersListData } from '../../redux/features/wreckers-slice'
-import { ASAssessmentTopWreckerCard } from '..'
+
+import { ASSESSMENT_SCREEN_IMAGE, ResizeMode } from '../../constants'
 
 import { styles } from './asAssessmentTopWreckersList-styles'
 
-const ASAssessmentTopWreckersList = ({ setAverageValue }) => {
+interface IWreckersProps {
+  setAverageValue(average: number): any
+}
+
+const ASAssessmentTopWreckersList = ({ setAverageValue }: IWreckersProps) => {
   const wreckersList = useSelector((state: RootState) => state.wreckers.wreckersList)
   const dispatch = useAppDispatch()
 
@@ -19,8 +24,8 @@ const ASAssessmentTopWreckersList = ({ setAverageValue }) => {
   const renderWreckersCards = () => {
     const TopThreeWreckers = wreckersList.slice(0, 3)
     const totalProgress = wreckersList.reduce((acc, data) => acc + Number(data.progress), 0)
-    const average = totalProgress / wreckersList.length
-    setAverageValue(Math.floor(average))
+    const average = Math.floor(totalProgress / wreckersList.length)
+    setAverageValue(average)
     return TopThreeWreckers.map((item, index) => (
       <ASAssessmentTopWreckerCard key={index} {...item} />
     ))
@@ -37,7 +42,7 @@ const ASAssessmentTopWreckersList = ({ setAverageValue }) => {
         onPress={() => Alert.alert('Coming Soon...')}>
         <Text style={styles.bottomContainerTitle}>View All Wreckers</Text>
         <Image
-          source={ASSESSMENT_SCREEN_IMAGE[ASSESSMENT_IMAGE_TITLE.Link]}
+          source={ASSESSMENT_SCREEN_IMAGE.Link}
           resizeMode={ResizeMode.Contain}
           style={styles.bottomContainerImage}
         />

@@ -3,23 +3,23 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { COLORS, SPACING, Typography } from '../../theme'
 
 interface IStyles {
-  bottomContainer: ViewStyle
-  bottomSubContainer: ViewStyle
-  bottomSubContainerImage: ImageStyle
-  bottomSubContainerButton: ViewStyle
   container: ViewStyle
+  subContainer: ViewStyle
+  imageContainer: ViewStyle
+  image: ImageStyle
   detailContainer: ViewStyle
-  duration: TextStyle
   headerContainer: ViewStyle
   headerSubContainer: ViewStyle
   headerSubContainerContent: ViewStyle
   headerSubContainerContentImage: ImageStyle
   headerSubContainerContentTitle: TextStyle
   headerSubContainerImage: ImageStyle
-  image: ImageStyle
-  imageContainer: ViewStyle
-  subContainer: ViewStyle
   title: TextStyle
+  bottomContainer: ViewStyle
+  duration: TextStyle
+  bottomSubContainer: ViewStyle
+  bottomSubContainerButton: ViewStyle
+  bottomSubContainerImage: ImageStyle
 }
 
 export const styles: IStyles = StyleSheet.create({

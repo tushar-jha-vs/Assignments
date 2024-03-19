@@ -10,7 +10,7 @@ export const PROGRESS_CARD_IMAGE_SOURCE: { [key: string]: number } = {
 export const ASSESSMENT_SCREEN_IMAGE: { [key: string]: number } = {
   Surviving: require('../assets/icons/surviving.png'),
   Thriving: require('../assets/icons/thriving.png'),
-  link: require('../assets/icons/link.png'),
+  Link: require('../assets/icons/link.png'),
 }
 
 export enum ASSESSMENT_IMAGE_TITLE {
