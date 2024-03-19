@@ -15,6 +15,7 @@ export const styles: IStyles = StyleSheet.create({
     flex: SPACING.space_1,
     flexDirection: 'row',
     justifyContent: 'center',
+    marginTop: SPACING.space_172,
   },
   subContainer: {
     justifyContent: 'center',

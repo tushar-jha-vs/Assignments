@@ -1,4 +1,4 @@
-export type IASDActiveCardProps = {
+export type IASDActiveCardType = {
   id: number
   title: string
 }

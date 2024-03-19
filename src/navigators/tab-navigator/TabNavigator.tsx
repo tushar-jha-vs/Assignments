@@ -3,8 +3,9 @@ import { Image, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { Activity, DActive, Dashboard, Notifications, Profile } from '../../screens'
-import { HeaderTitle, ResizeMode, TAB_ICON_SOURCE } from '../../constants'
 import { RootTabParamsList } from '../../types'
+
+import { HeaderTitle, ResizeMode, TAB_ICON_SOURCE } from '../../constants'
 
 import { styles } from './tabNavigator-styles'
 

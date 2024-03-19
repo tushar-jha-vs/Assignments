@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { IProgressProps } from '../../types'
+import { IProgressType } from '../../types'
 import { PROGRESS_LIST_BASE_URL } from '../../constants'
 
 export const fetchWreckersListData = createAsyncThunk('fetchWreckersListData', async () => {
@@ -14,7 +14,7 @@ export const fetchWreckersListData = createAsyncThunk('fetchWreckersListData', a
 })
 
 type InitialDActiveStateProps = {
-  wreckersList: IProgressProps[]
+  wreckersList: IProgressType[]
   isLoading: boolean
   isError: boolean
 }

@@ -9,11 +9,12 @@ import { RootStackParamList } from '../../../types'
 import { RootState, useAppDispatch } from '../../../redux/store'
 import { fetchWreckersListData } from '../../../redux/features/wreckers-slice'
 
+import { allReflectionsImageSource } from '../../../constants'
+
 import { styles } from './progress-styles'
 
 const Progress = () => {
-  const wreckersList = useSelector((state: RootState) => state.wreckers.wreckersList)
-  const isLoading = useSelector((state: RootState) => state.wreckers.isLoading)
+  const { wreckersList, isLoading } = useSelector((state: RootState) => state.wreckers)
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
   const dispatch = useAppDispatch()
 
@@ -26,14 +27,13 @@ const Progress = () => {
       {!isLoading ? (
         <>
           <FlatList
+            keyExtractor={item => item.title}
             showsVerticalScrollIndicator={false}
             data={wreckersList}
             renderItem={({ item }) => <ASProgressListCard {...item} />}
           />
           <View style={styles.imageContainer}>
-            <ImageBackground
-              style={styles.image}
-              source={require('../../../assets/images/all-reflections.png')}>
+            <ImageBackground style={styles.image} source={allReflectionsImageSource}>
               <TouchableOpacity
                 style={styles.reflectionsButton}
                 onPress={() => navigation.navigate('My Reflection')}>

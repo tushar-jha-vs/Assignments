@@ -17,7 +17,7 @@ const DailyReflection = () => {
         titleColor={COLORS.white}
         bgColor={COLORS.primary[800]}
         canGoBack={true}
-        imgSrc={backWhiteIcon}
+        imageSrc={backWhiteIcon}
       />
       <ASDayReflection />
     </View>

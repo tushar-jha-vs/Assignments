@@ -11,6 +11,7 @@ import { PROGRESS_CARD_IMAGE_SOURCE, ResizeMode } from '../../constants'
 import { styles } from './asAssessmentTopWreckerCard-styles'
 
 const ASAssessmentTopWreckerCard = (props: IASAssessmentTopWreckerCardProps) => {
+
   const { title, progress, description } = props
   const [isModalVisible, setIsModalVisible] = useState(false)
 

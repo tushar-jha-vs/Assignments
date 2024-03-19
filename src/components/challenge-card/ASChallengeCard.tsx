@@ -11,6 +11,7 @@ import {
   WEBVIEW_CHALLENGE_CARD_URI,
 } from '../../constants'
 
+
 import { styles } from './asChallengeCard-styles'
 
 const ASChallengeCard = (props: IASChallengeCardProps) => {

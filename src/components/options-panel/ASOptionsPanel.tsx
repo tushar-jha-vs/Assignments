@@ -5,11 +5,11 @@ import { COLORS } from '../../theme'
 
 import { styles } from './asOptionalPanel-styles'
 
-interface ASOptionsPanelProps {
+interface IASOptionsPanelProps {
   activeButton: string
   setActiveButton: Dispatch<SetStateAction<string>>
 }
-const ASOptionsPanel = (props: ASOptionsPanelProps) => {
+const ASOptionsPanel = (props: IASOptionsPanelProps) => {
   const { activeButton, setActiveButton } = props
 
   const renderButton = (buttonName: string, label: string) => {
