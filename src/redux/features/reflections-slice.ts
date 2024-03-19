@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { IMyReflectionsProps } from '../../types'
+import { IMyReflectionsType } from '../../types'
 import { MY_REFLECTIONS_BASE_URL } from '../../constants'
 
 export const fetchReflectionsListData = createAsyncThunk('fetchReflectionsListData', async () => {
@@ -14,7 +14,7 @@ export const fetchReflectionsListData = createAsyncThunk('fetchReflectionsListDa
 })
 
 type InitialDActiveStateProps = {
-  reflectionList: IMyReflectionsProps[]
+  reflectionList: IMyReflectionsType[]
   isLoading: boolean
   isError: boolean
 }

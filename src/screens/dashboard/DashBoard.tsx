@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, View } from 'react-native'
+import { View } from 'react-native'
 
 import { ASChallengeList, ASDashboardCard, ASDashboardHeader } from '../../components'
 

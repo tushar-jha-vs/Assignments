@@ -1,10 +1,11 @@
 import { View, Text, ImageBackground, Alert } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
-import { IASDActiveCardProps } from '../../types'
-import { D_ACTIVE_CARD_INFO, BUTTONS_TEXT_DATA } from '../../constants'
+import { IASDActiveCardType as IASDActiveCardProps } from '../../types'
 import { COLORS } from '../../theme'
 import { ASCustomButton } from '..'
+
+import { D_ACTIVE_CARD_INFO, BUTTONS_TEXT_DATA } from '../../constants'
 
 import { styles } from './asDActiveCard-styles'
 

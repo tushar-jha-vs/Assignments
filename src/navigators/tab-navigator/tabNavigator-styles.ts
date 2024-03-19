@@ -2,14 +2,14 @@ import { ImageStyle, Platform, StyleSheet, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING } from '../../theme'
 
-interface Styles {
+interface IStyles {
   tabBarStyle: ViewStyle
   tabBarIcon: ImageStyle
   iconContainer: ViewStyle
   activeIcon: ImageStyle
 }
 
-export const styles: Styles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   tabBarStyle: {
     borderTopLeftRadius: SPACING.space_16,
     borderTopRightRadius: SPACING.space_16,
