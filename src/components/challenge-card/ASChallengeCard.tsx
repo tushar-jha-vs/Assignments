@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Image, Modal, Text, TouchableOpacity, View } from 'react-native'
 import WebView from 'react-native-webview'
 
-import { IDashboardProps as IASChallengeCardProps } from '../../types'
+import { IDashboardType as IASChallengeCardProps } from '../../types'
 
 import {
   CHALLENGE_IMAGE_SOURCE,
@@ -10,7 +10,6 @@ import {
   NOTIFICATION_IMAGE_SOURCE,
   WEBVIEW_CHALLENGE_CARD_URI,
 } from '../../constants'
-
 
 import { styles } from './asChallengeCard-styles'
 
