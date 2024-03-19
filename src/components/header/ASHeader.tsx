@@ -3,15 +3,16 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
-import { ResizeMode } from '../../constants'
 import { RootTabParamsList } from '../../types'
 import { COLORS } from '../../theme'
+
+import { HeaderTitle, ResizeMode } from '../../constants'
 
 import { styles } from './asHeader-styles'
 
 interface IASHeaderProps {
   title: string
-  imgSrc?: number
+  imageSrc?: number
   canGoBack?: boolean
   bgColor?: string
   titleColor?: string
@@ -22,16 +23,18 @@ const ASHeader = (props: IASHeaderProps) => {
   const {
     title,
     canGoBack = false,
-    imgSrc,
+    imageSrc,
     bgColor = COLORS.white,
     titleColor = COLORS.neutral[700],
   } = props
   return (
     <View style={[styles.header, { backgroundColor: bgColor }]}>
-      {imgSrc ? (
+      {imageSrc ? (
         <TouchableOpacity
-          onPress={() => (canGoBack ? navigation.goBack() : navigation.navigate('Dashboard'))}>
-          <Image style={styles.image} source={imgSrc} resizeMode={ResizeMode.Contain} />
+          onPress={() =>
+            canGoBack ? navigation.goBack() : navigation.navigate(HeaderTitle.Dashboard)
+          }>
+          <Image style={styles.image} source={imageSrc} resizeMode={ResizeMode.Contain} />
         </TouchableOpacity>
       ) : (
         <View style={styles.emptyIcon} />

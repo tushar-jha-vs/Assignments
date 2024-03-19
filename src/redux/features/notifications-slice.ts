@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { IASNotificationCardProps } from '../../types'
+import { IASNotificationCardType } from '../../types'
 import { NOTIFICATIONS_BASE_URL } from '../../constants'
 
 export const fetchNotificationsListData = createAsyncThunk(
@@ -17,7 +17,7 @@ export const fetchNotificationsListData = createAsyncThunk(
 )
 
 type InitialDActiveStateProps = {
-  notificationsList: IASNotificationCardProps[]
+  notificationsList: IASNotificationCardType[]
   isLoading: boolean
   isError: boolean
 }

@@ -8,11 +8,11 @@ import {
   NOTIFICATION_IMAGE_SOURCE,
   WEBVIEW_CHALLENGE_CARD_URI,
 } from '../../constants'
-import { IDashboardProps } from '../../types'
+import { IDashboardType as IASChallengeCard } from '../../types'
 
 import { styles } from './asChallengeCard-styles'
 
-const ASChallengeCard = (props: IDashboardProps) => {
+const ASChallengeCard = (props: IASChallengeCard) => {
   const { id, title, isFav, startingTime, endingTime, isCompleted } = props
   const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
   const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))

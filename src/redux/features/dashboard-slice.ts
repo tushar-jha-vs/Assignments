@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import { IDashboardProps } from '../../types'
+import { IDashboardType } from '../../types'
 import { DASHBOARD_BASE_URL } from '../../constants'
 
 export const fetchDashboardListData = createAsyncThunk('fetchDashboardListData', async () => {
@@ -14,7 +14,7 @@ export const fetchDashboardListData = createAsyncThunk('fetchDashboardListData',
 })
 
 type InitialDActiveStateProps = {
-  dashboardChallengesList: IDashboardProps[]
+  dashboardChallengesList: IDashboardType[]
   isLoading: boolean
   isError: boolean
 }
