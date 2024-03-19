@@ -3,18 +3,18 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { COLORS, SPACING, Typography } from '../../theme'
 
 interface IStyles {
+  container: ViewStyle
+  headerContainer: ViewStyle
+  headerContainerRange: TextStyle
   bottomContainer: ViewStyle
   bottomContainerButtons: ViewStyle
   bottomContainerContent: ViewStyle
   bottomContainerInput: TextStyle
   bottomContainerTitle: TextStyle
+  bottomContainerOne: ViewStyle
+  bottomContainerTwo: ViewStyle
   button: ViewStyle
   buttonTitle: TextStyle
-  container: ViewStyle
-  emptyContainerOne: ViewStyle
-  emptyContainerTwo: ViewStyle
-  headerContainer: ViewStyle
-  headerContainerRange: TextStyle
 }
 
 export const styles: IStyles = StyleSheet.create({
@@ -41,6 +41,9 @@ export const styles: IStyles = StyleSheet.create({
     color: COLORS.neutral['700'],
     fontFamily: Typography.primary.medium,
     fontSize: SPACING.space_16,
+    height: SPACING.space_300,
+    marginTop: SPACING.space_28,
+    textAlignVertical: 'top',
   },
   bottomContainerButtons: {
     justifyContent: 'space-between',
@@ -61,19 +64,19 @@ export const styles: IStyles = StyleSheet.create({
     marginHorizontal: SPACING.space_20,
     gap: SPACING.space_24,
   },
-  emptyContainerOne: {
+  bottomContainerOne: {
     backgroundColor: COLORS.primary['300'],
     borderRadius: SPACING.space_8,
     marginHorizontal: SPACING.space_16,
-    marginTop: -SPACING.space_76,
+    marginTop: -SPACING.space_50,
     paddingVertical: SPACING.space_32,
     zIndex: -SPACING.space_1,
   },
-  emptyContainerTwo: {
+  bottomContainerTwo: {
     backgroundColor: COLORS.primary['500'],
     borderRadius: SPACING.space_8,
     marginHorizontal: SPACING.space_24,
-    marginTop: -SPACING.space_76,
+    marginTop: -SPACING.space_50,
     paddingHorizontal: SPACING.space_24,
     paddingVertical: SPACING.space_32,
     zIndex: -SPACING.space_2,

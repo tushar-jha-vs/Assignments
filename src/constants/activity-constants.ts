@@ -10,7 +10,7 @@ export const PROGRESS_CARD_IMAGE_SOURCE: { [key: string]: number } = {
 export const ASSESSMENT_SCREEN_IMAGE: { [key: string]: number } = {
   Surviving: require('../assets/icons/surviving.png'),
   Thriving: require('../assets/icons/thriving.png'),
-  link: require('../assets/icons/link.png'),
+  Link: require('../assets/icons/link.png'),
 }
 
 export enum ASSESSMENT_IMAGE_TITLE {
@@ -30,4 +30,5 @@ export const DAILY_REFLECTIONS_QUESTIONS = [
   'What is your favourite exercise?',
   'What is your favourite protein name?',
 ]
-export const MY_REFLECTIONS_BACKGROUND_IMAGE : string = require('../assets/images/Reflection.png')
+export const MY_REFLECTIONS_BACKGROUND_IMAGE = require('../assets/images/Reflection.png')
+export const allReflectionsImageSource = require('../assets/images/all-reflections.png')

@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { Alert, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { Bar } from 'react-native-progress'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
+
+import { COLORS, SPACING } from '../../theme'
+import { RootStackParamList } from '../../types'
 
 import { DAILY_REFLECTIONS_QUESTIONS } from '../../constants'
-import { COLORS, SPACING } from '../../theme'
 
 import { styles } from './asDayReflection-styles'
 
@@ -11,7 +15,10 @@ const ASDayReflection = () => {
   const [answer, setAnswer] = useState<string>('')
   const [answers, setAnswers] = useState<string[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [progressValue, setProgressValue] = useState(0)
+  const [progressValue, setProgressValue] = useState<number>(0)
+  const currentQuestionValue = currentIndex + 1
+  const totalQuestionsValue = DAILY_REFLECTIONS_QUESTIONS.length
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
   const handlePrevious = () => {
     if (currentIndex > 0) {
       if (answers.length > currentIndex - 1) {
@@ -45,12 +52,17 @@ const ASDayReflection = () => {
       setAnswers(prevAnswers => [...prevAnswers, answer])
       setCurrentIndex(prevIndex => prevIndex + 1)
       setProgressValue(prevProgressValue => {
-        return (prevProgressValue + 1) / DAILY_REFLECTIONS_QUESTIONS.length
+        return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
       })
       setAnswer('')
     }
   }
-  const showSubmit = () => {
+  const handleSubmit = () => {
+    if (answer.trim() === '') {
+      setAnswer('')
+      Alert.alert('Please enter a answer!!!')
+      return
+    }
     if (currentIndex < answers.length) {
       answers[currentIndex] = answer
     } else {
@@ -61,15 +73,16 @@ const ASDayReflection = () => {
       return prevProgressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length
     })
     console.log(answers)
+    navigation.goBack()
   }
   return (
-    <KeyboardAvoidingView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerContainerRange}>
-          {currentIndex + 1}/{DAILY_REFLECTIONS_QUESTIONS.length}
+          {currentQuestionValue}/{totalQuestionsValue}
         </Text>
         <Bar
-          progress={progressValue}
+          progress={progressValue + 1 / totalQuestionsValue}
           borderRadius={SPACING.space_8}
           height={SPACING.space_8}
           width={SPACING.space_300}
@@ -77,39 +90,39 @@ const ASDayReflection = () => {
           color={COLORS.primary['300']}
         />
       </View>
-      <View style={styles.bottomContainer}>
-        <View style={styles.bottomContainerContent}>
-          <Text style={styles.bottomContainerTitle}>
-            {DAILY_REFLECTIONS_QUESTIONS[currentIndex]}
-          </Text>
-          <TextInput
-            editable
-            multiline
-            numberOfLines={8}
-            onChangeText={text => setAnswer(text)}
-            value={answer}
-            style={styles.bottomContainerInput}
-            placeholder="Write your answer here..."
-          />
-        </View>
-        <View style={styles.bottomContainerButtons}>
-          <TouchableOpacity onPress={handlePrevious} style={styles.button}>
-            <Text style={styles.buttonTitle}>{currentIndex !== 0 ? 'Previous' : ''}</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={
-              currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? handleNext : showSubmit
-            }
-            style={styles.button}>
-            <Text style={styles.buttonTitle}>
-              {currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? 'Next' : 'Submit'}
+      <KeyboardAvoidingView enabled behavior="position" keyboardVerticalOffset={SPACING.space_148}>
+        <View style={styles.bottomContainer}>
+          <View style={styles.bottomContainerContent}>
+            <Text style={styles.bottomContainerTitle}>
+              {DAILY_REFLECTIONS_QUESTIONS[currentIndex]}
             </Text>
-          </TouchableOpacity>
+            <TextInput
+              multiline
+              onChangeText={text => setAnswer(text)}
+              value={answer}
+              style={styles.bottomContainerInput}
+              placeholder="Write your answer here..."
+            />
+          </View>
+          <View style={styles.bottomContainerButtons}>
+            <TouchableOpacity onPress={handlePrevious} style={styles.button}>
+              {currentIndex !== 0 && <Text style={styles.buttonTitle}>Previous</Text>}
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={
+                currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? handleNext : handleSubmit
+              }
+              style={styles.button}>
+              <Text style={styles.buttonTitle}>
+                {currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? 'Next' : 'Submit'}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-      <View style={styles.emptyContainerOne}></View>
-      <View style={styles.emptyContainerTwo}></View>
-    </KeyboardAvoidingView>
+        <View style={styles.bottomContainerOne}></View>
+        <View style={styles.bottomContainerTwo}></View>
+      </KeyboardAvoidingView>
+    </View>
   )
 }
 

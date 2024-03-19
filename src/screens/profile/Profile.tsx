@@ -1,5 +1,4 @@
-import React from 'react'
-import { View, SafeAreaView } from 'react-native'
+import { View } from 'react-native'
 
 import { ASProfileCard, ASProfileHeader } from '../../components'
 
@@ -15,10 +14,10 @@ const renderItems = () => {
 
 const Profile = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ASProfileHeader />
+    <View style={styles.container}>
+      <ProfileHeader />
       <View style={styles.subContainer}>{renderItems()}</View>
-    </SafeAreaView>
+    </View>
   )
 }
 

@@ -1,10 +1,10 @@
-export interface IProgressProps {
+export interface IProgressType {
   title: string
   progress: string
   description: string
 }
 
-export interface IDashboardProps {
+export interface IDashboardType {
   id: string
   title: string
   isFav: string
@@ -13,7 +13,7 @@ export interface IDashboardProps {
   isCompleted: string
 }
 
-export interface IMyReflectionsProps {
+export interface IMyReflectionsType {
   id: string
   date: string
   title: string

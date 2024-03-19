@@ -2,21 +2,36 @@ import React, { useState } from 'react'
 import { Image, Modal, Text, TouchableOpacity, View } from 'react-native'
 import WebView from 'react-native-webview'
 
+import { IDashboardProps as IASChallengeCardProps } from '../../types'
+
 import {
   CHALLENGE_IMAGE_SOURCE,
   CHALLENGE_CARD_COLOR,
   NOTIFICATION_IMAGE_SOURCE,
   WEBVIEW_CHALLENGE_CARD_URI,
 } from '../../constants'
-import { IDashboardProps } from '../../types'
+
 
 import { styles } from './asChallengeCard-styles'
 
-const ASChallengeCard = (props: IDashboardProps) => {
+const ASChallengeCard = (props: IASChallengeCardProps) => {
   const { id, title, isFav, startingTime, endingTime, isCompleted } = props
   const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
+  const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
+
+  const renderBookmarkImage = () => {
+    return isFavourite ? (
+      <Image source={CHALLENGE_IMAGE_SOURCE['bookmark']} style={styles.headerSubContainerImage} />
+    ) : (
+      <Image
+        source={CHALLENGE_IMAGE_SOURCE['removeBookmark']}
+        style={styles.headerSubContainerImage}
+      />
+    )
+  }
   return (
-    <View style={[styles.container, { backgroundColor: CHALLENGE_CARD_COLOR[id] }]}>
+    <View
+      style={[styles.container, { backgroundColor: CHALLENGE_CARD_COLOR[title.split(' ')[0]] }]}>
       <View style={styles.subContainer}>
         <View style={styles.imageContainer}>
           <Image source={NOTIFICATION_IMAGE_SOURCE[title.split(' ')[0]]} style={styles.image} />
@@ -26,21 +41,16 @@ const ASChallengeCard = (props: IDashboardProps) => {
             <View style={styles.headerSubContainer}>
               <View style={styles.headerSubContainerContent}>
                 <Text style={styles.headerSubContainerContentTitle}>Challenge {id}</Text>
-                {isCompleted === 'true' ? (
+                {isCompleted === 'true' && (
                   <Image
                     source={CHALLENGE_IMAGE_SOURCE['completedTick']}
                     style={styles.headerSubContainerContentImage}
                   />
-                ) : null}
+                )}
               </View>
-              <Image
-                source={
-                  isFav === 'true'
-                    ? CHALLENGE_IMAGE_SOURCE['bookmark']
-                    : CHALLENGE_IMAGE_SOURCE['removeBookmark']
-                }
-                style={styles.headerSubContainerImage}
-              />
+              <TouchableOpacity onPress={() => setIsFavourite(prev => !prev)}>
+                {renderBookmarkImage()}
+              </TouchableOpacity>
             </View>
             <Text style={styles.title}>{title}</Text>
           </View>
@@ -52,15 +62,20 @@ const ASChallengeCard = (props: IDashboardProps) => {
               style={styles.bottomSubContainer}
               onPress={() => setWebViewVisible(true)}>
               <Modal
-                visible={webViewVisible}
                 animationType="slide"
                 onRequestClose={() => setWebViewVisible(false)}
-                transparent={true}>
+                transparent={true}
+                visible={webViewVisible}>
                 <WebView
                   source={{
                     uri: WEBVIEW_CHALLENGE_CARD_URI,
                   }}
                 />
+                <TouchableOpacity
+                  onPress={() => setWebViewVisible(false)}
+                  style={styles.bottomSubContainerButton}>
+                  <Text>Close</Text>
+                </TouchableOpacity>
               </Modal>
               <Image
                 source={CHALLENGE_IMAGE_SOURCE['playButton']}

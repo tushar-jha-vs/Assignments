@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
+import { View } from 'react-native'
 
 import { ASChallengeList, ASDashboardCard, ASDashboardHeader } from '../../components'
 
@@ -7,11 +7,11 @@ import { styles } from './dashboard-styles'
 
 const Dashboard = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ASDashboardHeader />
       <ASDashboardCard />
       <ASChallengeList />
-    </SafeAreaView>
+    </View>
   )
 }
 

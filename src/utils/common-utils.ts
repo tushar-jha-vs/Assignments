@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+
 import {
   SECONDS_IN_DAY,
   SECONDS_IN_HOUR,
@@ -6,7 +8,6 @@ import {
   SECONDS_IN_WEEK,
   SECONDS_IN_YEAR,
 } from '../constants'
-const { format } = require('date-fns')
 
 export const getTime = (timestamp: number) => {
   const currentTime = new Date().getTime()

@@ -18,3 +18,4 @@ export { default as ASAssessmentScoreCard } from './assessment-score-card/ASAsse
 export { default as ASAssessmentTopWreckersList } from './assessment-top-wreckers-list/ASAssessmentTopWreckersList'
 export { default as ASAssessmentTopWreckerCard } from './assessment-top-wrecker-card/ASAssessmentTopWreckerCard'
 export { default as ASPopUp } from './pop-up/ASPopUp';
+export { default as ASLoader } from './loader/ASLoader'

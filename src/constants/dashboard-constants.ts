@@ -8,9 +8,9 @@ export const CHALLENGE_IMAGE_SOURCE: { [key: string]: number } = {
 }
 
 export const CHALLENGE_CARD_COLOR: { [key: string]: string } = {
-  '1': COLORS.secondary['100'],
-  '2': COLORS.accent['100'],
-  '3': COLORS.primary['100'],
+  'D-active': COLORS.secondary['100'],
+  'Reminder': COLORS.accent['100'],
+  'Reflection': COLORS.primary['100'],
 }
 
 export const DASHBOARD_HEADER_IMAGE_SOURCE: { [key: string]: number } = {

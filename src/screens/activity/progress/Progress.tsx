@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { View, FlatList, ImageBackground, Text, TouchableOpacity } from 'react-native'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
 
-import { ASProgressListCard } from '../../../components'
-import { RootStackParamList, IProgressProps } from '../../../types'
-
-import { styles } from './progress-styles'
+import { ASLoader, ASProgressListCard } from '../../../components'
+import { RootStackParamList } from '../../../types'
 import { RootState, useAppDispatch } from '../../../redux/store'
 import { fetchWreckersListData } from '../../../redux/features/wreckers-slice'
 
+import { allReflectionsImageSource } from '../../../constants'
+
+import { styles } from './progress-styles'
+
 const Progress = () => {
-  const wreckersList = useSelector((state: RootState) => state.wreckers.wreckersList)
+  const { wreckersList, isLoading } = useSelector((state: RootState) => state.wreckers)
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
   const dispatch = useAppDispatch()
 
@@ -20,26 +22,29 @@ const Progress = () => {
     dispatch(fetchWreckersListData())
   }, [])
 
-
   return (
     <View style={styles.mainContainer}>
-      <FlatList
-        showsVerticalScrollIndicator={false}
-        ListEmptyComponent={() => <Text>Loading...</Text>}
-        data={wreckersList}
-        renderItem={({ item }) => <ASProgressListCard {...item} />}
-      />
-      <View style={styles.imageContainer}>
-        <ImageBackground
-          style={styles.image}
-          source={require('../../../assets/images/all-reflections.png')}>
-          <TouchableOpacity
-            style={styles.reflectionsButton}
-            onPress={() => navigation.navigate('My Reflection')}>
-            <Text style={styles.label}>View All Reflections</Text>
-          </TouchableOpacity>
-        </ImageBackground>
-      </View>
+      {!isLoading ? (
+        <>
+          <FlatList
+            keyExtractor={item => item.title}
+            showsVerticalScrollIndicator={false}
+            data={wreckersList}
+            renderItem={({ item }) => <ASProgressListCard {...item} />}
+          />
+          <View style={styles.imageContainer}>
+            <ImageBackground style={styles.image} source={allReflectionsImageSource}>
+              <TouchableOpacity
+                style={styles.reflectionsButton}
+                onPress={() => navigation.navigate('My Reflection')}>
+                <Text style={styles.label}>View All Reflections</Text>
+              </TouchableOpacity>
+            </ImageBackground>
+          </View>
+        </>
+      ) : (
+        <ASLoader />
+      )}
     </View>
   )
 }

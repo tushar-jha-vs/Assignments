@@ -1,10 +1,11 @@
 import React from 'react'
 import { Image, Text, View } from 'react-native'
 
-import { NOTIFICATION_IMAGE_SOURCE, ResizeMode } from '../../constants'
 import { COLORS } from '../../theme'
-import { IASNotificationCardProps } from '../../types'
+import { IASNotificationCardType as IASNotificationCardProps } from '../../types'
 import { getTime } from '../../utils'
+
+import { NOTIFICATION_IMAGE_SOURCE, ResizeMode } from '../../constants'
 
 import { styles } from './asNotificationCard-styles'
 

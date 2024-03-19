@@ -4,14 +4,16 @@ import { COLORS, SPACING, Typography } from '../../theme'
 
 interface IStyles {
   container: ViewStyle
-  bottomContainer: ViewStyle
-  bottomContainerTitle: TextStyle
   headerContainer: ViewStyle
   headerImageContainer: ViewStyle
   headerImageContainerImage: ImageStyle
   headerImageContainerTitle: TextStyle
   headerProgressContainer: ViewStyle
   headerProgressContainerTitle: TextStyle
+  progressBarOuterContainer: ViewStyle
+  progressBarInnerContainer: ViewStyle
+  headerImageContainerImageTwo: ImageStyle
+  containerTitle: TextStyle
 }
 
 export const styles: IStyles = StyleSheet.create({
@@ -20,10 +22,8 @@ export const styles: IStyles = StyleSheet.create({
     marginBottom: SPACING.space_28,
     marginHorizontal: SPACING.space_20,
   },
-  bottomContainer: {
+  containerTitle: {
     alignItems: 'center',
-  },
-  bottomContainerTitle: {
     color: COLORS.white,
     fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_14,
@@ -43,6 +43,9 @@ export const styles: IStyles = StyleSheet.create({
     height: SPACING.space_40,
     width: SPACING.space_40,
   },
+  headerImageContainerImageTwo: {
+    width: SPACING.space_50,
+  },
   headerImageContainerTitle: {
     color: COLORS.primary['50'],
     fontFamily: Typography.secondary.bold,
@@ -59,5 +62,17 @@ export const styles: IStyles = StyleSheet.create({
     fontSize: SPACING.space_32,
     lineHeight: SPACING.space_44,
     marginBottom: SPACING.space_12,
+  },
+  progressBarOuterContainer: {
+    height: SPACING.space_12,
+    color: COLORS.white,
+    backgroundColor: COLORS.white,
+    borderColor: COLORS.white,
+    borderRadius: SPACING.space_100,
+    width: SPACING.space_140,
+  },
+  progressBarInnerContainer: {
+    height: SPACING.space_12,
+    borderRadius: SPACING.space_8,
   },
 })

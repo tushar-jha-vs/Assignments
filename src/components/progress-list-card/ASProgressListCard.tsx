@@ -4,13 +4,15 @@ import * as Progress from 'react-native-progress'
 
 import { ASPopUp } from '..'
 import { COLORS, SPACING } from '../../theme'
-import { IProgressProps } from '../../types'
+import { IProgressType as IASProgressListCardProps } from '../../types'
+
+import { ResizeMode, PROGRESS_CARD_IMAGE_SOURCE, nextIcon } from '../../constants'
 
 import { ResizeMode, PROGRESS_CARD_IMAGE_SOURCE, nextIcon } from '../../constants'
 
 import { styles } from './asProgressListCard-styles'
 
-const ASProgressListCard = (props: IProgressProps) => {
+const ASProgressListCard = (props: IASProgressListCardProps) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const { title, progress, description } = props
   const progressPercentage = Number(progress) / 100

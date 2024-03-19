@@ -3,22 +3,23 @@ import { ImageStyle, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { COLORS, SPACING, Typography } from '../../theme'
 
 interface IStyles {
-  bottomContainer: ViewStyle
-  bottomSubContainer: ViewStyle
-  bottomSubContainerImage: ImageStyle
   container: ViewStyle
+  subContainer: ViewStyle
+  imageContainer: ViewStyle
+  image: ImageStyle
   detailContainer: ViewStyle
-  duration: TextStyle
   headerContainer: ViewStyle
   headerSubContainer: ViewStyle
   headerSubContainerContent: ViewStyle
   headerSubContainerContentImage: ImageStyle
   headerSubContainerContentTitle: TextStyle
   headerSubContainerImage: ImageStyle
-  image: ImageStyle
-  imageContainer: ViewStyle
-  subContainer: ViewStyle
   title: TextStyle
+  bottomContainer: ViewStyle
+  duration: TextStyle
+  bottomSubContainer: ViewStyle
+  bottomSubContainerButton: ViewStyle
+  bottomSubContainerImage: ImageStyle
 }
 
 export const styles: IStyles = StyleSheet.create({
@@ -35,6 +36,12 @@ export const styles: IStyles = StyleSheet.create({
     height: SPACING.space_12,
     width: SPACING.space_12,
     margin: SPACING.space_12,
+  },
+  bottomSubContainerButton: {
+    alignItems: 'center',
+    backgroundColor: COLORS.primary['500'],
+    color: COLORS.white,
+    padding: SPACING.space_14,
   },
   container: {
     borderRadius: SPACING.space_16,
