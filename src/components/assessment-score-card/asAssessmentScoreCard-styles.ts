@@ -4,8 +4,6 @@ import { COLORS, SPACING, Typography } from '../../theme'
 
 interface IStyles {
   container: ViewStyle
-  bottomContainer: ViewStyle
-  bottomContainerTitle: TextStyle
   headerContainer: ViewStyle
   headerImageContainer: ViewStyle
   headerImageContainerImage: ImageStyle
@@ -14,6 +12,8 @@ interface IStyles {
   headerProgressContainerTitle: TextStyle
   progressBarOuterContainer: ViewStyle
   progressBarInnerContainer: ViewStyle
+  headerImageContainerImageTwo: ImageStyle
+  containerTitle: TextStyle
 }
 
 export const styles: IStyles = StyleSheet.create({
@@ -22,10 +22,8 @@ export const styles: IStyles = StyleSheet.create({
     marginBottom: SPACING.space_28,
     marginHorizontal: SPACING.space_20,
   },
-  bottomContainer: {
+  containerTitle: {
     alignItems: 'center',
-  },
-  bottomContainerTitle: {
     color: COLORS.white,
     fontFamily: Typography.secondary.bold,
     fontSize: SPACING.space_14,
@@ -44,6 +42,9 @@ export const styles: IStyles = StyleSheet.create({
   headerImageContainerImage: {
     height: SPACING.space_40,
     width: SPACING.space_40,
+  },
+  headerImageContainerImageTwo: {
+    width: SPACING.space_50,
   },
   headerImageContainerTitle: {
     color: COLORS.primary['50'],

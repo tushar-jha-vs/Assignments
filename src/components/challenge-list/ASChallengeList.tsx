@@ -26,6 +26,7 @@ const ASChallengeList = () => {
       data={dashboardChallengesList}
       scrollEnabled
       keyExtractor={item => item.id.toString()}
+      showsVerticalScrollIndicator={false}
       renderItem={({ item }) => <ASChallengeCard {...item} />}
     />
   )

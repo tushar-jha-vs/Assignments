@@ -3,18 +3,18 @@ import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 import { COLORS, SPACING, Typography } from '../../theme'
 
 interface IStyles {
+  container: ViewStyle
+  headerContainer: ViewStyle
+  headerContainerRange: TextStyle
   bottomContainer: ViewStyle
   bottomContainerButtons: ViewStyle
   bottomContainerContent: ViewStyle
   bottomContainerInput: TextStyle
   bottomContainerTitle: TextStyle
+  bottomContainerOne: ViewStyle
+  bottomContainerTwo: ViewStyle
   button: ViewStyle
   buttonTitle: TextStyle
-  container: ViewStyle
-  emptyContainerOne: ViewStyle
-  emptyContainerTwo: ViewStyle
-  headerContainer: ViewStyle
-  headerContainerRange: TextStyle
 }
 
 export const styles: IStyles = StyleSheet.create({
@@ -64,7 +64,7 @@ export const styles: IStyles = StyleSheet.create({
     marginHorizontal: SPACING.space_20,
     gap: SPACING.space_24,
   },
-  emptyContainerOne: {
+  bottomContainerOne: {
     backgroundColor: COLORS.primary['300'],
     borderRadius: SPACING.space_8,
     marginHorizontal: SPACING.space_16,
@@ -72,7 +72,7 @@ export const styles: IStyles = StyleSheet.create({
     paddingVertical: SPACING.space_32,
     zIndex: -SPACING.space_1,
   },
-  emptyContainerTwo: {
+  bottomContainerTwo: {
     backgroundColor: COLORS.primary['500'],
     borderRadius: SPACING.space_8,
     marginHorizontal: SPACING.space_24,

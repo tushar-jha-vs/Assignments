@@ -1,5 +1,5 @@
 import React from 'react'
-import { ActivityIndicator, StyleSheet, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, View, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING } from '../../theme'
 
@@ -11,7 +11,11 @@ const ASLoader = () => {
   )
 }
 
-const styles = StyleSheet.create({
+interface IStyles {
+  container: ViewStyle
+}
+
+const styles: IStyles = StyleSheet.create({
   container: {
     flex: SPACING.space_1,
     justifyContent: 'center',

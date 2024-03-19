@@ -4,9 +4,10 @@ import { Bar } from 'react-native-progress'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
-import { DAILY_REFLECTIONS_QUESTIONS } from '../../constants'
 import { COLORS, SPACING } from '../../theme'
 import { RootStackParamList } from '../../types'
+
+import { DAILY_REFLECTIONS_QUESTIONS } from '../../constants'
 
 import { styles } from './asDayReflection-styles'
 
@@ -14,7 +15,9 @@ const ASDayReflection = () => {
   const [answer, setAnswer] = useState<string>('')
   const [answers, setAnswers] = useState<string[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [progressValue, setProgressValue] = useState(0)
+  const [progressValue, setProgressValue] = useState<number>(0)
+  const currentQuestionValue = currentIndex + 1
+  const totalQuestionsValue = DAILY_REFLECTIONS_QUESTIONS.length
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>()
   const handlePrevious = () => {
     if (currentIndex > 0) {
@@ -54,7 +57,7 @@ const ASDayReflection = () => {
       setAnswer('')
     }
   }
-  const showSubmit = () => {
+  const handleSubmit = () => {
     if (answer.trim() === '') {
       setAnswer('')
       Alert.alert('Please enter a answer!!!')
@@ -76,10 +79,10 @@ const ASDayReflection = () => {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerContainerRange}>
-          {currentIndex + 1}/{DAILY_REFLECTIONS_QUESTIONS.length}
+          {currentQuestionValue}/{totalQuestionsValue}
         </Text>
         <Bar
-          progress={progressValue + 1 / DAILY_REFLECTIONS_QUESTIONS.length}
+          progress={progressValue + 1 / totalQuestionsValue}
           borderRadius={SPACING.space_8}
           height={SPACING.space_8}
           width={SPACING.space_300}
@@ -94,7 +97,6 @@ const ASDayReflection = () => {
               {DAILY_REFLECTIONS_QUESTIONS[currentIndex]}
             </Text>
             <TextInput
-              editable
               multiline
               onChangeText={text => setAnswer(text)}
               value={answer}
@@ -104,11 +106,11 @@ const ASDayReflection = () => {
           </View>
           <View style={styles.bottomContainerButtons}>
             <TouchableOpacity onPress={handlePrevious} style={styles.button}>
-              <Text style={styles.buttonTitle}>{currentIndex !== 0 ? 'Previous' : ''}</Text>
+              {currentIndex !== 0 && <Text style={styles.buttonTitle}>Previous</Text>}
             </TouchableOpacity>
             <TouchableOpacity
               onPress={
-                currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? handleNext : showSubmit
+                currentIndex !== DAILY_REFLECTIONS_QUESTIONS.length - 1 ? handleNext : handleSubmit
               }
               style={styles.button}>
               <Text style={styles.buttonTitle}>
@@ -117,8 +119,8 @@ const ASDayReflection = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.emptyContainerOne}></View>
-        <View style={styles.emptyContainerTwo}></View>
+        <View style={styles.bottomContainerOne}></View>
+        <View style={styles.bottomContainerTwo}></View>
       </KeyboardAvoidingView>
     </View>
   )

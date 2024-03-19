@@ -2,23 +2,36 @@ import React, { useState } from 'react'
 import { Image, Modal, Text, TouchableOpacity, View } from 'react-native'
 import WebView from 'react-native-webview'
 
+import { IDashboardProps as IASChallengeCardProps } from '../../types'
+
 import {
   CHALLENGE_IMAGE_SOURCE,
   CHALLENGE_CARD_COLOR,
   NOTIFICATION_IMAGE_SOURCE,
   WEBVIEW_CHALLENGE_CARD_URI,
 } from '../../constants'
-import { IDashboardType as IASChallengeCard } from '../../types'
+
 
 import { styles } from './asChallengeCard-styles'
 
-const ASChallengeCard = (props: IASChallengeCard) => {
+const ASChallengeCard = (props: IASChallengeCardProps) => {
   const { id, title, isFav, startingTime, endingTime, isCompleted } = props
   const [webViewVisible, setWebViewVisible] = useState<boolean>(false)
   const [isFavourite, setIsFavourite] = useState<boolean>(JSON.parse(isFav))
 
+  const renderBookmarkImage = () => {
+    return isFavourite ? (
+      <Image source={CHALLENGE_IMAGE_SOURCE['bookmark']} style={styles.headerSubContainerImage} />
+    ) : (
+      <Image
+        source={CHALLENGE_IMAGE_SOURCE['removeBookmark']}
+        style={styles.headerSubContainerImage}
+      />
+    )
+  }
   return (
-    <View style={[styles.container, { backgroundColor: CHALLENGE_CARD_COLOR[id] }]}>
+    <View
+      style={[styles.container, { backgroundColor: CHALLENGE_CARD_COLOR[title.split(' ')[0]] }]}>
       <View style={styles.subContainer}>
         <View style={styles.imageContainer}>
           <Image source={NOTIFICATION_IMAGE_SOURCE[title.split(' ')[0]]} style={styles.image} />
@@ -28,25 +41,15 @@ const ASChallengeCard = (props: IASChallengeCard) => {
             <View style={styles.headerSubContainer}>
               <View style={styles.headerSubContainerContent}>
                 <Text style={styles.headerSubContainerContentTitle}>Challenge {id}</Text>
-                {isCompleted === 'true' ? (
+                {isCompleted === 'true' && (
                   <Image
                     source={CHALLENGE_IMAGE_SOURCE['completedTick']}
                     style={styles.headerSubContainerContentImage}
                   />
-                ) : null}
+                )}
               </View>
               <TouchableOpacity onPress={() => setIsFavourite(prev => !prev)}>
-                {isFavourite ? (
-                  <Image
-                    source={CHALLENGE_IMAGE_SOURCE['bookmark']}
-                    style={styles.headerSubContainerImage}
-                  />
-                ) : (
-                  <Image
-                    source={CHALLENGE_IMAGE_SOURCE['removeBookmark']}
-                    style={styles.headerSubContainerImage}
-                  />
-                )}
+                {renderBookmarkImage()}
               </TouchableOpacity>
             </View>
             <Text style={styles.title}>{title}</Text>
