@@ -1,7 +1,8 @@
-import { View, SafeAreaView } from 'react-native'
 import React from 'react'
+import { View, SafeAreaView } from 'react-native'
 
 import { ProfileCard, ProfileHeader } from '../../components'
+
 import { PROFILE_MENU_ITEMS } from '../../constants'
 
 import styles from './profile-styles'

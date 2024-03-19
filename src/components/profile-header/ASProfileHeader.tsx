@@ -1,11 +1,12 @@
-import { View, Text, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { View, Text, Image, ImageBackground, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
-import { backIcon, profileBackground } from '../../constants'
 import { ProfileInfo } from '..'
 import { RootTabParamsList } from '../../types'
+
+import { backIcon, profileBackground } from '../../constants'
 
 import styles from './asProfileHeader-styles'
 

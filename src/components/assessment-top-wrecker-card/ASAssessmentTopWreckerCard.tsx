@@ -12,7 +12,7 @@ import { styles } from './asAssessmentTopWreckerCard-styles'
 
 const ASAssessmentTopWreckerCard = (props: IProgressProps) => {
   const { title, progress, description } = props
-  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false)
   const handlePress = () => {
     setIsModalVisible(true)
   }
