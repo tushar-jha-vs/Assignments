@@ -15,7 +15,7 @@ const renderItems = () => {
 const Profile = () => {
   return (
     <View style={styles.container}>
-      <ProfileHeader />
+      <ASProfileHeader />
       <View style={styles.subContainer}>{renderItems()}</View>
     </View>
   )

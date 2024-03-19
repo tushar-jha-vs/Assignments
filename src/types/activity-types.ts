@@ -18,3 +18,9 @@ export interface IMyReflectionsType {
   date: string
   title: string
 }
+
+export interface UserInfoType {
+  name: string
+  email: string
+  phoneNumber: string
+}

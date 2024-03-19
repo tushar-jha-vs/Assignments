@@ -3,12 +3,12 @@ import { View, Text, Image, ImageBackground, TouchableOpacity } from 'react-nati
 import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
-import { ProfileInfo } from '..'
 import { RootTabParamsList } from '../../types'
 
 import { backIcon, profileBackground } from '../../constants'
 
 import styles from './asProfileHeader-styles'
+import { ASProfileInfo } from '..'
 
 const ASProfileHeader = () => {
   const navigation = useNavigation<StackNavigationProp<RootTabParamsList>>()
@@ -21,7 +21,7 @@ const ASProfileHeader = () => {
         <Text style={styles.title}>Profile</Text>
         <View style={styles.icon} />
       </View>
-      <ProfileInfo />
+      <ASProfileInfo/>
     </ImageBackground>
   )
 }
