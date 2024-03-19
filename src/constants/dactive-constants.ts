@@ -1,7 +1,7 @@
 import { COLORS } from '../theme'
 import { IDActiveCardInfoType } from '../types'
 
-export const buttonsText = ['2min', '4min', '8min']
+export const BUTTONS_TEXT_DATA: string[] = ['2min', '4min', '8min']
 
 export const D_ACTIVE_CARD_INFO: { [key: string]: IDActiveCardInfoType } = {
   'Outer Ring': {
@@ -26,5 +26,5 @@ export const D_ACTIVE_CARD_INFO: { [key: string]: IDActiveCardInfoType } = {
   },
 }
 
-export const TEXT_GRADIENT_LOCATION = [0, 0.8792, 1]
+export const TEXT_GRADIENT_LOCATION = [0, 0.8791, 1]
 export const BUTTON_GRADIENT_LOCATION = [0, 0.7]

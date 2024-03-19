@@ -1,38 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import { FlatList, View } from 'react-native'
+import React, { useEffect } from 'react'
+import { FlatList, SafeAreaView } from 'react-native'
+import { useSelector } from 'react-redux'
 
-import { IASDActiveCardProps } from '../../types'
-import { DACTIVE_BASE_URL } from '../../constants'
-import { Header, DActiveCard } from '../../components'
-import { getNotificationDActiveData } from '../../services'
+import { ASHeader, ASDActiveCard, ASLoader } from '../../components'
+import { RootState, useAppDispatch } from '../../redux/store'
+import { fetchDActiveListData } from '../../redux/features/dActive-slice'
+
+import { HeaderTitle, backGreenIcon } from '../../constants'
 
 import { styles } from './dActive-styles'
 
 const DActive = () => {
-  const [dActiveList, setDActiveList] = useState<IASDActiveCardProps[]>([])
-  const getDActiveListData = async () => {
-    const res = await getNotificationDActiveData(DACTIVE_BASE_URL)
-    if (res.success) {
-      setDActiveList(res.data)
-    } else {
-      console.error(res.error)
-    }
-  }
+  const { dActiveList } = useSelector((state: RootState) => state.dActive)
+  const dispatch = useAppDispatch()
+
   useEffect(() => {
-    getDActiveListData()
+    dispatch(fetchDActiveListData())
   }, [])
 
   return (
-    <View style={styles.container}>
-      <Header title="D Active" />
+    <SafeAreaView style={styles.container}>
+      <ASHeader title={HeaderTitle.DActive} imageSrc={backGreenIcon} />
       <FlatList
         style={styles.subContainer}
         data={dActiveList}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <DActiveCard item={item} />}
+        ListEmptyComponent={() => <ASLoader />}
+        renderItem={({ item }) => <ASDActiveCard {...item} />}
         keyExtractor={item => String(item.id)}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 

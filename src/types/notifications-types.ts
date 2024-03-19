@@ -1,4 +1,4 @@
-export interface IASNotificationCardProps {
+export interface IASNotificationCardType {
   id: string
   image: string
   text: string

@@ -1,26 +1,46 @@
-import { View, Text, Image } from 'react-native'
 import React from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
 
-import { ResizeMode } from '../../constants'
+import { RootTabParamsList } from '../../types'
+import { COLORS } from '../../theme'
+
+import { HeaderTitle, ResizeMode } from '../../constants'
 
 import { styles } from './asHeader-styles'
 
 interface IASHeaderProps {
-  imgSrc?: number | undefined
   title: string
+  imageSrc?: number
+  canGoBack?: boolean
+  bgColor?: string
+  titleColor?: string
 }
 
 const ASHeader = (props: IASHeaderProps) => {
-  const { title, imgSrc } = props
+  const navigation = useNavigation<StackNavigationProp<RootTabParamsList>>()
+  const {
+    title,
+    canGoBack = false,
+    imageSrc,
+    bgColor = COLORS.white,
+    titleColor = COLORS.neutral[700],
+  } = props
   return (
-    <View style={styles.header}>
-      <View style={styles.icon} />
-      <Text style={styles.title}>{title}</Text>
-      {imgSrc !== undefined ? (
-        <Image style={styles.image} resizeMode={ResizeMode.Contain} source={imgSrc} />
+    <View style={[styles.header, { backgroundColor: bgColor }]}>
+      {imageSrc ? (
+        <TouchableOpacity
+          onPress={() =>
+            canGoBack ? navigation.goBack() : navigation.navigate(HeaderTitle.Dashboard)
+          }>
+          <Image style={styles.image} source={imageSrc} resizeMode={ResizeMode.Contain} />
+        </TouchableOpacity>
       ) : (
-        <View style={styles.icon} />
+        <View style={styles.emptyIcon} />
       )}
+      <Text style={[styles.title, { color: titleColor }]}>{title}</Text>
+      <View style={styles.emptyIcon} />
     </View>
   )
 }

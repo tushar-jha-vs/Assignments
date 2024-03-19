@@ -8,11 +8,12 @@ export const palette = {
     '500': '#20ACA4',
     '600': '#178A86',
     '700': '#176E6D',
+    '800': '#247F79'
   },
   pink: {
     '50': '#FDF2F7',
     '100': '#FBE8F2',
-    '200': '#FADOE5',
+    '200': '#FAD0E5',
     '300': '#F7AACE',
     '400': '#F175AC',
     '500': '#E84C8D',
@@ -47,4 +48,6 @@ export const palette = {
     '300': '#FFFFFF',
   },
   tundora: '#454545',
+  charcoal: '#2B3F57',
+  grey: '#00000066'
 }
