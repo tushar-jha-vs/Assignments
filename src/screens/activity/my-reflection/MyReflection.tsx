@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
-import { ImageBackground, FlatList, View, SafeAreaView } from 'react-native'
+import { ImageBackground, FlatList, View, View } from 'react-native'
 import { useSelector } from 'react-redux'
 
 import { ASHeader, ASLoader, ASMyReflectionCard } from '../../../components'
-import { MY_REFLECTIONS_BACKGROUND_IMAGE, ResizeMode, backGreenIcon } from '../../../constants'
 import { RootState, useAppDispatch } from '../../../redux/store'
 import { fetchReflectionsListData } from '../../../redux/features/reflections-slice'
+
+import { MY_REFLECTIONS_BACKGROUND_IMAGE,ResizeMode, backGreenIcon } from '../../../constants'
 
 import { styles } from './myReflection-styles'
 
@@ -18,7 +19,7 @@ const MyReflection = () => {
   }, [])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <ImageBackground
         source={MY_REFLECTIONS_BACKGROUND_IMAGE}
         resizeMode={ResizeMode.Stretch}
@@ -33,7 +34,7 @@ const MyReflection = () => {
           />
         </View>
       </ImageBackground>
-    </SafeAreaView>
+    </View>
   )
 }
 

@@ -1,5 +1,5 @@
-import { View, Text, Image, Button, TouchableOpacity, Modal } from 'react-native';
 import React, { useState } from 'react';
+import { View, Text, Image, Button, TouchableOpacity, Modal } from 'react-native';
 import WebView from 'react-native-webview';
 
 import { PROFILE_CARD_URL, nextIcon } from '../../constants';
@@ -11,7 +11,7 @@ interface IASProfileCardProps {
 }
 
 const ASProfileCard = (props: IASProfileCardProps) => {
-  const [showWebView, setShowWebView] = useState(false);
+  const [showWebView, setShowWebView] = useState<boolean>(false);
   const { title } = props;
 
   const toggleWebView = () => {

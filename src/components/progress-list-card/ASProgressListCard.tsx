@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import * as Progress from 'react-native-progress'
 
-import ASPopUp from '../pop-up/ASPopUp'
+import { ASPopUp } from '..'
 import { COLORS, SPACING } from '../../theme'
 import { IProgressType as IASProgressListCardProps } from '../../types'
+
+import { ResizeMode, PROGRESS_CARD_IMAGE_SOURCE, nextIcon } from '../../constants'
 
 import { ResizeMode, PROGRESS_CARD_IMAGE_SOURCE, nextIcon } from '../../constants'
 

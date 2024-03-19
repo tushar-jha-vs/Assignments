@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Image, Text, View, TouchableOpacity } from 'react-native'
 import { Bar } from 'react-native-progress'
 
+
 import ASPopUp from '../pop-up/ASPopUp'
 import { COLORS, SPACING } from '../../theme'
 import { IProgressProps as IASAssessmentTopWreckerCardProps } from '../../types'
@@ -13,8 +14,7 @@ import { styles } from './asAssessmentTopWreckerCard-styles'
 const ASAssessmentTopWreckerCard = (props: IASAssessmentTopWreckerCardProps) => {
 
   const { title, progress, description } = props
-  const [isModalVisible, setIsModalVisible] = useState(false)
-
+  const [isModalVisible, setIsModalVisible] = useState<boolean>(false)
   const handlePress = () => {
     setIsModalVisible(true)
   }

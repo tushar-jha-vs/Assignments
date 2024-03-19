@@ -1,8 +1,9 @@
-import { View, Text, Modal, Image, TouchableOpacity, ImageSourcePropType } from 'react-native'
 import React, { Dispatch, SetStateAction } from 'react'
+import { View, Text, Modal, Image, TouchableOpacity, ImageSourcePropType } from 'react-native'
 import { Bar } from 'react-native-progress'
 
 import { COLORS, SPACING } from '../../theme'
+
 import { ResizeMode } from '../../constants'
 
 import styles from './asPopUp-styles'
@@ -27,9 +28,7 @@ const ASPopUp = (props: IASPopUpProps) => {
       animationType="slide"
       transparent={true}
       visible={isModalVisible}
-      onRequestClose={() => {
-        setIsModalVisible(!isModalVisible)
-      }}>
+      onRequestClose={() => handlePress}>
       <TouchableOpacity style={styles.modalOverlay} onPress={handlePress}>
         <View style={styles.container}>
           <View style={styles.subContainer}>
