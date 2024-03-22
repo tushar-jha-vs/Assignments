@@ -1,0 +1,1 @@
+export const ACTIVE_CASES_THRESHOLD = 30000
