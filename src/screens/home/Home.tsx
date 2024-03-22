@@ -32,22 +32,25 @@ const Home = () => {
     setPage(page === Math.ceil(covstatsListLength / LIMIT) ? 1 : page + 1)
   }
   return (
-    <>
-      <ASHeader title="COVID - 19" />
-      <View style={styles.container}>
-        <View style={styles.mainContainer}>
-          <ASLiveReports page={page} handleNext={handleNext} handlePrev={handlePrev} />
-          <FlatList
-            data={paginatedCovstatsList}
-            renderItem={({ item }) => <ASCountryCard {...item} />}
-            ListEmptyComponent={() => <ASLoader />}
-            keyExtractor={item => item.country}
-            showsVerticalScrollIndicator={false}
-          />
-        </View>
-      </View>
-    </>
+    <ASLoader />
   )
+  // return (
+  //   <>
+  //     <ASHeader title="COVID-19" />
+  //     <View style={styles.container}>
+  //       <View style={styles.mainContainer}>
+  //         <ASLiveReports page={page} handleNext={handleNext} handlePrev={handlePrev} />
+  //         <FlatList
+  //           data={paginatedCovstatsList}
+  //           renderItem={({ item }) => <ASCountryCard {...item} />}
+  //           ListEmptyComponent={() => <ASLoader />}
+  //           keyExtractor={item => item.country}
+  //           showsVerticalScrollIndicator={false}
+  //         />
+  //       </View>
+  //     </View>
+  //   </>
+  // )
 }
 
 export default Home

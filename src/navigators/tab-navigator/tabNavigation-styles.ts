@@ -1,8 +1,14 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 import { COLORS, SPACING, Typography } from '../../theme'
 
-export const styles = StyleSheet.create({
+interface IStyles {
+  tabBarStyle: ViewStyle
+  tabBarLabel: TextStyle
+  activeIcon: TextStyle
+}
+
+export const styles: IStyles = StyleSheet.create({
   tabBarStyle: {
     height: '8%',
     position: 'absolute',

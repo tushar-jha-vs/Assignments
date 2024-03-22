@@ -2,7 +2,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import { COLORS } from '../theme'
 
-
 export const readData = async (key: string) => {
   try {
     const value = await AsyncStorage.getItem(key)

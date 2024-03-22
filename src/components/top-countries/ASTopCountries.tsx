@@ -24,7 +24,7 @@ const ASTopCountries = () => {
 
   const renderTopCountries = () => {
     return sortedCovstatsList
-      .slice(0, 100)
+      .slice(0, 3)
       .map((item, index) => <ASTopCountryCard key={index} {...item} />)
   }
 
