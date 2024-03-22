@@ -3,7 +3,7 @@ import { View, ActivityIndicator } from 'react-native'
 
 import { COLORS } from '../../theme'
 
-import { styles } from '../header/asHeader-styles'
+import { styles } from './asLoader-styles'
 
 const ASLoader = () => {
   return (

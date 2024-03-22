@@ -6,7 +6,7 @@ interface IStyles {
   container: ViewStyle
 }
 
-const styles: IStyles = StyleSheet.create({
+export const styles: IStyles = StyleSheet.create({
   container: {
     flex: SPACING.space_1,
     justifyContent: 'center',
